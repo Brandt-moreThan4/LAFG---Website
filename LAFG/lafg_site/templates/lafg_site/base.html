@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'lafg_site/css/bootstrap/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'lafg_site/css/site.css' %}" />
+    {% block styles %}{% endblock %}
+
+    {#<link rel="icon" href="{% static 'lafg_site/Images/BlackHole.jpg' %}" />#}
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1 navbar-right justify-content-end">
+                        <li class="nav-item"
+                            ><a class="nav-link" href="{% url 'lafg_site:home' %}">Home</a>
+                        </li>
+                        <li class="nav-item"
+                            ><a class="nav-link" href="{% url 'lafg_site:contact' %}">Contact Us</a>
+                        </li>
+                        <li class="nav-item"
+                            ><a class="nav-link" href="{% url 'lafg_site:conduct' %}">Conduct a Focus Group</a>
+                        </li>
+                        <li class="nav-item"
+                            ><a class="nav-link" href="{% url 'lafg_site:sign_up' %}">Sign-Up Form</a>
+                        </li>
+                        <li class="nav-item"
+                            ><a class="nav-link" href="/admin/">Admin</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div>
+            <img id="skyLine" src="~/Images/skyline.jpg" />
+        </div>
+        <br />
+    </header>
+
+
+    <div class="container body-content">
+        <main class="pb-3">
+            {% block content %}{% endblock %}
+        </main>
+        
+    </div>
+
+
+    <footer class="border-top footer">
+        <div class="container">
+            &copy; 2020 - LAFG
+        </div>
+    </footer>
+
+
+    <script src="{% static "lafg_site/js/jquery/jquery.min.js" %}"></script>  {#must come before the below script#}
+    <script type="text/javascript" src="{% static "lafg_site/js/bootstrap/bootstrap.bundle.min.js" %}"></script>
+
+    {% block scripts %}{% endblock %} 
+
+
+</body>
+</html>
