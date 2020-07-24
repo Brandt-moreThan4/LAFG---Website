@@ -35,6 +35,9 @@
     <Compile Include="lafg_site\apps.py" />
     <Compile Include="lafg_site\migrations\__init__.py" />
     <Compile Include="lafg_site\models.py" />
+    <Compile Include="lafg_site\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="lafg_site\tests.py" />
     <Compile Include="lafg_site\urls.py">
       <SubType>Code</SubType>

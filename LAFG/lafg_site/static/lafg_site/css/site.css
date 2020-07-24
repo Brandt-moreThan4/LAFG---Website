@@ -6,6 +6,10 @@ header {
     color: white !important; /*What would be a better color?*/
 }
 
+nav {
+    margin: 0px;
+}
+
 
 /*Make text smaller on smaller screens.*/
 html {
@@ -26,7 +30,6 @@ html {
     min-height: 100%;
 }
 
-/*Shouldn't be necessary, but I think bootstrap is overriding it if I just map to body tag*/
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
@@ -59,8 +62,8 @@ body {
 #skyLine {
     width: 100%;
     height: 220px;
-    clear: both;
-    margin-top: 145px;
+/*    clear: both;
+    margin-top: 145px;*/
 }
 
 #TopHeader {
@@ -122,6 +125,7 @@ body {
 #CourtRoom {
     width: 75%;
 }
+
 
 /*
 li:hover {

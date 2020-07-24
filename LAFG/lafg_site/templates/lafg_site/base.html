@@ -10,13 +10,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'lafg_site/css/site.css' %}" />
     {% block styles %}{% endblock %}
 
-    {#<link rel="icon" href="{% static 'lafg_site/Images/BlackHole.jpg' %}" />#}
+    <link rel="icon" href="{% static 'lafg_site/Images/logo.png' %}" />
 
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="margin:0px !important; border-bottom:0px !important">
 
             <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -37,18 +37,16 @@
                         <li class="nav-item"
                             ><a class="nav-link" href="{% url 'lafg_site:sign_up' %}">Sign-Up Form</a>
                         </li>
-                        <li class="nav-item"
-                            ><a class="nav-link" href="/admin/">Admin</a>
-                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <div>
-            <img id="skyLine" src="~/Images/skyline.jpg" />
-        </div>
-        <br />
     </header>
+
+    <div>
+        <img id="skyLine" src= "{% static 'lafg_site/Images/skyline.jpg' %}" alt="Skyline"/>
+    </div>
+    <br />
 
 
     <div class="container body-content">
