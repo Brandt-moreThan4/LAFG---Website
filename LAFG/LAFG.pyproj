@@ -83,6 +83,7 @@
     <Content Include="lafg_site\templates\lafg_site\conduct.html" />
     <Content Include="lafg_site\templates\lafg_site\contact.html" />
     <Content Include="lafg_site\templates\lafg_site\index.html" />
+    <Content Include="lafg_site\templates\lafg_site\sign-up2.html" />
     <Content Include="lafg_site\templates\lafg_site\sign_up.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
