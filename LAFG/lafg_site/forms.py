@@ -18,7 +18,13 @@ MARITAL_STATUS_CHOICES = [('Single','Single'),
                           ('Divorced','Divorced'),
                           ('Widowed','Widowed'),
                           ('Separated','Separated')]
-INCOME_CHOICES = [('Liberal','Liberal') , ('Moderate','Moderate'), ('Conservative','Conservative')]
+
+INCOME_CHOICES = [('Less than $15,000','Less than $15,000'),
+                  ('$15,000 - $30,000','$15,000 - $30,000'),
+                  ('$31,000 - $60,000','$31,000 - $60,000'),
+                  ('$61,000 - $90,000','$61,000 - $90,000'),
+                  ('Over $90,000','Over $90,000')]
+
 WORKING_CHOICES = [('Yes','Yes') , ('No','No'), ('Student','Student'), ('Retired','Retired')]
 EDUCATION_CHOICES = [('Some School','Some School'),
                      ('High School or GED','High School or GED'),
@@ -50,18 +56,35 @@ class PersonForm(forms.ModelForm):
         model = Person
         fields = '__all__'
 
+
+        labels = {
+            'children': ('How many children do you have?'),
+            'income': ('What is your annual household income?'),
+            'working': ('Are you working?'),
+            'education': ('Highest level of education attained?'),
+            'us_citizen': ('Are you a U.S Citizen?'),
+            'registered_voter': ('Are you a registered voter?'),
+            'religious': ('Religious?'),
+            'previous_focus_group': ('Have you ever participated in a focus group about a legal issue?'),
+            'party_to_law_suit': ('Have you ever been party to a lawsuit?'),
+            'felony': ('Have you ever been convicted of a felony?'),
+            'legal_background': ('Are you studying law or have you worked for a law firm?'),
+            'location': ("Please indicate where you're located:"),
+            'source': ('How did you hear about us?'),
+        }
+
         # All the widgets are needed to make some better html than Django's defaults.
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'first-name', 'placeholder':'First Name'}),
             'last_name': forms.TextInput(attrs={'class': 'last-name', 'placeholder':'Last Name'}),
             'email': forms.TextInput(attrs={'class':'email', 'placeholder':'email@domain.com' }),
-            'phone': forms.TextInput(attrs={'type':'tel'}),
+            'phone': forms.TextInput(attrs={'type':'tel', 'placeholder':'999-999-9999'}),
             'sex': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=SEX_CHOICES),
             'ethnicity': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=ETHNICITY_CHOICES),
             'political_view': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=POLITICAL_VIEW_CHOICES),
             'marital_status': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=MARITAL_STATUS_CHOICES),     
             #'children': forms.IntegerField(attrs={'min':0}),
-            'income': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=ETHNICITY_CHOICES),
+            'income': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=INCOME_CHOICES),
             'working': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=WORKING_CHOICES),
             'education': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=EDUCATION_CHOICES),
             'us_citizen': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=US_CITIZEN_CHOICES),

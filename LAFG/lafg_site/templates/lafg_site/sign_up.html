@@ -8,11 +8,11 @@
             list-style-type:none !important;
         }
 
-        .fieldWrapper {
+/*        .fieldWrapper {
             border-style:dashed;
             border-color:black;
             border-width:thin;
-        }
+        }*/
 
     </style>
 {% endblock %}
@@ -33,14 +33,15 @@
                 {% for field in form %}
                     <div class="fieldWrapper">
                         {{ field.errors }}
-                        {{ field.label_tag }} {{ field }}
+                        {{ field.label_tag }}
+                        <br />
+                        {{ field }}
                         {% if field.help_text %}
                             <p class="help">{{ field.help_text|safe }}</p>
                         {% endif %}
                     </div>
                     <br />
                 {% endfor %}
-
 
                 <button class="btn btn-primary" type="submit" form="sign_up" value="Submit">Submit</button>
             </form>
