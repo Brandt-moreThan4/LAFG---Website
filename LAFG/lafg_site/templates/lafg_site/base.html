@@ -43,11 +43,14 @@
         </nav>
     </header>
 
-    <div>
+    <div class="card bg-dark text-white">
         <img id="skyLine" src= "{% static 'lafg_site/Images/skyline.jpg' %}" alt="Skyline"/>
+        <div class="card-img-overlay">
+            <h2 class="card-title">{% block page_title %}{% endblock %}</h2>
+        </div>
     </div>
-    <br />
 
+    <br />
 
     <div class="container pb-3">
         <div class="row">
