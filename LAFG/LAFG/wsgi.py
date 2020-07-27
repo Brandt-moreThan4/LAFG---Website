@@ -27,3 +27,22 @@ os.environ.setdefault(
 # file. This includes Django's development server, if the WSGI_APPLICATION
 # setting points here.
 application = get_wsgi_application()
+
+
+
+## +++++++++++ DJANGO +++++++++++
+## To use your own django app use code like this:
+#import os
+#import sys
+##
+### assuming your django settings file is at '/home/153144green/mysite/mysite/settings.py'
+### and your manage.py is is at '/home/153144green/mysite/manage.py'
+#path = '/home/153144green/LAFG---Website/LAFG'
+#if path not in sys.path:
+#    sys.path.append(path)
+##
+#os.environ['DJANGO_SETTINGS_MODULE'] = 'LAFG.settings'
+##
+### then:
+#from django.core.wsgi import get_wsgi_application
+#application = get_wsgi_application()

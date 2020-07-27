@@ -51,34 +51,17 @@
     <Compile Include="LAFG\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="lafg_site\static\lafg_site\css\site.css" />
-    <Content Include="lafg_site\static\lafg_site\css\bootstrap\bootstrap-grid.css" />
-    <Content Include="lafg_site\static\lafg_site\css\bootstrap\bootstrap-grid.css.map" />
-    <Content Include="lafg_site\static\lafg_site\css\bootstrap\bootstrap-grid.min.css" />
-    <Content Include="lafg_site\static\lafg_site\css\bootstrap\bootstrap-grid.min.css.map" />
-    <Content Include="lafg_site\static\lafg_site\css\bootstrap\bootstrap-reboot.css" />
-    <Content Include="lafg_site\static\lafg_site\css\bootstrap\bootstrap-reboot.css.map" />
-    <Content Include="lafg_site\static\lafg_site\css\bootstrap\bootstrap-reboot.min.css" />
-    <Content Include="lafg_site\static\lafg_site\css\bootstrap\bootstrap-reboot.min.css.map" />
     <Content Include="lafg_site\static\lafg_site\css\bootstrap\bootstrap.css" />
-    <Content Include="lafg_site\static\lafg_site\css\bootstrap\bootstrap.css.map" />
     <Content Include="lafg_site\static\lafg_site\css\bootstrap\bootstrap.min.css" />
-    <Content Include="lafg_site\static\lafg_site\css\bootstrap\bootstrap.min.css.map" />
+    <Content Include="lafg_site\static\lafg_site\css\site.css" />
     <Content Include="lafg_site\static\lafg_site\Images\courtRoom.jpg" />
     <Content Include="lafg_site\static\lafg_site\Images\logo.png" />
     <Content Include="lafg_site\static\lafg_site\Images\meetingRoom.jpg" />
     <Content Include="lafg_site\static\lafg_site\Images\skyline.jpg" />
     <Content Include="lafg_site\static\lafg_site\js\bootstrap\bootstrap.bundle.js" />
-    <Content Include="lafg_site\static\lafg_site\js\bootstrap\bootstrap.bundle.js.map" />
     <Content Include="lafg_site\static\lafg_site\js\bootstrap\bootstrap.bundle.min.js" />
-    <Content Include="lafg_site\static\lafg_site\js\bootstrap\bootstrap.bundle.min.js.map" />
-    <Content Include="lafg_site\static\lafg_site\js\bootstrap\bootstrap.js" />
-    <Content Include="lafg_site\static\lafg_site\js\bootstrap\bootstrap.js.map" />
-    <Content Include="lafg_site\static\lafg_site\js\bootstrap\bootstrap.min.js" />
-    <Content Include="lafg_site\static\lafg_site\js\bootstrap\bootstrap.min.js.map" />
     <Content Include="lafg_site\static\lafg_site\js\jquery\jquery.js" />
     <Content Include="lafg_site\static\lafg_site\js\jquery\jquery.min.js" />
-    <Content Include="lafg_site\static\lafg_site\js\jquery\jquery.min.map" />
     <Content Include="lafg_site\templates\lafg_site\base.html" />
     <Content Include="lafg_site\templates\lafg_site\conduct.html" />
     <Content Include="lafg_site\templates\lafg_site\contact.html" />
