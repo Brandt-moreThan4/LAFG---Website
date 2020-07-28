@@ -6,15 +6,20 @@ header {
     color: white !important; /*What would be a better color?*/
 }
 
+.right-nav ul{
+    list-style-type:none;
+}
+
+.right-nav hr{
+    margin: 0px;
+}
+
+
 /*Below does not work for some reason. So it is applied manually to nav element in html*/
 /*nav {
     margin: 0px !important;
     border-bottom: 0px !important;
 }*/
-
-
-
-
 /*Make text smaller on smaller screens.*/
 html {
     font-size: 14px;

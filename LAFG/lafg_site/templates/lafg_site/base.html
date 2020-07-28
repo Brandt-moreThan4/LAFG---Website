@@ -1,4 +1,4 @@
-﻿{% load static %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -63,12 +63,23 @@
             <br /><br />
 
             <div class="col-md-3">
-                <div>
+                <div class="right-nav">
                     <h1>Side Bar!!</h1>
+                    <br /><br />
+
+                    <h4>LA Focus Groups</h4>
                     <ul>
-                        <li>Elements inside of nav</li>
-                        <li>Elements inside of nav</li>
-                        <li>Elements inside of nav</li>
+                        <li><a class="" href="{% url 'lafg_site:home' %}">Home</a></li> <hr />
+                        <li><a class="" href="{% url 'lafg_site:contact' %}">Contact Us</a></li><hr />
+                        <li><a class="" href="{% url 'lafg_site:conduct' %}">Conduct a Focus Group</a></li><hr />
+                        <li><a class="" href="{% url 'lafg_site:sign_up' %}">Sign-Up Form</a></li>
+                    </ul>
+                    <br /><br />
+                    <h4>LA Focus Groups</h4>
+                    <ul>
+                        <li>Elements inside of right nav</li>
+                        <li>Any ideas what to put here??</li>
+                        <li>I feel like address is silly.</li>
                     </ul>
                 </div>
             </div>
