@@ -1,0 +1,26 @@
+﻿    {% extends "lafg_site/base.html" %}
+    {% load static %}
+
+    {% block title %}Data{% endblock %}
+    {% block page_title %}Data Export{% endblock %}
+
+    {% block content %}
+
+        {#<div class="row">#}
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                 {# Could instead use one book name and different values for to differentiate on back end? #}    
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <button type="submit" value="data_export" name="data_export" class="btn btn-primary">Export Data</button><br /><br />   
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>  
+        {#</div>#}
+
+
+    {% endblock %}

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import PersonForm
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
@@ -43,8 +44,8 @@ def sign_up(request):
     return render(request, 'lafg_site/sign_up.html', {'form': form, 'form_submitted': form_submitted})
 
 
+@login_required
+def data(request):
+    """This is the page they will be re-directed to after submitting a sign-up form"""
 
-#def thankyou(request):
-#    """This is the page they will be re-directed to after submitting a sign-up form"""
-
-#    return render(request, 'lafg_site/form-submitted.html')
+    return render(request, 'lafg_site/data.html')

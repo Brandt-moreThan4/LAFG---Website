@@ -65,7 +65,9 @@
     <Content Include="lafg_site\templates\lafg_site\base.html" />
     <Content Include="lafg_site\templates\lafg_site\conduct.html" />
     <Content Include="lafg_site\templates\lafg_site\contact.html" />
+    <Content Include="lafg_site\templates\lafg_site\data.html" />
     <Content Include="lafg_site\templates\lafg_site\index.html" />
+    <Content Include="lafg_site\templates\registration\login.html" />
     <Content Include="lafg_site\templates\lafg_site\sign_up.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
@@ -83,6 +85,7 @@
     <Folder Include="lafg_site\static\lafg_site\js\jquery\" />
     <Folder Include="lafg_site\templates\" />
     <Folder Include="lafg_site\templates\lafg_site\" />
+    <Folder Include="lafg_site\templates\registration\" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
