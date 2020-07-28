@@ -1,7 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
+from . models import Person
 from .forms import PersonForm
 from django.contrib.auth.decorators import login_required
+import datetime
+
+from .data_tools import data_export
 
 
 def home(request):
@@ -47,5 +51,18 @@ def sign_up(request):
 @login_required
 def data(request):
     """This is the page they will be re-directed to after submitting a sign-up form"""
+
+    if request.method == 'POST':
+        button_value = request.POST.get('data_export')
+        if button_value == 'participant_export':
+
+            # File name arguement for response object must be surrounded by quotes I think
+            file_name = '"' + datetime.datetime.today().strftime('%Y-%m-%d') + '--participants.csv' + '"'
+            response = HttpResponse(content_type='text/csv')
+            response['Content-Disposition'] = 'attachment; filename=' + file_name
+            data_export.export_db(Person, response)
+
+            return response
+
 
     return render(request, 'lafg_site/data.html')

@@ -33,6 +33,9 @@
   <ItemGroup>
     <Compile Include="lafg_site\admin.py" />
     <Compile Include="lafg_site\apps.py" />
+    <Compile Include="lafg_site\data_tools\data_export.py" />
+    <Compile Include="lafg_site\data_tools\data_import.py" />
+    <Compile Include="lafg_site\data_tools\__init__.py" />
     <Compile Include="lafg_site\migrations\__init__.py" />
     <Compile Include="lafg_site\models.py" />
     <Compile Include="lafg_site\forms.py">
@@ -51,6 +54,12 @@
     <Compile Include="LAFG\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="lafg_site\data_tools\__pycache__\data_export.cpython-37.pyc" />
+    <Content Include="lafg_site\data_tools\__pycache__\data_import.cpython-37.pyc" />
+    <Content Include="lafg_site\data_tools\__pycache__\__init__.cpython-37.pyc" />
+    <Content Include="lafg_site\data_dump\Knowledge.csv" />
+    <Content Include="lafg_site\data_dump\Post.csv" />
+    <Content Include="lafg_site\data_dump\websiteDB.xlsx" />
     <Content Include="lafg_site\static\lafg_site\css\bootstrap\bootstrap.css" />
     <Content Include="lafg_site\static\lafg_site\css\bootstrap\bootstrap.min.css" />
     <Content Include="lafg_site\static\lafg_site\css\site.css" />
@@ -74,6 +83,10 @@
   <ItemGroup>
     <Folder Include="LAFG\" />
     <Folder Include="lafg_site\" />
+    <Folder Include="lafg_site\data_tools\" />
+    <Folder Include="lafg_site\data_tools\data_dump\" />
+    <Folder Include="lafg_site\data_tools\__pycache__\" />
+    <Folder Include="lafg_site\data_dump\" />
     <Folder Include="lafg_site\migrations\" />
     <Folder Include="lafg_site\static\" />
     <Folder Include="lafg_site\static\lafg_site\" />

@@ -1,0 +1,5 @@
+id,time_stamp,first_name,last_name,email,phone,age,sex,ethnicity,political_view,marital_status,children,income,working,occupation,education,us_citizen,registered_voter,religious,previous_focus_group,party_to_law_suit,felony,legal_background,location,source
+1,2020-07-28 02:45:13.285568+00:00,Brandt,Green,bgreen97@gmail.com,2259074265,23,Male,White,Moderate,Single,0,"$15,000 - $30,000",No,lol,College Graduate,Yes,Yes,Yes,No,No,No,No,Baton Rouge,Family/Friend
+2,2020-07-28 02:49:42.707665+00:00,Brandt,Green,bgree41@lsu.edu,2259074265,23,Male,White,Liberal,Single,2,"$61,000 - $90,000",No,moderator,Some School,Yes,No,No,Yes,Yes,Yes,Yes,Baton Rouge,Family/Friend
+3,2020-07-28 03:12:57.830176+00:00,Brandt,Green,bgreen97@gmail.com,2259074265,3,Male,White,Moderate,Single,3,"Over $90,000",Yes,moderator,Some School,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Baton Rouge,Family/Friend
+4,2020-07-28 03:15:51.768029+00:00,Brandt,Green,bgreen97@gmail.com,2259074265,23,Male,White,Liberal,Single,44,"Less than $15,000",Yes,test8,Post Graduate,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Baton Rouge,Family/Friend
