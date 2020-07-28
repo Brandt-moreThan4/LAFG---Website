@@ -26,22 +26,32 @@ INCOME_CHOICES = [('Less than $15,000','Less than $15,000'),
                   ('Over $90,000','Over $90,000')]
 
 WORKING_CHOICES = [('Yes','Yes') , ('No','No'), ('Student','Student'), ('Retired','Retired')]
+
 EDUCATION_CHOICES = [('Some School','Some School'),
                      ('High School or GED','High School or GED'),
                      ('College Graduate','College Graduate'),
                      ('Post Graduate','Post Graduate')]
+
 US_CITIZEN_CHOICES = [('Yes','Yes') , ('No','No')]
+
 REGISTERED_VOTER_CHOICES = [('Yes','Yes') , ('No','No')]
+
 RELIGIOUS_CHOICE = [('Yes','Yes') , ('No','No')]
+
 PREVIOUS_FOCUS_GROUP_CHOICES = [('Yes','Yes') , ('No','No')]
+
 PARTY_TO_LAW_SUIT_CHOICES = [('Yes','Yes') , ('No','No')]
+
 FELONY_CHOICES = [('Yes','Yes') , ('No','No')]
+
 LEGAL_BACKGROUND_CHOICES = [('Yes','Yes') , ('No','No')]
+
 LOCATION_CHOICES = [('Baton Rouge','Baton Rouge'),
                     ('Metairie','Metairie'),
                     ('Shreveport','Shreveport'),
                     ('Lafayette','Lafayette'),
                     ('New Orleans','New Orleans'),]
+
 SOURCES_CHOICES = [('Family/Friend','Family/Friend'),
                     ('Facebook','Facebook'),
                     ('Instagram','Instagram'),
@@ -71,19 +81,21 @@ class PersonForm(forms.ModelForm):
             'legal_background': ('Are you studying law or have you worked for a law firm?'),
             'location': ("Please indicate where you're located:"),
             'source': ('How did you hear about us?'),
+            'occupation': ('If you are working, what is your occupation?')
         }
 
         # All the widgets are needed to make some better html than Django's defaults.
         widgets = {
-            'first_name': forms.TextInput(attrs={'class': 'first-name', 'placeholder':'First Name'}),
-            'last_name': forms.TextInput(attrs={'class': 'last-name', 'placeholder':'Last Name'}),
-            'email': forms.TextInput(attrs={'class':'email', 'placeholder':'email@domain.com' }),
-            'phone': forms.TextInput(attrs={'type':'tel', 'placeholder':'999-999-9999'}),
+            'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'First Name'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Last Name'}),
+            'email': forms.TextInput(attrs={'class':'form-control', 'placeholder':'email@example.com' }),
+            'phone': forms.TextInput(attrs={'class':'form-control', 'type':'tel', 'placeholder':'999-999-9999'}),
+            'age': forms.NumberInput(attrs={'class':'form-control', 'min':0}),
             'sex': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=SEX_CHOICES),
             'ethnicity': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=ETHNICITY_CHOICES),
             'political_view': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=POLITICAL_VIEW_CHOICES),
-            'marital_status': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=MARITAL_STATUS_CHOICES),     
-            #'children': forms.IntegerField(attrs={'min':0}),
+            'marital_status': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=MARITAL_STATUS_CHOICES),                  
+            'children': forms.NumberInput(attrs={'class':'form-control', 'min':0}),
             'income': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=INCOME_CHOICES),
             'working': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=WORKING_CHOICES),
             'education': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=EDUCATION_CHOICES),
