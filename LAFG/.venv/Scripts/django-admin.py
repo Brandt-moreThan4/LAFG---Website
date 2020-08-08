@@ -1,4 +1,4 @@
-#!C:\Users\15314\source\repos\LAFG\LAFG\env\Scripts\python.exe
+#!c:\users\15314\onedrive\desktop\web development\lafg---website\lafg\.venv\scripts\python.exe
 from django.core import management
 
 if __name__ == "__main__":
