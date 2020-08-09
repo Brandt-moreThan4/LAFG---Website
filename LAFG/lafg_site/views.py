@@ -1,12 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
-from . models import Person
-from .forms import PersonForm
 from django.contrib.auth.decorators import login_required
 import datetime
 
 from .data_tools import data_export
-
+from . models import Person
+from .forms import PersonForm
 
 def home(request):
     """Renders home/ about page"""
@@ -40,12 +39,19 @@ def sign_up(request):
         if form.is_valid():
             form.save()
             form_submitted = True 
+            return HttpResponseRedirect('/sign_up_success/')
 
     # if a GET (or any other method) we'll create a blank form
     else:
         form = PersonForm()
 
     return render(request, 'lafg_site/sign_up.html', {'form': form, 'form_submitted': form_submitted})
+
+
+def sign_up_success(request):
+    """Renders the sign-up success template"""
+
+    return render(request, 'lafg_site/sign_up_success.html')
 
 
 @login_required
