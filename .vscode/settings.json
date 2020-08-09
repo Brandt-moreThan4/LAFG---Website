@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "LAFG\\.venv\\Scripts\\python.exe"
+    "python.pythonPath": "LAFG\\.venv\\Scripts\\python.exe",
+    "git.ignoreLimitWarning": true
 }
