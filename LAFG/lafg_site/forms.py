@@ -98,6 +98,7 @@ class PersonForm(forms.ModelForm):
             'children': forms.NumberInput(attrs={'class':'form-control', 'min':0}),
             'income': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=INCOME_CHOICES),
             'working': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=WORKING_CHOICES),
+            'occupation': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Occupation'}),
             'education': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=EDUCATION_CHOICES),
             'us_citizen': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=US_CITIZEN_CHOICES),
             'registered_voter': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=REGISTERED_VOTER_CHOICES),

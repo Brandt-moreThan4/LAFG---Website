@@ -1,26 +1,40 @@
 """
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
-
-Replace this with more appropriate tests for your application.
+Run with python ./manage.py test lafg_site
 """
 
 import django
 from django.test import TestCase
+from . models import Person
 
-# TODO: Configure your database in settings.py and sync before running tests.
 
-class SimpleTest(TestCase):
-    """Tests for the application views."""
+class PersonTest(TestCase):
+    """Test for if creating a person works."""
 
-    # Django requires an explicit setup() when running tests in PTVS
-    @classmethod
-    def setUpClass(cls):
-        super(SimpleTest, cls).setUpClass()
-        django.setup()
+    def test_create_valid_person(self):
+        new_person = Person()
+        new_person.first_name = "Test_Clarance"
+        new_person.last_name = 'Test_Leblanc'
+        new_person.email = 'brandtgreen97@gmail.com'
+        new_person.phone = '2259074265'
+        new_person.age = 22
+        new_person.sex = 'Male'
+        new_person.ethnicity = 'Black'
+        new_person.political_view = 'Liberal'
+        new_person.marital_status = 'Single'
+        new_person.children = 2
+        new_person.income = '$15,000 - $30,000'
+        new_person.working = 'Yes'
+        new_person.occupation = 'Butcher'
+        new_person.education = 'College Graduate'
+        new_person.us_citizen = 'Yes'
+        new_person.registered_voter = 'Yes'
+        new_person.religious = 'Yes' 
+        new_person.previous_focus_group = 'No'
+        new_person.party_to_law_suit = 'No'
+        new_person.felony = 'No'
+        new_person.legal_background = 'Yes'
+        new_person.location = 'Baton Rouge'
+        new_person.source = 'Facebook'
+        new_person.save()
 
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
+        self.assertEqual(True,True)
