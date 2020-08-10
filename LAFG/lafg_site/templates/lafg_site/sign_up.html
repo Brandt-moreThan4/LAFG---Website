@@ -65,7 +65,7 @@
 
 {% block scripts %}
     <script>
-
+        // Only show occupation field if someone is working.
         function showHideOccupation() {
             var occupation =  document.getElementById("occupation");
             var working = document.querySelector('input[name="working"]:checked');
@@ -78,12 +78,12 @@
             }
 
         }
-
+        // Hide occupation field by default.
         function hideOccupation() {
+
             document.getElementById("occupation").className = "field-wrapper d-none";
             }
 
-        window.onload=hideOccupation
         window.onload=hideOccupation
 
     </script>
