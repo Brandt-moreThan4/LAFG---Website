@@ -105,6 +105,6 @@ USE_TZ = True
 
 
 
-STATIC_URL = '/assets/'
-STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
-#STATIC_ROOT = '/home/153144green/LAFG---Website/static'
+STATIC_URL = '/static/'
+#STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+STATIC_ROOT = '/home/153144green/LAFG---Website/static'
