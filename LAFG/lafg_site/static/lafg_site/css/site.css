@@ -10,6 +10,10 @@ header {
     list-style-type:none;
 }
 
+.right-nav li{
+    margin-bottom: 3px;
+}
+
 .right-nav hr{
     margin: 0px;
 }
