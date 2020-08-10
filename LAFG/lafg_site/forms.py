@@ -6,10 +6,11 @@ from .models import Person
 """All these choices are used as the inputs for the django widgets in order to produce the radio fields"""
 
 SEX_CHOICES = [('Male','Male') , ('Female','Female')]
-ETHNICITY_CHOICES = [('White','White'),
-                    ('African American/Black','African American/Black'),
-                    ('Asian','Asian'),
-                    ('Hispanic','Hispanic'),
+ETHNICITY_CHOICES = [('Asian','Asian'),
+                    ('Black or African American','Black or African American'),
+                    ('Hispanic or Latino','Hispanic or Latino'),
+                    ('White','White'),
+                    ('Native Hawaiian or Other Pacific Islander', 'Native Hawaiian or Other Pacific Islander'),
                     ('Other','Other')]
 POLITICAL_VIEW_CHOICES = [('Liberal','Liberal') , ('Moderate','Moderate'), ('Conservative','Conservative')]
 
@@ -62,6 +63,11 @@ SOURCES_CHOICES = [('Family/Friend','Family/Friend'),
 class PersonForm(forms.ModelForm):
     """Sign_Up submission form"""
     #I should add some javascript for race field and occupation field to make an inut box if 'other' is selected
+
+    # Must do the below line so that you can set required to false.
+    occupation = forms.CharField(required=False, label = 'If you are working, what is your occupation?', widget=forms.TextInput(attrs={'class': 'form-control'}))
+
+
     class Meta:
         model = Person
         fields = '__all__'
@@ -97,8 +103,7 @@ class PersonForm(forms.ModelForm):
             'marital_status': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=MARITAL_STATUS_CHOICES),                  
             'children': forms.NumberInput(attrs={'class':'form-control', 'min':0}),
             'income': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=INCOME_CHOICES),
-            'working': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=WORKING_CHOICES),
-            'occupation': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Occupation'}),
+            'working': forms.RadioSelect(attrs={'class':'ethnicity', 'onclick':'showHideOccupation()'}, choices=WORKING_CHOICES),
             'education': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=EDUCATION_CHOICES),
             'us_citizen': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=US_CITIZEN_CHOICES),
             'registered_voter': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=REGISTERED_VOTER_CHOICES),
@@ -110,3 +115,4 @@ class PersonForm(forms.ModelForm):
             'location': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=LOCATION_CHOICES),
             'source': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=SOURCES_CHOICES),
         }
+

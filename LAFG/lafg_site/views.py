@@ -7,6 +7,8 @@ from .data_tools import data_export
 from . models import Person
 from .forms import PersonForm
 
+print('http://127.0.0.1:8000/sign_up')
+
 def home(request):
     """Renders home/ about page"""
 
