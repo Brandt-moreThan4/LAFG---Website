@@ -66,7 +66,7 @@ class PersonForm(forms.ModelForm):
 
     # Must do the below line so that you can set required to false.
     occupation = forms.CharField(required=False, label = 'If you are working, what is your occupation?', widget=forms.TextInput(attrs={'class': 'form-control'}))
-
+    sourceOther = forms.CharField(required=False, label = 'If other, please specify.', widget=forms.TextInput(attrs={'class': 'form-control'}))
 
     class Meta:
         model = Person
@@ -87,6 +87,7 @@ class PersonForm(forms.ModelForm):
             'legal_background': ('Are you studying law or have you worked for a law firm?'),
             'location': ("Please indicate where you're located:"),
             'source': ('How did you hear about us?'),
+            'sourceOther': ('If other, please specify.'),
             'occupation': ('If you are working, what is your occupation?')
         }
 
@@ -113,6 +114,6 @@ class PersonForm(forms.ModelForm):
             'felony': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=FELONY_CHOICES),
             'legal_background': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=LEGAL_BACKGROUND_CHOICES),
             'location': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=LOCATION_CHOICES),
-            'source': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=SOURCES_CHOICES),
+            'source': forms.RadioSelect(attrs={'class':'ethnicity','onclick':'showHideSourceOther()'}, choices=SOURCES_CHOICES),
         }
 

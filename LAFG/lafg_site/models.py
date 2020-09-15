@@ -17,7 +17,7 @@ class Person(models.Model):
     marital_status = models.CharField(max_length=50)
     children = models.IntegerField()
     income = models.CharField(max_length=250)
-    working = models.CharField(max_length=3)
+    working = models.CharField(max_length=100)
     occupation = models.CharField(max_length=100)
     education = models.CharField(max_length=100)
     us_citizen = models.CharField(max_length=3)
@@ -29,4 +29,5 @@ class Person(models.Model):
     legal_background = models.CharField(max_length=3)
     location = models.CharField(max_length=250)
     source = models.CharField(max_length=250)
+    sourceOther = models.CharField(max_length=250)
 

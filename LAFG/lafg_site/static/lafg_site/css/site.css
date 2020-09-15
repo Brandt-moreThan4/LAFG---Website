@@ -75,11 +75,11 @@ body {
 
 
 #CourtRoom {
-    width: 75%;
+    width: 90%;
 }
 
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1200px) {
     
     #CourtRoom {
         width: 100%;

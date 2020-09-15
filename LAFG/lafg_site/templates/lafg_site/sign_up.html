@@ -81,13 +81,39 @@
             }
 
         }
-        // Hide occupation field by default.
-        function hideOccupation() {
 
-            document.getElementById("occupation").className = "field-wrapper d-none";
+        function showHideSourceOther() {
+            var sourceOther =  document.getElementById("sourceOther");
+            var source = document.querySelector('input[name="source"]:checked');
+
+            if (source.value == "Other"){
+                sourceOther.className = "field-wrapper";
+            }
+            else {
+                sourceOther.className = "field-wrapper d-none";
             }
 
-        window.onload=hideOccupation
+        }
+
+                // Hide occupation field by default.
+        function hideOccupation() {
+            document.getElementById("occupation").className = "field-wrapper d-none";
+        }
+
+        function hideSourceOther() {
+            document.getElementById("sourceOther").className = "field-wrapper d-none";
+        }
+
+        function hideFields() {
+            hideOccupation()
+            hideSourceOther()
+            
+        }
+
+        // When the page loads. Hide the two fields unless they are triggered by clicking on the
+        // appropriate radio buttons. 
+        window.onload=hideFields
+
 
     </script>
 {% endblock %}
