@@ -51,7 +51,8 @@ LOCATION_CHOICES = [('Baton Rouge','Baton Rouge'),
                     ('Metairie','Metairie'),
                     ('Shreveport','Shreveport'),
                     ('Lafayette','Lafayette'),
-                    ('New Orleans','New Orleans'),]
+                    ('New Orleans','New Orleans'),
+                    ('Terrebonne Parish','Terrebonne Parish'),]
 
 SOURCES_CHOICES = [('Family/Friend','Family/Friend'),
                     ('Facebook','Facebook'),
