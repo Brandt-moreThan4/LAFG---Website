@@ -47,11 +47,12 @@ FELONY_CHOICES = [('Yes','Yes') , ('No','No')]
 
 LEGAL_BACKGROUND_CHOICES = [('Yes','Yes') , ('No','No')]
 
-LOCATION_CHOICES = [('Baton Rouge','Baton Rouge'),
+LOCATION_CHOICES = [('Iberville Parish','Iberville Parish'),    
+                    ('Baton Rouge','Baton Rouge'),
                     ('Metairie','Metairie'),
                     ('Shreveport','Shreveport'),
                     ('Lafayette','Lafayette'),
-                    ('New Orleans','New Orleans'),
+                    ('New Orleans','New Orleans'),                
                     ('Terrebonne Parish','Terrebonne Parish'),]
 
 SOURCES_CHOICES = [('Family/Friend','Family/Friend'),

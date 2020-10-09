@@ -31,3 +31,7 @@ class Person(models.Model):
     source = models.CharField(max_length=250)
     sourceOther = models.CharField(max_length=250)
 
+    class Meta:
+        # abstract = True
+        ordering = ('-time_stamp',)
+
