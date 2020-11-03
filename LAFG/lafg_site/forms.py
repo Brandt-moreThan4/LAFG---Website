@@ -47,13 +47,17 @@ FELONY_CHOICES = [('Yes','Yes') , ('No','No')]
 
 LEGAL_BACKGROUND_CHOICES = [('Yes','Yes') , ('No','No')]
 
-LOCATION_CHOICES = [('Iberville Parish','Iberville Parish'),    
+# ('Iberville Parish','Iberville Parish'), 
+# Terrebonne Parish','Terrebonne Parish'),
+
+LOCATION_CHOICES = [('Tangipahoa','Tangipahoa'),    
                     ('Baton Rouge','Baton Rouge'),
                     ('Metairie','Metairie'),
                     ('Shreveport','Shreveport'),
                     ('Lafayette','Lafayette'),
-                    ('New Orleans','New Orleans'),                
-                    ('Terrebonne Parish','Terrebonne Parish'),]
+                    ('New Orleans','New Orleans'),]
+
+
 
 SOURCES_CHOICES = [('Family/Friend','Family/Friend'),
                     ('Facebook','Facebook'),
