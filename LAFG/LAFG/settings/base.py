@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lafg_site.apps.lafg_siteConfig',
+    'survey.apps.SurveyConfig',
 ]
 
 # Middleware framework
