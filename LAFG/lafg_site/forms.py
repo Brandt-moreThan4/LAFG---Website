@@ -49,13 +49,16 @@ LEGAL_BACKGROUND_CHOICES = [('Yes','Yes') , ('No','No')]
 
 # ('Iberville Parish','Iberville Parish'), 
 # Terrebonne Parish','Terrebonne Parish'),
-
-LOCATION_CHOICES = [('Tangipahoa','Tangipahoa'),    
-                    ('Baton Rouge','Baton Rouge'),
-                    ('Metairie','Metairie'),
-                    ('Shreveport','Shreveport'),
-                    ('Lafayette','Lafayette'),
-                    ('New Orleans','New Orleans'),]
+# Harrison County
+LOCATION_CHOICES = [('Harrison County','Harrison County, TX'),
+                    ('Roane County','Roane County, TN'),
+                    ('Knoxville','Knoxville, TN'),
+                    # ('Tangipahoa','Tangipahoa, LA'),    
+                    ('Baton Rouge','Baton Rouge, LA'),
+                    ('Metairie','Metairie, LA'),
+                    ('Shreveport','Shreveport, LA'),
+                    # ('Lafayette','Lafayette, LA'),
+                    ('New Orleans','New Orleans, LA'),]
 
 
 
