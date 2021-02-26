@@ -30,9 +30,6 @@ def conduct(request):
 def sign_up(request):
     """Renders the sign-up form"""
 
-    # Below variable is used to decide thank you message should be shown or if the from should be shown.
-    form_submitted = False
-
      # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
@@ -47,7 +44,7 @@ def sign_up(request):
     else:
         form = PersonForm()
 
-    return render(request, 'lafg_site/sign_up.html', {'form': form, 'form_submitted': form_submitted})
+    return render(request, 'lafg_site/sign_up.html', {'form': form})
 
 
 def sign_up_success(request):
@@ -58,7 +55,7 @@ def sign_up_success(request):
 
 @login_required
 def data(request):
-    """This is the page they will be re-directed to after submitting a sign-up form"""
+    """This is the page to export the participant list as a csv"""
 
     if request.method == 'POST':
         button_value = request.POST.get('data_export')
@@ -68,7 +65,7 @@ def data(request):
             file_name = '"' + datetime.datetime.today().strftime('%Y-%m-%d') + '--participants.csv' + '"'
             response = HttpResponse(content_type='text/csv')
             response['Content-Disposition'] = 'attachment; filename=' + file_name
-            data_export.export_db(Person, response)
+            data_export.export_db(Person, response) # Write the content to the response object
 
             return response
 
