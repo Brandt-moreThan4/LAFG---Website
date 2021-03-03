@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 import datetime
 
 from .data_tools import data_export
-from . models import Person
+from . models import Person, Place, State
 from .forms import PersonForm
 
 print('http://127.0.0.1:8000/sign_up')
@@ -12,7 +12,15 @@ print('http://127.0.0.1:8000/sign_up')
 def home(request):
     """Renders home/ about page"""
 
-    return render(request, 'lafg_site/index.html')
+    states = State.objects.exclude(display=False)
+    
+    states_dict = {}
+    for state in states:
+        places_in_state = Place.objects.filter(display=True)
+        places_in_state = places_in_state.filter(state__name=state)
+        states_dict[state.name] = places_in_state
+
+    return render(request, 'lafg_site/index.html', context={'states_dict':states_dict})
 
 
 def contact(request):
@@ -29,7 +37,8 @@ def conduct(request):
 
 def sign_up(request):
     """Renders the sign-up form"""
-
+    
+    from .forms import PersonForm
      # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
@@ -37,7 +46,6 @@ def sign_up(request):
         # check whether it's valid:
         if form.is_valid():
             form.save()
-            form_submitted = True 
             return HttpResponseRedirect('/sign_up_success/')
 
     # if a GET (or any other method) we'll create a blank form
@@ -45,6 +53,13 @@ def sign_up(request):
         form = PersonForm()
 
     return render(request, 'lafg_site/sign_up.html', {'form': form})
+
+
+
+
+def test(request):
+
+    return render(request, 'lafg_site/sign_two.html') 
 
 
 def sign_up_success(request):

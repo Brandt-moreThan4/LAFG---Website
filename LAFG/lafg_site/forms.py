@@ -1,17 +1,19 @@
 from django import forms
-from .models import Person
+from .models import Person, Place
 
 
 
 """All these choices are used as the inputs for the django widgets in order to produce the radio fields"""
 
 SEX_CHOICES = [('Male','Male') , ('Female','Female')]
+
 ETHNICITY_CHOICES = [('Asian','Asian'),
                     ('Black or African American','Black or African American'),
                     ('Hispanic or Latino','Hispanic or Latino'),
                     ('White','White'),
                     ('Native Hawaiian or Other Pacific Islander', 'Native Hawaiian or Other Pacific Islander'),
                     ('Other','Other')]
+
 POLITICAL_VIEW_CHOICES = [('Liberal','Liberal') , ('Moderate','Moderate'), ('Conservative','Conservative')]
 
 MARITAL_STATUS_CHOICES = [('Single','Single'),
@@ -47,20 +49,21 @@ FELONY_CHOICES = [('Yes','Yes') , ('No','No')]
 
 LEGAL_BACKGROUND_CHOICES = [('Yes','Yes') , ('No','No')]
 
-# ('Iberville Parish','Iberville Parish'), 
-# Terrebonne Parish','Terrebonne Parish'),
-# Harrison County
+
 LOCATION_CHOICES = [('Harrison County','Harrison County, TX'),
                     ('Roane County','Roane County, TN'),
-                    ('Knoxville','Knoxville, TN'),
-                    # ('Tangipahoa','Tangipahoa, LA'),    
+                    ('Knoxville','Knoxville, TN'),    
                     ('Baton Rouge','Baton Rouge, LA'),
                     ('Metairie','Metairie, LA'),
-                    ('Shreveport','Shreveport, LA'),
-                    # ('Lafayette','Lafayette, LA'),
+                    ('Shreveport','Shreveport, LA'),                
                     ('New Orleans','New Orleans, LA'),]
 
 
+place_query = Place.objects.filter(display=True)
+loc_labels = [place.city_label for place in place_query]
+loc_values = [place.city_value for place in place_query]
+LOCATION_CHOICES = list(zip(loc_values, loc_labels))
+print('done')
 
 SOURCES_CHOICES = [('Family/Friend','Family/Friend'),
                     ('Facebook','Facebook'),
@@ -71,16 +74,15 @@ SOURCES_CHOICES = [('Family/Friend','Family/Friend'),
 
 class PersonForm(forms.ModelForm):
     """Sign_Up submission form"""
-    #I should add some javascript for race field and occupation field to make an inut box if 'other' is selected
 
     # Must do the below line so that you can set required to false.
     occupation = forms.CharField(required=False, label = 'If you are working, what is your occupation?', widget=forms.TextInput(attrs={'class': 'form-control'}))
     sourceOther = forms.CharField(required=False, label = 'If other, please specify.', widget=forms.TextInput(attrs={'class': 'form-control'}))
 
+
     class Meta:
         model = Person
         fields = '__all__'
-
 
         labels = {
             'children': ('How many children do you have?'),
@@ -90,7 +92,7 @@ class PersonForm(forms.ModelForm):
             'us_citizen': ('Are you a U.S Citizen?'),
             'registered_voter': ('Are you a registered voter?'),
             'religious': ('Religious?'),
-            'previous_focus_group': ('Have you ever participated in a focus group about a legal issue?'),
+            'previous_focus_group ':('Have you ever participated in a focus group about a legal issue?'),
             'party_to_law_suit': ('Have you ever been party to a lawsuit?'),
             'felony': ('Have you ever been convicted of a felony?'),
             'legal_background': ('Are you studying law or have you worked for a law firm?'),
@@ -100,6 +102,8 @@ class PersonForm(forms.ModelForm):
             'occupation': ('If you are working, what is your occupation?')
         }
 
+
+        
         # All the widgets are needed to make some better html than Django's defaults.
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'First Name'}),
@@ -125,4 +129,8 @@ class PersonForm(forms.ModelForm):
             'location': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=LOCATION_CHOICES),
             'source': forms.RadioSelect(attrs={'class':'ethnicity','onclick':'showHideSourceOther()'}, choices=SOURCES_CHOICES),
         }
+
+        
+
+    
 

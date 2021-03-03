@@ -2,6 +2,29 @@ from django.db import models
 
 
 
+class State(models.Model):
+    """Bet"""
+    name = models.CharField(max_length=200)
+    display = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Place(models.Model):
+    """Class to model a city"""
+
+    state = models.ForeignKey(State, on_delete=models.SET_NULL, null=True)
+    city_value = models.CharField(max_length=200)
+    city_label = models.CharField(max_length=200)
+    display = models.BooleanField(default=True)
+
+    # class Meta:
+    def __str__(self):
+        return self.city_label
+
+
+
 class Person(models.Model):
     """Class to model a potential participant"""
     
