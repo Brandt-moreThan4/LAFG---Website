@@ -1,31 +1,30 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpRequest
 from django.core.paginator import Paginator
 
-
-print('http://127.0.0.1:8000/survey/test_case/')
-
+from .models import Survey
 
 
-# def test_case(request, page_num):
-#     """Renders home/ about page"""
-
-#     if page_num <1:
-#         page_num = 1
-#     elif page_num > 2:
-#         page_num = 2
+print('http://127.0.0.1:8000/survey/test_case/Survey-1')
 
 
-#     template_path = 'survey/test_case' + str(page_num) + '.html'
-
-#     return render(request, template_path)
 
 
-def test_case(request):
+def survey(request: HttpRequest, survey_name):
     """Renders survey 1"""
 
-    return render(request, 'survey/surveys/survey_1.html')
+    survey = get_object_or_404(Survey, survey_name=survey_name)
+    if request.method == 'GET':
+        return render(request, survey.get_template_path())
+    elif request.method == 'POST':
+        print('OMG we are in the post')
+        data = request.POST
+
+        # After doing everything send them to finish page
+        HttpResponseRedirect('survey/survey_complete.html') 
+
+        return render(request, survey.get_template_path())
 
 
 
