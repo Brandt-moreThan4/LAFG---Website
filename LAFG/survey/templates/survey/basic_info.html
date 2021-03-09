@@ -1,284 +1,283 @@
 
     <div>
         <div>
-            <form class="sign-up-form" method="post" id="sign_up" autocomplete="on">
-                <input type="hidden" name="csrfmiddlewaretoken" value="FJb0GcvhKIywSRTYvU426e6HnzP1vluLjm7F3MG8hPBocAMYds9BYE5oMSQqNyso">
+            <!-- <input type="hidden" name="csrfmiddlewaretoken" value="FJb0GcvhKIywSRTYvU426e6HnzP1vluLjm7F3MG8hPBocAMYds9BYE5oMSQqNyso"> -->
 
-               
-                    <div id="age" class="field-wrapper">
-                        <span><label for="id_age">Age:</label></span>
-                        <br />
-                        <span ><input type="number" name="age" class="form-control" min="0" required id="id_age"></span>
-                    </div>
-                    
-                
-
-                    <div id="sex" class="field-wrapper">
-                        <span><label for="id_sex_0">Sex:</label></span>
-                        <br />
-                        <ul id="id_sex" class="ethnicity">
-                            <li>
-                                <label for="id_sex_0"><input type="radio" name="sex" value="Male" class="ethnicity" maxlength="10" required id="id_sex_0">
-                                     Male
-                                </label>
-                            </li>
-                                <label for="id_sex_1"><input type="radio" name="sex" value="Female" class="ethnicity" maxlength="10" required id="id_sex_1"> 
-                                    Female
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                
-                    <div id="ethnicity" class="field-wrapper">
-                        <span><label for="id_ethnicity_0">Ethnicity:</label></span>
-                        <br />
-                        <span>
-                            <ul id="id_ethnicity" class="ethnicity">
-                                <li>
-                                    <label for="id_ethnicity_0"><input type="radio" name="ethnicity" value="Asian" class="ethnicity" maxlength="50" required id="id_ethnicity_0"> Asian</label>
-                                </li>
-                                <li>
-                                    <label for="id_ethnicity_1"><input type="radio" name="ethnicity" value="Black or African American" class="ethnicity" maxlength="50" required id="id_ethnicity_1"> Black or African American</label>
-                                </li>
-                                <li>
-                                    <label for="id_ethnicity_2"><input type="radio" name="ethnicity" value="Hispanic or Latino" class="ethnicity" maxlength="50" required id="id_ethnicity_2"> Hispanic or Latino</label>
-                                </li>
-                                <li>
-                                    <label for="id_ethnicity_3"><input type="radio" name="ethnicity" value="White" class="ethnicity" maxlength="50" required id="id_ethnicity_3"> White</label>
-                                </li>
-                                <li>
-                                    <label for="id_ethnicity_4"><input type="radio" name="ethnicity" value="Native Hawaiian or Other Pacific Islander" class="ethnicity" maxlength="50" required id="id_ethnicity_4"> Native Hawaiian or Other Pacific Islander</label>
-                                </li>
-                                <li>
-                                    <label for="id_ethnicity_5"><input type="radio" name="ethnicity" value="Other" class="ethnicity" maxlength="50" required id="id_ethnicity_5"> Other</label>
-                                </li>
-                            </ul>
-                        </span>
-                    </div>
-                    
-
-                    <div id="political_view" class="field-wrapper">
-                        <span><label for="id_political_view_0">Political view:</label></span>
-                        <br />
-                        <span >
-                            <ul id="id_political_view" class="ethnicity">
-                                <li>
-                                    <label for="id_political_view_0"><input type="radio" name="political_view" value="Liberal" class="ethnicity" maxlength="50" required id="id_political_view_0"> Liberal</label>
-                                </li> 
-                                </li>
-                                    <label for="id_political_view_1"><input type="radio" name="political_view" value="Moderate" class="ethnicity" maxlength="50" required id="id_political_view_1"> Moderate</label>
-                                </li>
-                                <li>
-                                    <label for="id_political_view_2"><input type="radio" name="political_view" value="Conservative" class="ethnicity" maxlength="50" required id="id_political_view_2"> Conservative</label>
-                                </li>
-                            </ul>
-                        </span>
-                    </div>
-                    
-
-                    <div id="marital_status" class="field-wrapper">
-                        <span><label for="id_marital_status_0">Marital status:</label></span>
-                        <br />
-                        <span >
-                            <ul id="id_marital_status" class="ethnicity">
-                                <li>
-                                    <label for="id_marital_status_0"><input type="radio" name="marital_status" value="Single" class="ethnicity" maxlength="50" required id="id_marital_status_0"> Single</label>
-                                </li>
-                                <li>
-                                    <label for="id_marital_status_1"><input type="radio" name="marital_status" value="Married" class="ethnicity" maxlength="50" required id="id_marital_status_1"> Married</label>
-                                </li>
-                                <li>
-                                    <label for="id_marital_status_2"><input type="radio" name="marital_status" value="Divorced" class="ethnicity" maxlength="50" required id="id_marital_status_2"> Divorced</label>
-                                </li>
-                                <li>
-                                    <label for="id_marital_status_3"><input type="radio" name="marital_status" value="Widowed" class="ethnicity" maxlength="50" required id="id_marital_status_3"> Widowed</label>
-                                </li>
-                                <li>
-                                    <label for="id_marital_status_4"><input type="radio" name="marital_status" value="Separated" class="ethnicity" maxlength="50" required id="id_marital_status_4"> Separated</label>
-                                </li>
-                            </ul>
-                        </span>
-                    </div>
-                    
-                    <div id="children" class="field-wrapper">                        
-                        <span><label for="id_children">How many children do you have?</label></span>
-                        <br />
-                        <span ><input type="number" name="children" class="form-control" min="0" required id="id_children"></span>
-                    </div>
-                    
-                    <div id="income" class="field-wrapper">
-                        <span><label for="id_income_0">What is your annual household income?</label></span>
-                        <br />
-                        <span >
-                            <ul id="id_income" class="ethnicity">
-                                <li>
-                                    <label for="id_income_0"><input type="radio" name="income" value="Less than $15,000" class="ethnicity" maxlength="250" required id="id_income_0"> Less than $15,000</label>
-                                </li>
-                                <li>
-                                    <label for="id_income_1"><input type="radio" name="income" value="$15,000 - $30,000" class="ethnicity" maxlength="250" required id="id_income_1"> $15,000 - $30,000</label>
-                                </li>
-                                <li>
-                                    <label for="id_income_2"><input type="radio" name="income" value="$31,000 - $60,000" class="ethnicity" maxlength="250" required id="id_income_2"> $31,000 - $60,000</label>
-                                </li>
-                                <li>
-                                    <label for="id_income_3"><input type="radio" name="income" value="$61,000 - $90,000" class="ethnicity" maxlength="250" required id="id_income_3"> $61,000 - $90,000</label>
-                                </li>
-                                <li>
-                                    <label for="id_income_4"><input type="radio" name="income" value="Over $90,000" class="ethnicity" maxlength="250" required id="id_income_4"> Over $90,000</label>
-                                </li>
-                            </ul>
-                        </span>
-                    </div>
-                    
-                
-
-                    <div id="working" class="field-wrapper">
-                        <span><label for="id_working_0">Are you working?</label></span>
-                        <br />
-                        <span >
-                            <ul id="id_working" class="ethnicity">
-                                <li>
-                                    <label for="id_working_0"><input type="radio" name="working" value="Yes" class="ethnicity" onclick="showHideOccupation()" maxlength="100" required id="id_working_0"> Yes</label>
-                                </li>
-                                <li>
-                                    <label for="id_working_1"><input type="radio" name="working" value="No" class="ethnicity" onclick="showHideOccupation()" maxlength="100" required id="id_working_1"> No</label>
-                                </li>
-                                <li>
-                                    <label for="id_working_2"><input type="radio" name="working" value="Student" class="ethnicity" onclick="showHideOccupation()" maxlength="100" required id="id_working_2"> Student</label>
-                                </li>
-                                <li>
-                                    <label for="id_working_3"><input type="radio" name="working" value="Retired" class="ethnicity" onclick="showHideOccupation()" maxlength="100" required id="id_working_3"> Retired</label>
-                                </li>
-                            </ul>
-                        </span>
-                    </div>
-                    
-                
-
-                    <div id="occupation" class="field-wrapper">
-                        <span><label for="id_occupation">If you are working, what is your occupation?</label></span>
-                        <br />
-                        <span ><input type="text" name="occupation" class="form-control" id="id_occupation"></span>
-                    </div>
-                    
-
-                    <div id="education" class="field-wrapper">
-                        <span><label for="id_education_0">Highest level of education attained?</label></span>
-                        <br />
-                        <span >
-                            <ul id="id_education" class="ethnicity">
-                                <li>
-                                    <label for="id_education_0"><input type="radio" name="education" value="Some School" class="ethnicity" maxlength="100" required id="id_education_0"> Some School</label>
-                                </li>
-                                <li>
-                                    <label for="id_education_1"><input type="radio" name="education" value="High School or GED" class="ethnicity" maxlength="100" required id="id_education_1"> High School or GED</label>
-                                </li>
-                                <li>
-                                    <label for="id_education_2"><input type="radio" name="education" value="College Graduate" class="ethnicity" maxlength="100" required id="id_education_2"> College Graduate</label>
-                                </li>
-                                <li>
-                                    <label for="id_education_3"><input type="radio" name="education" value="Post Graduate" class="ethnicity" maxlength="100" required id="id_education_3"> Post Graduate</label>
-                                </li>
-                            </ul>
-                        </span>
-                    </div>
-                    
-                
-
-                    <div id="us_citizen" class="field-wrapper">
-                        <span><label for="id_us_citizen_0">Are you a U.S Citizen?</label></span>
-                        <br />
-                        <span >
-                            <ul id="id_us_citizen" class="ethnicity">
-                                <li>
-                                    <label for="id_us_citizen_0"><input type="radio" name="us_citizen" value="Yes" class="ethnicity" maxlength="3" required id="id_us_citizen_0"> Yes</label>
-                                </li>
-                                <li>
-                                    <label for="id_us_citizen_1"><input type="radio" name="us_citizen" value="No" class="ethnicity" maxlength="3" required id="id_us_citizen_1"> No</label>
-                                </li>
-                            </ul>
-                        </span>
-                    </div>
-                    
-                    <div id="registered_voter" class="field-wrapper">
-                        <span><label for="id_registered_voter_0">Are you a registered voter?</label></span>
-                        <br />
-                        <span >
-                            <ul id="id_registered_voter" class="ethnicity">
-                                <li>
-                                    <label for="id_registered_voter_0"><input type="radio" name="registered_voter" value="Yes" class="ethnicity" maxlength="3" required id="id_registered_voter_0"> Yes</label>
-                                </li>
-                                <li>
-                                    <label for="id_registered_voter_1"><input type="radio" name="registered_voter" value="No" class="ethnicity" maxlength="3" required id="id_registered_voter_1"> No</label>
-                                </li>
-                            </ul>
-                        </span>
-                    </div>
-                    
-
-                    <div id="religious" class="field-wrapper">
-                        <span><label for="id_religious_0">Religious?</label></span>
-                        <br />
-                        <span >
-                            <ul id="id_religious" class="ethnicity">
-                                <li>
-                                    <label for="id_religious_0"><input type="radio" name="religious" value="Yes" class="ethnicity" maxlength="3" required id="id_religious_0"> Yes</label>
-                                </li>
-                                    <li><label for="id_religious_1"><input type="radio" name="religious" value="No" class="ethnicity" maxlength="3" required id="id_religious_1"> No</label>
-                                </li>
-                            </ul>
-                        </span>
-                    </div>
-                    
+        
+            <div id="age" class="field-wrapper">
+                <span><label for="id_age">Age:</label></span>
+                <br />
+                <span ><input type="number" name="age" class="form-control" min="0" required id="id_age"></span>
+            </div>
             
-                
-                    <div id="party_to_law_suit" class="field-wrapper">
-                        <span><label for="id_party_to_law_suit_0">Have you ever been party to a lawsuit?</label></span>
-                        <br />
-                        <span >
-                            <ul id="id_party_to_law_suit" class="ethnicity">
-                                <li>
-                                    <label for="id_party_to_law_suit_0"><input type="radio" name="party_to_law_suit" value="Yes" class="ethnicity" maxlength="3" required id="id_party_to_law_suit_0"> Yes</label>
-                                </li>
-                                <li>
-                                    <label for="id_party_to_law_suit_1"><input type="radio" name="party_to_law_suit" value="No" class="ethnicity" maxlength="3" required id="id_party_to_law_suit_1"> No</label>
-                                </li>
-                            </ul>
-                        </span>
-                    </div>
-                    
-                    <div id="felony" class="field-wrapper">
-                        <span><label for="id_felony_0">Have you ever been convicted of a felony?</label></span>
-                        <br />
-                        <span >
-                            <ul id="id_felony" class="ethnicity">
-                                <li>
-                                    <label for="id_felony_0"><input type="radio" name="felony" value="Yes" class="ethnicity" maxlength="3" required id="id_felony_0"> Yes</label>
-                                </li>
-                                <li>
-                                    <label for="id_felony_1"><input type="radio" name="felony" value="No" class="ethnicity" maxlength="3" required id="id_felony_1"> No</label>
-                                </li>
-                            </ul>
-                        </span>
-                    </div>
-                    
+        
+
+            <div id="sex" class="field-wrapper">
+                <span><label for="id_sex_m">Sex:</label></span>
+                <br />
+                <ul id="id_sex" class="ethnicity">
+                    <li>
+                        <label for="id_sex_m"><input type="radio" name="sex" value="Male" class="ethnicity" maxlength="10" required id="id_sex_m">
+                                Male
+                        </label>
+                    </li>
+                    <li>
+                        <label for="id_sex_f"><input type="radio" name="sex" value="Female" class="ethnicity" maxlength="10" required id="id_sex_f"> 
+                            Female
+                        </label>
+                    </li>
+                </ul>
+            </div>
             
-                    <div id="legal_background" class="field-wrapper">
-                        <span><label for="id_legal_background_0">Are you studying law or have you worked for a law firm?</label></span>
-                        <br />
-                        <span >
-                            <ul id="id_legal_background" class="ethnicity">
-                                <li>
-                                    <label for="id_legal_background_0"><input type="radio" name="legal_background" value="Yes" class="ethnicity" maxlength="3" required id="id_legal_background_0"> Yes</label>
-                                </li>
-                                <li>
-                                    <label for="id_legal_background_1"><input type="radio" name="legal_background" value="No" class="ethnicity" maxlength="3" required id="id_legal_background_1"> No</label>
-                                </li>
-                            </ul>
-                        </span>
-                    </div>
-            </form>
+        
+            <div id="ethnicity" class="field-wrapper">
+                <span><label for="id_ethnicity_0">Ethnicity:</label></span>
+                <br />
+                <span>
+                    <ul id="id_ethnicity" class="ethnicity">
+                        <li>
+                            <label for="id_ethnicity_0"><input type="radio" name="ethnicity" value="Asian" class="ethnicity" maxlength="50" required id="id_ethnicity_0"> Asian</label>
+                        </li>
+                        <li>
+                            <label for="id_ethnicity_1"><input type="radio" name="ethnicity" value="Black or African American" class="ethnicity" maxlength="50" required id="id_ethnicity_1"> Black or African American</label>
+                        </li>
+                        <li>
+                            <label for="id_ethnicity_2"><input type="radio" name="ethnicity" value="Hispanic or Latino" class="ethnicity" maxlength="50" required id="id_ethnicity_2"> Hispanic or Latino</label>
+                        </li>
+                        <li>
+                            <label for="id_ethnicity_3"><input type="radio" name="ethnicity" value="White" class="ethnicity" maxlength="50" required id="id_ethnicity_3"> White</label>
+                        </li>
+                        <li>
+                            <label for="id_ethnicity_4"><input type="radio" name="ethnicity" value="Native Hawaiian or Other Pacific Islander" class="ethnicity" maxlength="50" required id="id_ethnicity_4"> Native Hawaiian or Other Pacific Islander</label>
+                        </li>
+                        <li>
+                            <label for="id_ethnicity_5"><input type="radio" name="ethnicity" value="Other" class="ethnicity" maxlength="50" required id="id_ethnicity_5"> Other</label>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+            
+
+            <div id="political_view" class="field-wrapper">
+                <span><label for="id_political_view_0">Political view:</label></span>
+                <br />
+                <span >
+                    <ul id="id_political_view" class="ethnicity">
+                        <li>
+                            <label for="id_political_view_0"><input type="radio" name="political_view" value="Liberal" class="ethnicity" maxlength="50" required id="id_political_view_0"> Liberal</label>
+                        </li> 
+                        </li>
+                            <label for="id_political_view_1"><input type="radio" name="political_view" value="Moderate" class="ethnicity" maxlength="50" required id="id_political_view_1"> Moderate</label>
+                        </li>
+                        <li>
+                            <label for="id_political_view_2"><input type="radio" name="political_view" value="Conservative" class="ethnicity" maxlength="50" required id="id_political_view_2"> Conservative</label>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+            
+
+            <div id="marital_status" class="field-wrapper">
+                <span><label for="id_marital_status_0">Marital status:</label></span>
+                <br />
+                <span >
+                    <ul id="id_marital_status" class="ethnicity">
+                        <li>
+                            <label for="id_marital_status_0"><input type="radio" name="marital_status" value="Single" class="ethnicity" maxlength="50" required id="id_marital_status_0"> Single</label>
+                        </li>
+                        <li>
+                            <label for="id_marital_status_1"><input type="radio" name="marital_status" value="Married" class="ethnicity" maxlength="50" required id="id_marital_status_1"> Married</label>
+                        </li>
+                        <li>
+                            <label for="id_marital_status_2"><input type="radio" name="marital_status" value="Divorced" class="ethnicity" maxlength="50" required id="id_marital_status_2"> Divorced</label>
+                        </li>
+                        <li>
+                            <label for="id_marital_status_3"><input type="radio" name="marital_status" value="Widowed" class="ethnicity" maxlength="50" required id="id_marital_status_3"> Widowed</label>
+                        </li>
+                        <li>
+                            <label for="id_marital_status_4"><input type="radio" name="marital_status" value="Separated" class="ethnicity" maxlength="50" required id="id_marital_status_4"> Separated</label>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+            
+            <div id="children" class="field-wrapper">                        
+                <span><label for="id_children">How many children do you have?</label></span>
+                <br />
+                <span ><input type="number" name="children" class="form-control" min="0" required id="id_children"></span>
+            </div>
+            
+            <div id="income" class="field-wrapper">
+                <span><label for="id_income_0">What is your annual household income?</label></span>
+                <br />
+                <span >
+                    <ul id="id_income" class="ethnicity">
+                        <li>
+                            <label for="id_income_0"><input type="radio" name="income" value="Less than $15,000" class="ethnicity" maxlength="250" required id="id_income_0"> Less than $15,000</label>
+                        </li>
+                        <li>
+                            <label for="id_income_1"><input type="radio" name="income" value="$15,000 - $30,000" class="ethnicity" maxlength="250" required id="id_income_1"> $15,000 - $30,000</label>
+                        </li>
+                        <li>
+                            <label for="id_income_2"><input type="radio" name="income" value="$31,000 - $60,000" class="ethnicity" maxlength="250" required id="id_income_2"> $31,000 - $60,000</label>
+                        </li>
+                        <li>
+                            <label for="id_income_3"><input type="radio" name="income" value="$61,000 - $90,000" class="ethnicity" maxlength="250" required id="id_income_3"> $61,000 - $90,000</label>
+                        </li>
+                        <li>
+                            <label for="id_income_4"><input type="radio" name="income" value="Over $90,000" class="ethnicity" maxlength="250" required id="id_income_4"> Over $90,000</label>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+            
+        
+
+            <div id="working" class="field-wrapper">
+                <span><label for="id_working_0">Are you working?</label></span>
+                <br />
+                <span >
+                    <ul id="id_working" class="ethnicity">
+                        <li>
+                            <label for="id_working_0"><input type="radio" name="working" value="Yes" class="ethnicity" onclick="showHideOccupation()" maxlength="100" required id="id_working_0"> Yes</label>
+                        </li>
+                        <li>
+                            <label for="id_working_1"><input type="radio" name="working" value="No" class="ethnicity" onclick="showHideOccupation()" maxlength="100" required id="id_working_1"> No</label>
+                        </li>
+                        <li>
+                            <label for="id_working_2"><input type="radio" name="working" value="Student" class="ethnicity" onclick="showHideOccupation()" maxlength="100" required id="id_working_2"> Student</label>
+                        </li>
+                        <li>
+                            <label for="id_working_3"><input type="radio" name="working" value="Retired" class="ethnicity" onclick="showHideOccupation()" maxlength="100" required id="id_working_3"> Retired</label>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+            
+        
+
+            <div id="occupation" class="field-wrapper">
+                <span><label for="id_occupation">If you are working, what is your occupation?</label></span>
+                <br />
+                <span ><input type="text" name="occupation" class="form-control" id="id_occupation"></span>
+            </div>
+            
+
+            <div id="education" class="field-wrapper">
+                <span><label for="id_education_0">Highest level of education attained?</label></span>
+                <br />
+                <span >
+                    <ul id="id_education" class="ethnicity">
+                        <li>
+                            <label for="id_education_0"><input type="radio" name="education" value="Some School" class="ethnicity" maxlength="100" required id="id_education_0"> Some School</label>
+                        </li>
+                        <li>
+                            <label for="id_education_1"><input type="radio" name="education" value="High School or GED" class="ethnicity" maxlength="100" required id="id_education_1"> High School or GED</label>
+                        </li>
+                        <li>
+                            <label for="id_education_2"><input type="radio" name="education" value="College Graduate" class="ethnicity" maxlength="100" required id="id_education_2"> College Graduate</label>
+                        </li>
+                        <li>
+                            <label for="id_education_3"><input type="radio" name="education" value="Post Graduate" class="ethnicity" maxlength="100" required id="id_education_3"> Post Graduate</label>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+            
+        
+
+            <div id="us_citizen" class="field-wrapper">
+                <span><label for="id_us_citizen_0">Are you a U.S Citizen?</label></span>
+                <br />
+                <span >
+                    <ul id="id_us_citizen" class="ethnicity">
+                        <li>
+                            <label for="id_us_citizen_0"><input type="radio" name="us_citizen" value="Yes" class="ethnicity" maxlength="3" required id="id_us_citizen_0"> Yes</label>
+                        </li>
+                        <li>
+                            <label for="id_us_citizen_1"><input type="radio" name="us_citizen" value="No" class="ethnicity" maxlength="3" required id="id_us_citizen_1"> No</label>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+            
+            <div id="registered_voter" class="field-wrapper">
+                <span><label for="id_registered_voter_0">Are you a registered voter?</label></span>
+                <br />
+                <span >
+                    <ul id="id_registered_voter" class="ethnicity">
+                        <li>
+                            <label for="id_registered_voter_0"><input type="radio" name="registered_voter" value="Yes" class="ethnicity" maxlength="3" required id="id_registered_voter_0"> Yes</label>
+                        </li>
+                        <li>
+                            <label for="id_registered_voter_1"><input type="radio" name="registered_voter" value="No" class="ethnicity" maxlength="3" required id="id_registered_voter_1"> No</label>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+            
+
+            <div id="religious" class="field-wrapper">
+                <span><label for="id_religious_0">Religious?</label></span>
+                <br />
+                <span >
+                    <ul id="id_religious" class="ethnicity">
+                        <li>
+                            <label for="id_religious_0"><input type="radio" name="religious" value="Yes" class="ethnicity" maxlength="3" required id="id_religious_0"> Yes</label>
+                        </li>
+                            <li><label for="id_religious_1"><input type="radio" name="religious" value="No" class="ethnicity" maxlength="3" required id="id_religious_1"> No</label>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+            
+    
+        
+            <div id="party_to_law_suit" class="field-wrapper">
+                <span><label for="id_party_to_law_suit_0">Have you ever been party to a lawsuit?</label></span>
+                <br />
+                <span >
+                    <ul id="id_party_to_law_suit" class="ethnicity">
+                        <li>
+                            <label for="id_party_to_law_suit_0"><input type="radio" name="party_to_law_suit" value="Yes" class="ethnicity" maxlength="3" required id="id_party_to_law_suit_0"> Yes</label>
+                        </li>
+                        <li>
+                            <label for="id_party_to_law_suit_1"><input type="radio" name="party_to_law_suit" value="No" class="ethnicity" maxlength="3" required id="id_party_to_law_suit_1"> No</label>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+            
+            <div id="felony" class="field-wrapper">
+                <span><label for="id_felony_0">Have you ever been convicted of a felony?</label></span>
+                <br />
+                <span >
+                    <ul id="id_felony" class="ethnicity">
+                        <li>
+                            <label for="id_felony_0"><input type="radio" name="felony" value="Yes" class="ethnicity" maxlength="3" required id="id_felony_0"> Yes</label>
+                        </li>
+                        <li>
+                            <label for="id_felony_1"><input type="radio" name="felony" value="No" class="ethnicity" maxlength="3" required id="id_felony_1"> No</label>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+            
+    
+            <div id="legal_background" class="field-wrapper">
+                <span><label for="id_legal_background_0">Are you studying law or have you worked for a law firm?</label></span>
+                <br />
+                <span >
+                    <ul id="id_legal_background" class="ethnicity">
+                        <li>
+                            <label for="id_legal_background_0"><input type="radio" name="legal_background" value="Yes" class="ethnicity" maxlength="3" required id="id_legal_background_0"> Yes</label>
+                        </li>
+                        <li>
+                            <label for="id_legal_background_1"><input type="radio" name="legal_background" value="No" class="ethnicity" maxlength="3" required id="id_legal_background_1"> No</label>
+                        </li>
+                    </ul>
+                </span>
+            </div>
         </div>
     </div>
 
