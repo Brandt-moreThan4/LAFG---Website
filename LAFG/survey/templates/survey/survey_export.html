@@ -1,0 +1,28 @@
+{% extends "survey/base.html" %}
+{% load static %}
+
+{% block title %}Survey Complete{% endblock %}
+{% block page_title %}Survey Complete{% endblock %}
+{% block styles %}
+{% endblock %}
+
+{% block content %}
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}  
+    <div class="row">
+        <div class="col">
+            <div>
+                <button type="submit" value="survey1" name="data_export" class="btn btn-primary">Export Suvey 1</button><br /><br />   
+            </div>
+        </div>
+        <div class="col">
+            <div>
+                <button type="submit" value="survey2" name="data_export" class="btn btn-primary">Export Suvey 2</button><br /><br />   
+            </div>
+        </div>
+    </div>
+</form>  
+
+
+{% endblock %}
