@@ -8,6 +8,7 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'lafg_site/css/bootstrap/bootstrap.min.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'lafg_site/css/site.css' %}" />
+    {% block style_links %}{% endblock %}
     {% block styles %}{% endblock %}
 
     <link rel="icon" href="{% static 'lafg_site/Images/Square Logo.png' %}"/>
@@ -26,36 +27,38 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1 navbar-right justify-content-end">
-                        <li class="nav-item"
-                            ><a class="nav-link" href="{% url 'lafg_site:home' %}">Home</a>
-                        </li>
-                        <li class="nav-item"
-                            ><a class="nav-link" href="{% url 'lafg_site:contact' %}">Contact Us</a>
-                        </li>
-                        <li class="nav-item"
-                            ><a class="nav-link" href="{% url 'lafg_site:conduct' %}">Conduct a Focus Group</a>
-                        </li>
-                        <li class="nav-item"
-                            ><a class="nav-link" href="{% url 'lafg_site:sign_up' %}">Sign-Up Form</a>
-                        </li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="{% url 'survey:survey_help' %}">Help</a></li> -->
+                        <li class="nav-item"><a class="nav-link" type="button" data-toggle="modal" data-target="#exampleModal">Help</a></li>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Help</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  If you need help, please call: <a href="tel:225-907-4265">225-907-4265</a>.
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- <div class="card bg-dark text-white">
-        <img id="skyLine" src= "{% static 'lafg_site/Images/skyline.jpg' %}" alt="Skyline"/>
-        <div class="card-img-overlay">
-            <h2 class="card-title">{% block page_title %}{% endblock %}</h2>
-        </div>
-    </div> -->
 
     <br />
 
     <div class="container pb-3">
         <div class="row justify-content-between">
-            <div class="col-md-8">
+            <div class="col-md-9 col-lg-8">
                 <main>
                     {% block content %}{% endblock %}
                 </main>      

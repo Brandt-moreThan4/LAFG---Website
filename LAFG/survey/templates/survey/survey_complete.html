@@ -1,0 +1,21 @@
+{% extends "survey/base.html" %}
+{% load static %}
+
+{% block title %}Survey Complete{% endblock %}
+{% block page_title %}Survey Complete{% endblock %}
+{% block styles %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="alert alert-success" role="alert">
+    <h2>Submission received!</h2>
+    <hr><br>
+    <p>Thank you for participating in this legal case study. If you were directed to this survey through 
+        Amazon Mechanical Turk,  please input the following key as your completion token: 
+    </p>
+    <p>{{ survey_key }}</p>
+</div>
+
+{% endblock %}
