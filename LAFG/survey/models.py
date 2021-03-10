@@ -23,7 +23,7 @@ class Survey(models.Model):
         return f'survey/surveys/{self.survey_name}.html'
 
     def get_csv_path(self):
-        pass
+        return f'LAFG/survey/data/survey_exports/{self.survey_name}.csv'
 
     def __str__(self):
         return self.survey_name
