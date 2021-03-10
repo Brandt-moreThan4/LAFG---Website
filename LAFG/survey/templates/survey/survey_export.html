@@ -1,8 +1,8 @@
 {% extends "survey/base.html" %}
 {% load static %}
 
-{% block title %}Survey Complete{% endblock %}
-{% block page_title %}Survey Complete{% endblock %}
+{% block title %}Survey Export{% endblock %}
+{% block page_title %}Survey Export{% endblock %}
 {% block styles %}
 {% endblock %}
 
@@ -13,16 +13,39 @@
     <div class="row">
         <div class="col">
             <div>
-                <button type="submit" value="survey1" name="data_export" class="btn btn-primary">Export Suvey 1</button><br /><br />   
+                <button type="submit" value="Survey-1" name="data_export" class="btn btn-primary">Export Suvey 1</button><br /><br />   
             </div>
         </div>
         <div class="col">
             <div>
-                <button type="submit" value="survey2" name="data_export" class="btn btn-primary">Export Suvey 2</button><br /><br />   
+                <button type="submit" value="Survey-2" name="data_export" class="btn btn-primary">Export Suvey 2</button><br /><br />   
             </div>
         </div>
     </div>
 </form>  
 
+
+<a type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+</a>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Help</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          If you need help, please call: <a href="tel:225-907-4265">225-907-4265</a>.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 {% endblock %}

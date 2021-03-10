@@ -54,6 +54,7 @@ def survey_export(request):
     """ """
     # Should probably just make this so that I can return the csv directly include it as an href link?
     if request.method == 'POST':
+        # button value with either be 'Survey-1' or 'Survey-2'
         button_value = request.POST.get('data_export')
         file_name = button_value + '.csv'
         response = HttpResponse(content_type='text/csv')

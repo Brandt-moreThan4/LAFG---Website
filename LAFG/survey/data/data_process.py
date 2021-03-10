@@ -1,3 +1,5 @@
+"""I should change it so that all survey's save to the same file? Might not work unless they all have the same questions. """
+
 import csv
 from pathlib import Path
 import string
@@ -74,7 +76,7 @@ def key_is_valid(key: str) -> bool:
 
 def write_csv_to_response(survey_name, response):
     """Takes an interable of iterables like a list of lists and writes it to the response object as a csv?"""
-    survey_csv_path = Path(__file__).parent / 'survey_exports' / 'Survey-1.csv'
+    survey_csv_path = Path(__file__).parent / 'survey_exports' / ( survey_name +'.csv') 
     survey_rows = load_csv(survey_csv_path) 
     writer = csv.writer(response).writerows(survey_rows)
     
