@@ -31,7 +31,9 @@ def process_form(survey:Survey, query_dict: QueryDict) -> str:
 def save_form_data_to_csv(survey:Survey, form_answers: list):
     """Appends the form responses to the survey csv path."""
 
-    survey_csv_path = Path(survey.get_csv_path())
+    # Really don't know why the below doesn't work
+    # survey_csv_path = Path(survey.get_csv_path())
+    survey_csv_path = Path(__file__).parent / 'survey_exports' / ( survey.survey_name +'.csv') 
 
     with survey_csv_path.open('a',  newline='') as f:
         writer = csv.writer(f)

@@ -23,7 +23,6 @@ def survey(request: HttpRequest, survey_name):
         return render(request, survey.get_template_path())
     elif request.method == 'POST':
         try:
-            # print(four)
             survey_key = dp.process_form(survey, request.POST)# Feels weird. Wish I could do the survey key separately from saving it.
 
         except:
