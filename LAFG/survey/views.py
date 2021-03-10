@@ -15,9 +15,9 @@ print('http://127.0.0.1:8000/survey/survey-export/')
 
 
 def survey(request: HttpRequest, survey_name):
-    """Renders survey 1"""
+    """Renders surveys based on survey name provided in url"""
 
-    survey = get_object_or_404(Survey, survey_name=survey_name)
+    survey = get_object_or_404(Survey, survey_name=survey_name, active=True)
     
     if request.method == 'GET':
         return render(request, survey.get_template_path())
@@ -44,10 +44,15 @@ def survey_fail(request):
 
     return render(request, 'survey/survey_submit_error.html')
 
+def survey_help(request):
+    """"""
+    return render(request, 'survey/help.html')
+
+
 
 def survey_export(request):
     """ """
-    # Should probably just make this so that I can return the csv directly?
+    # Should probably just make this so that I can return the csv directly include it as an href link?
     if request.method == 'POST':
         button_value = request.POST.get('data_export')
         file_name = button_value + '.csv'

@@ -44,7 +44,7 @@ def generate_random_survey_key() -> str:
         key = get_new_key()
     
     # If the key is unique then write it to the csv file and return it.
-    with SURVEY_KEY_PATH.open('a') as f:
+    with SURVEY_KEY_PATH.open('a', newline='') as f:
         csv_writer = csv.writer(f, delimiter=',')
         csv_writer.writerow([key])
     return key

@@ -8,7 +8,14 @@
 
 {% block content %}
 
-<h2>Yo, you done!<h2>
-<p>Here's your survey key: {{ survey_key }}</p>
+
+<div class="alert alert-success" role="alert">
+    <h2>Submission received!</h2>
+    <hr><br>
+    <p>Thank you for participating in this legal case study. If you were directed to this survey through 
+        Amazon Mechanical Turk,  please input the following key as your completion token: 
+    </p>
+    <p>{{ survey_key }}</p>
+</div>
 
 {% endblock %}

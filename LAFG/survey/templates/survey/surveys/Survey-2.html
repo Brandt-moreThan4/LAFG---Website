@@ -18,6 +18,7 @@
             margin-bottom: 30px;
         }
         
+
         /* h3 {
             text-align: center;
         } */
@@ -28,15 +29,10 @@
             text-align: center;
         }
 
-        .question-head {
-            text-align: center;
-            color: blue;
-        }
-
-        .question-section {
-            margin: 25px;
-            padding: 25px;
-            border-style: solid;
+        .fault-number-label {
+            display: inline-block;
+            width: 260px;
+            /* color: red; */
         }
 
         .sign-up-form ul {
@@ -50,87 +46,150 @@
         .field-wrapper {
             margin-bottom:20px;
         }
+        
     </style>
 {% endblock %}
 
 
 {% block content %}
 
-<br>
-<h2>Legal Case Study</h2>
-<hr>
-<br><br>
-<h3 >Instructions</h3>
-<br>
 <div>
-    <p>Thank you for particpating in this case study! First you will be presented with questions for gaining some basic info about you.
-        Following these questions, you will begin the actual case study portion of the study. Here, you will be presented with facts from
-        both sides of a case that is potentially going to trial. Interspersed througout the case will be questions pertaining to the information
-        presented. I do not feel like putting a bunch more sample text here, but you get the idea.
-    </p>
-    <p>
-        And here could be more instructions. Instructions are just the best. They really give you a feel for the task at hand and help you to
-        perform to the utmost of your talents as an individual.
-    </p>
+    <form class="" method="post" id="survey1" autocomplete="on">
+        {% csrf_token %}
+            <br>
+            <h2>Legal Case Study</h2>
+            <hr>
+            <br><br>
+            <h3 >Instructions</h3>
+            <br>
+            <div>
+                <p>Thank you for particpating in this case study! First you will be presented with questions for gaining some basic info about you.
+                    Following these questions, you will begin the actual case study portion of the study. Here, you will be presented with facts from
+                    both sides of a case that is potentially going to trial. Interspersed througout the case will be questions pertaining to the information
+                    presented. I do not feel like putting a bunch more sample text here, but you get the idea.
+                </p>
+                <p>
+                    And here could be more instructions. Instructions are just the best. They really give you a feel for the task at hand and help you to
+                    perform to the utmost of your talents as an individual.
+                </p>
+            </div>
+            <br><br>
+            <hr>
+            <h3>Basic Info</h3>
+            
+            <div class="sign-up-form">
+                {% include "survey/basic_info.html" %}
+            </div>
+
+            <hr>
+            <br>
+
+        <div class="Case-Facts">
+            <h3>Case Facts</h3>
+            <br>
+
+            <ul>
+                <li>American Industrial Minerals, LLC, or “AIM,” manufactures and distributes sandblasting sand out of its Orange, TX facility.</li>
+                <li>AIM owns three tractor-trailers like the one in the photo below:</li>
+            </ul>
+            <div><img class="img-fluid" width="700" height="350" src= "{% static 'survey/Images/surveys/1.jpg' %}"></div>
+            <ul>
+                <li>In January 2017, AIM employed two experienced truck drivers and needed a third.</li>
+                <li>On January 20, 2017, AIM hired Matthew Jones, 23 years old, as a third truck driver.</li>
+                <li>Matthew Jones had been a licensed truck driver since July 2015 and drove for five trucking companies before coming to AIM.</li>
+                <li>At 5:00 a.m. on March 30, 2017, Matthew Jones leaves AIM in Orange, TX with a load of industrial minerals, headed to Covington, LA.</li>
+                <li>Matthew Jones reaches Baton Rouge, LA just before 8:00 a.m.</li>
+                <li>Matthew Jones is traveling in the left inside lane of eastbound I-12, approaching the O’Neal Lane exit.</li>
+            </ul>
+            <div><img class="img-fluid" width="700" height="350" src= "{% static 'survey/Images/surveys/2.png' %}"></div>
+            <ul>
+                <li>Jones decides to change from left outside lane to the middle lane of I-12.</li>
+                <li>As Jones moves to his right into the center lane, he hits the left rear corner of a car driven by Lana Beyt, 28 years old at the time.</li>
+                <li>Lana Beyt and Frances Landry were carpooling to esthetician school in Hammond, LA.</li>
+                <li>Ms. Beyt’s car started to turn counter-clockwise, crossed the path of the 18-wheeler, struck the center concrete barrier, and then careened back across the three lanes of traffic and off the shoulder of the highway. The resting place for Ms. Beyt’s car is below:</li>
+            </ul>
+            <div><img class="img-fluid" width="700" height="350" src= "{% static 'survey/Images/surveys/3.jpg' %}"></div>
+            <ul>
+                <li>Matthew Jones told officers that he did not see Ms. Beyt’s car because she was in the blindspot along the passenger side of his truck.</li>
+                <li>AIM’s trucks are equipped with side mirrors, as required by federal trucking laws, but none of their trucks have fender mirrors.</li>
+                <li>Fender mirrors are added to the front fenders of trucks to allow the driver to get a better view of space alongside their trucks.</li>
+                <li>Matthew Jones told his supervisor, after the collision, that the collision would not have happened if the truck had been equipped with fender mirrors.</li>
+            </ul>
+        </div>
+
+        <hr>
+        <br>
+        <h3>Questions</h3>
+        <br>
+        <div>
+
+            <div class="">
+                <div>Who is at fault for the collision between the AIM truck and the Beyt vehicle? (Mark each that you believe are at fault):</div>
+                <br>
+                <div id="fault_person">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="fault_person" value="American Industrial Materials, LLC" id="fault_person_0">
+                        <label class="form-check-label" for="fault_person_0">
+                        American Industrial Materials, LLC
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="fault_person" value="Matthew Jones" id="fault_person_1">
+                        <label class="form-check-label" for="fault_person_1">
+                        Matthew Jones
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="fault_person" value="Lana Beyt" id="fault_person_2">
+                        <label class="form-check-label" for="fault_person_2">
+                        Lana Beyt
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+
+            <div>
+                <p>If you said yes to more than one, assign a percentage of fault to each person you believe is at fault:</p>
+                <div id="fault_percent">
+                    <p>
+                        <label class="fault-number-label" >American Industrial Materials, LLC: </label>
+                        <input type="number" id="fault_percent_0" name="fault_percent_aim" min="0" max="100"> %
+                    </p>
+                    <p>
+                        <label class="fault-number-label">Matthew Jones:</label>
+                        <input type="number" id="fault_percent_1" name="fault_percent_mj" min="0" max="100"> %
+                    </p>
+                    <p>
+                        <label class="fault-number-label">Lana Beyt:</label>
+                        <input type="number" id="fault_percent_2" name="fault_percent_lb" min="0" max="100"> %
+                    </p>
+                </div>
+            </div>
+            <br>
+
+            <div id="fault_reasons">
+                <div>
+                    <label>If you assigned fault to American Industrial Minerals, what do you believe they did wrong?</label>
+                    <textarea class="form-control" id="fault_reason_0" name="fault_reason_aim"></textarea>
+                </div>
+                <br>
+                <div>
+                    <label>If you assigned fault to Matthew Jones, what do you believe they did wrong?</label>
+                    <textarea class="form-control" id="fault_reason_1" name="fault_reason_mj"></textarea>
+                </div>
+                <br>
+                <div>
+                    <label>If you assigned fault to Lana Beyt, what do you believe they did wrong?</label>
+                    <textarea class="form-control" id="fault_reason_2" name="fault_reason_lb"></textarea>
+                </div>
+            </div>
+
+        </div>
+        <br>
+
+        <button class="btn btn-primary btn-lg" type="submit" form="survey1" value="Submit">Submit</button> 
+    </form>
 </div>
-<br><br>
-<hr>
-<h3>Basic Questions</h3>
-<hr>
-<br>
-
-<h3>Case Facts:</h3>
-<br>
-
-<ul>
-    <li>American Industrial Minerals, LLC, or “AIM,” manufactures and distributes sandblasting sand out of its Orange, TX facility.</li>
-    <li>AIM owns three tractor-trailers like the one in the photo below:</li>
-</ul>
-<div><img width="700" height="350" src= "{% static 'survey/Images/surveys/1.jpg' %}"></div>
-<ul>
-    <li>In January 2017, AIM employed two experienced truck drivers and needed a third.</li>
-    <li>On January 20, 2017, AIM hired Matthew Jones, 23 years old, as a third truck driver.</li>
-    <li>Matthew Jones had been a licensed truck driver since July 2015 and drove for five trucking companies before coming to AIM.</li>
-    <li>At 5:00 a.m. on March 30, 2017, Matthew Jones leaves AIM in Orange, TX with a load of industrial minerals, headed to Covington, LA.</li>
-    <li>Matthew Jones reaches Baton Rouge, LA just before 8:00 a.m.</li>
-    <li>Matthew Jones is traveling in the left inside lane of eastbound I-12, approaching the O’Neal Lane exit.</li>
-</ul>
-<div><img width="700" height="350" src= "{% static 'survey/Images/surveys/2.png' %}"></div>
-<ul>
-    <li>Jones decides to change from left outside lane to the middle lane of I-12.</li>
-    <li>As Jones moves to his right into the center lane, he hits the left rear corner of a car driven by Lana Beyt, 28 years old at the time.</li>
-    <li>Lana Beyt and Frances Landry were carpooling to esthetician school in Hammond, LA.</li>
-    <li>Ms. Beyt’s car started to turn counter-clockwise, crossed the path of the 18-wheeler, struck the center concrete barrier, and then careened back across the three lanes of traffic and off the shoulder of the highway. The resting place for Ms. Beyt’s car is below:</li>
-</ul>
-<div><img width="700" height="350" src= "{% static 'survey/Images/surveys/3.jpg' %}"></div>
-<br>
-<ul>
-    <li>Matthew Jones told officers that he did not see Ms. Beyt’s car because she was in the blindspot along the passenger side of his truck.</li>
-    <li>AIM’s trucks are equipped with side mirrors, as required by federal trucking laws, but none of their trucks have fender mirrors.</li>
-    <li>Fender mirrors are added to the front fenders of trucks to allow the driver to get a better view of space alongside their trucks.</li>
-    <li>Matthew Jones told his supervisor, after the collision, that the collision would not have happened if the truck had been equipped with fender mirrors.</li>
-</ul>
-
-
-<h3>Questions:</h3>
-
-<div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-          Default checkbox
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-        <label class="form-check-label" for="flexCheckChecked">
-          Checked checkbox
-        </label>
-      </div>
-    </div>
-</div>
-
-
-
 
 {% endblock %}
