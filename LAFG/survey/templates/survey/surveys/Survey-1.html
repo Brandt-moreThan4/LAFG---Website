@@ -46,6 +46,17 @@
         .field-wrapper {
             margin-bottom:20px;
         }
+
+        .case-importance ul{
+            list-style-type:none !important;
+        }
+        .case-importance li {
+            margin-bottom: 15px;
+        }
+
+        .fact-select {
+            margin-right: 15px;
+        }
         
     </style>
 {% endblock %}
@@ -171,17 +182,117 @@
                 </div>
                 <br>
                 <div>
-                    <label>If you assigned fault to Matthew Jones, what do you believe they did wrong?</label>
+                    <label>If you assigned fault to Matthew Jones, what do you believe he did wrong?</label>
                     <textarea class="form-control" id="fault_reason_1" name="fault_reason_mj"></textarea>
                 </div>
                 <br>
                 <div>
-                    <label>If you assigned fault to Lana Beyt, what do you believe they did wrong?</label>
+                    <label>If you assigned fault to Lana Beyt, what do you believe she did wrong?</label>
                     <textarea class="form-control" id="fault_reason_2" name="fault_reason_lb"></textarea>
                 </div>
             </div>
 
         </div>
+        <br>
+        <br>
+        <div class="case-importance">
+            <p>Rank the following facts in the order of their importance in this case (1 being most important,  6 being least important):</p>
+            <ul>
+                <li>
+                    <select class="fact-select" name="select1" required>
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <span>Matt Jones did not see Lana Beyt’s car before he changed lanes.</span>
+                </li>
+                <li>
+                    <select class="fact-select" name="select2" required>
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <span>Lana Beyt was in the truck’s blind spot.</span>
+                </li>
+                <li>
+                    <select class="fact-select" name="select3" required>
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <span>AIM hired a driver with less than two years of truck-driving experience.</span>
+                </li>
+                <li>
+                    <select class="fact-select" name="select4" required>
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <span>Lana Beyt’s car spun counter-clockwise across the path of the truck after impact.</span>
+                </li>
+                <li>
+                    <select class="fact-select" name="select5" required>
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <span>Lana Beyt’s car was nearly past the truck when the truck changed lanes.</span>
+                </li>
+                <li>
+                    <select class="fact-select" name="select6" required>
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <span>Lana Beyt’s car was struck by the truck, then struck the concrete barrier, and then was struck by an exit sign alongside the interstate before coming to a stop.</span>
+                </li>
+            </ul>
+        </div>
+        
+
+        <br><br>
+        <div>
+            <p>On a scale of 0 to 10, 0 being “not at all” and 10 being “very bad,” how badly do you expect Lana Beyt was injured in this crash?</p>
+            <select class="form-control" name="Injury_Extent" required>
+                <option disabled selected value> -- select an option -- </option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value=10>10</option>
+            </select>
+        </div>
+        <br>
         <br>
 
         <button class="btn btn-primary btn-lg" type="submit" form="survey1" value="Submit">Submit</button> 

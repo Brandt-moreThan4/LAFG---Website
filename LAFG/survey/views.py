@@ -9,7 +9,8 @@ from .models import Survey
 from .data import data_process as dp
 
 print('http://127.0.0.1:8000/survey/surveys/Survey-1')
-print('http://127.0.0.1:8000/survey/survey-export/')
+print('http://127.0.0.1:8000/survey/surveys/Survey-2')
+# print('http://127.0.0.1:8000/survey/survey-export/')
 
 
 
