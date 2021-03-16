@@ -8,17 +8,18 @@ import datetime
 from .models import Survey
 from .data import data_process as dp
 
-print('http://127.0.0.1:8000/survey/surveys/Survey-1')
-print('http://127.0.0.1:8000/survey/surveys/Survey-2')
+print('http://127.0.0.1:8000/survey/surveys/Survey-401A')
+print('http://127.0.0.1:8000/survey/surveys/Survey-501B')
+
 # print('http://127.0.0.1:8000/survey/survey-export/')
 
 
 
 
-def survey(request: HttpRequest, survey_name):
+def survey(request: HttpRequest, survey_url):
     """Renders surveys based on survey name provided in url"""
 
-    survey = get_object_or_404(Survey, survey_name=survey_name, active=True)
+    survey = get_object_or_404(Survey, url_slug=survey_url, active=True)
     
     if request.method == 'GET':
         return render(request, survey.get_template_path())

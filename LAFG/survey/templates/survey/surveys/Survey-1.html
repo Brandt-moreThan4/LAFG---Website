@@ -47,10 +47,10 @@
             margin-bottom:20px;
         }
 
-        .case-importance ul{
+        #case-importance ul{
             list-style-type:none !important;
         }
-        .case-importance li {
+        #case-importance li {
             margin-bottom: 15px;
         }
 
@@ -195,7 +195,7 @@
         </div>
         <br>
         <br>
-        <div class="case-importance">
+        <div class="" id="case-importance">
             <p>Rank the following facts in the order of their importance in this case (1 being most important,  6 being least important):</p>
             <ul>
                 <li>
@@ -298,5 +298,19 @@
         <button class="btn btn-primary btn-lg" type="submit" form="survey1" value="Submit">Submit</button> 
     </form>
 </div>
+
+
+<script>
+    $(function () {
+        alert('heel');
+        var parent = $('#case-importance');
+        children = parent.children();
+        for (child in children) {
+            alert(child);
+                
+        }
+    })
+</script>
+
 
 {% endblock %}

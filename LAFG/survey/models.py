@@ -17,6 +17,7 @@ class Survey(models.Model):
 
     survey_name = models.SlugField(max_length=300, unique=True)
     active = models.BooleanField(default=True)
+    url_slug =models.SlugField(max_length=300, unique=True)
 
 
     def get_template_path(self):
