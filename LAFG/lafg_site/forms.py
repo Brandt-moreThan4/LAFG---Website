@@ -63,7 +63,7 @@ place_query = Place.objects.filter(display=True)
 loc_labels = [place.city_label for place in place_query]
 loc_values = [place.city_value for place in place_query]
 LOCATION_CHOICES = list(zip(loc_values, loc_labels))
-print('done')
+# print('done')
 
 SOURCES_CHOICES = [('Family/Friend','Family/Friend'),
                     ('Facebook','Facebook'),
@@ -71,6 +71,12 @@ SOURCES_CHOICES = [('Family/Friend','Family/Friend'),
                     ('Other','Other')]
         
 
+def get_location_choices():
+    place_query = Place.objects.filter(display=True)
+    loc_labels = [place.city_label for place in place_query]
+    loc_values = [place.city_value for place in place_query]
+    LOCATION_CHOICES = list(zip(loc_values, loc_labels))
+    return LOCATION_CHOICES
 
 class PersonForm(forms.ModelForm):
     """Sign_Up submission form"""
@@ -79,7 +85,13 @@ class PersonForm(forms.ModelForm):
     occupation = forms.CharField(required=False, label = 'If you are working, what is your occupation?', widget=forms.TextInput(attrs={'class': 'form-control'}))
     sourceOther = forms.CharField(required=False, label = 'If other, please specify.', widget=forms.TextInput(attrs={'class': 'form-control'}))
 
+    def __init__(self, *args, **kwargs):
+        # This function makes sure the rendered choices for location button are dynamic and based off the the 'Places' model.
+        super().__init__(*args, **kwargs)
+        locations= get_location_choices()
+        self.fields["location"].widget.choices = locations
 
+    
     class Meta:
         model = Person
         fields = '__all__'
@@ -98,8 +110,6 @@ class PersonForm(forms.ModelForm):
             'legal_background': ('Are you studying law or have you worked for a law firm?'),
             'location': ("Please indicate where you're located:"),
             'source': ('How did you hear about us?'),
-            'sourceOther': ('If other, please specify.'),
-            'occupation': ('If you are working, what is your occupation?')
         }
 
 
