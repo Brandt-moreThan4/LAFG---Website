@@ -5,8 +5,9 @@ from pathlib import Path
 import string
 import random
 from django.http import HttpResponseRedirect, HttpRequest, QueryDict
+import datetime
 
-from ..models import Survey
+from ..models import Survey, Survey_Key
 
 
 SURVEY_KEY_PATH: Path = Path(__file__).parent / 'survey_keys.csv'
@@ -18,10 +19,11 @@ def process_form(survey:Survey, query_dict: QueryDict) -> str:
     data_dict = dict(query_dict) # Necessary because there is some weirdness in accessing Query Dict
 
     form_answers = list(data_dict.values())
-    form_answers = [';'.join(answer) for answer in form_answers]  # Cconverts the answers from their natural state -list objects- strings. 
+    form_answers = [';'.join(answer) for answer in form_answers]  # Converts the answers from their natural state -list objects- strings. 
 
     survey_key = generate_random_survey_key()
     form_answers.insert(0, survey_key) # put survey key in the first column of the csv row
+    form_answers.insert(0, datetime.datetime.now()) # Add time stamp
 
     save_form_data_to_csv(survey=survey, form_answers=form_answers)
 
@@ -48,9 +50,8 @@ def generate_random_survey_key() -> str:
         key = get_new_key()
     
     # If the key is unique then write it to the csv file and return it.
-    with SURVEY_KEY_PATH.open('a', newline='') as f:
-        csv_writer = csv.writer(f, delimiter=',')
-        csv_writer.writerow([key])
+    new_key = Survey_Key(key=key)
+    new_key.save()
     return key
 
 
@@ -61,18 +62,11 @@ def get_new_key() -> str:
 
 def key_is_valid(key: str) -> bool:
     """Returns true if the survey key is unique"""
-    # I bet there is some way to do this in like 2 lines
-    with SURVEY_KEY_PATH.open() as f:
-        reader = csv.reader(f, delimiter=',')
-        all_keys = []
-        for row in reader:
-            for col in row:
-                all_keys.append(col)
-
-        if key in all_keys:
-            return False
-        else:
-            return True
+    all_keys = [survey_key.key for survey_key in Survey_Key.objects.all()]
+    if key in all_keys:
+        return False
+    else:
+        return True
 
 
 

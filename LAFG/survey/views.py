@@ -5,8 +5,10 @@ from django.core.paginator import Paginator
 from django.urls import reverse
 import datetime
 
-from .models import Survey
+from .models import Survey, Survey_Key
 from .data import data_process as dp
+from lafg_site.data_tools.data_export import export_db
+
 
 print('http://127.0.0.1:8000/survey/surveys/Survey-401A')
 print('http://127.0.0.1:8000/survey/surveys/Survey-501B')
@@ -60,7 +62,10 @@ def survey_export(request):
         file_name = button_value + '.csv'
         response = HttpResponse(content_type='text/csv')
         response['Content-Disposition'] = 'attachment; filename=' + file_name
-        dp.write_csv_to_response(button_value, response)
+        if button_value == 'keys':
+            export_db(Survey_Key, response)
+        else:
+            dp.write_csv_to_response(button_value, response)
         return response
 
     return render(request, 'survey/survey_export.html')
