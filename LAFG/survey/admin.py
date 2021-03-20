@@ -1,15 +1,20 @@
 from django.contrib import admin
 
-from .models import Survey, Survey_Key
+from .models import Survey, Survey_Key, Survey_Record
 
 
 @admin.register(Survey)
-class PersonAdmin(admin.ModelAdmin):
+class SurveyAdmin(admin.ModelAdmin):
     # list_display = ('id',)
     pass
 
 @admin.register(Survey_Key)
-class PersonAdmin(admin.ModelAdmin):
+class SurveyKeyAdmin(admin.ModelAdmin):
+    # list_display = ('id',)
+    pass
+
+@admin.register(Survey_Record)
+class SurveyRecordAdmin(admin.ModelAdmin):
     # list_display = ('id',)
     pass
 

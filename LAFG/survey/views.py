@@ -27,13 +27,14 @@ def survey(request: HttpRequest, survey_url):
         return render(request, survey.get_template_path())
     elif request.method == 'POST':
         try:
-            survey_key = dp.process_form(survey, request.POST)# Feels weird. Wish I could do the survey key separately from saving it.
-
+            survey_key = dp.process_form(survey, request.POST) # Feels weird. Wish I could do the survey key separately from saving it.
         except:
             response = redirect('survey:survey_fail')
             return response
         else:
             return redirect('survey:survey_success', survey_key=survey_key)
+
+
 
 
 
@@ -48,7 +49,7 @@ def survey_fail(request):
     return render(request, 'survey/survey_submit_error.html')
 
 def survey_help(request):
-    """"""
+    """ Not actually using this."""
     return render(request, 'survey/help.html')
 
 

@@ -1,23 +1,15 @@
 from django.db import models
 
 
-# class Question(models.Model):
-#     question_text = models.CharField(max_length=200)
-#     pub_date = models.DateTimeField('date published')
-
-
-# class Choice(models.Model):
-#     question = models.ForeignKey(Question, on_delete=models.CASCADE)
-#     choice_text = models.CharField(max_length=200)
-#     votes = models.IntegerField(default=0)
-
-
 class Survey(models.Model):
     """Each row will contain some high level data for a survey"""
 
     survey_name = models.SlugField(max_length=300, unique=True)
     active = models.BooleanField(default=True)
-    url_slug =models.SlugField(max_length=300, unique=True)
+    url_slug = models.SlugField(max_length=300, unique=True)
+    column_headers = models.TextField(max_length=1000, default='lol')
+
+
 
 
     def get_template_path(self):
@@ -36,3 +28,8 @@ class Survey_Key(models.Model):
     def __str__(self):
         return self.key
     
+
+class Survey_Record(models.Model):
+    survey = models.ForeignKey(Survey, on_delete=models.CASCADE)
+    response = models.TextField()
+    # timestamp = models.DateTimeField()
