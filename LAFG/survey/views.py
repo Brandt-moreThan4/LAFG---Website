@@ -58,16 +58,17 @@ def survey_export(request):
     """ """
     # Should probably just make this so that I can return the csv directly include it as an href link?
     if request.method == 'POST':
-        # button value with either be 'Survey-1' or 'Survey-2'
-        button_value = request.POST.get('data_export')
-        file_name = button_value + '.csv'
+        survey_name = request.POST.get('data_export') 
+
+        file_name = survey_name + '.csv'
         response = HttpResponse(content_type='text/csv')
         response['Content-Disposition'] = 'attachment; filename=' + file_name
-        if button_value == 'keys':
-            export_db(Survey_Key, response)
-        else:
-            dp.write_csv_to_response(button_value, response)
-        return response
 
-    return render(request, 'survey/survey_export.html')
+        dp.write_records_to_response(survey_name, response)
+        return response
+    else:
+        surveys = Survey.objects.all()
+        
+
+    return render(request, 'survey/survey_export.html',context={'surveys': surveys})
     

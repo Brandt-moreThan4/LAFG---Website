@@ -4,7 +4,7 @@ import csv
 from pathlib import Path
 import string
 import random
-from django.http import HttpResponseRedirect, HttpRequest, QueryDict
+from django.http import HttpResponseRedirect, HttpRequest, QueryDict, HttpResponse
 import datetime
 import json
 
@@ -67,6 +67,15 @@ def key_is_valid(key: str) -> bool:
     else:
         return True
 
+
+
+
+def write_records_to_response(button_value: str, response: HttpResponse):
+    records = Survey_Record.objects.all().filter(survey__survey_name = button_value)
+    record_responses = [record.response for record in records]
+    records = [json.loads(record) for record in record_responses]
+    csv.writer(response).writerows(records)
+    print('lol')
 
 
 # def save_form_data_to_csv(survey:Survey, form_answers: list):

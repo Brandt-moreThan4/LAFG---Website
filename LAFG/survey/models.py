@@ -29,7 +29,11 @@ class Survey_Key(models.Model):
         return self.key
     
 
+# Should change the name..
 class Survey_Record(models.Model):
     survey = models.ForeignKey(Survey, on_delete=models.CASCADE)
     response = models.TextField()
-    # timestamp = models.DateTimeField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return str(self.survey) +': ' + str(self.timestamp)
