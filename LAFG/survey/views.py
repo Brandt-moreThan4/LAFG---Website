@@ -4,6 +4,8 @@ from django.http import HttpResponseRedirect, HttpRequest, QueryDict, HttpRespon
 from django.core.paginator import Paginator
 from django.urls import reverse
 import datetime
+import requests
+from django.conf import settings
 
 from .models import Survey, Survey_Key
 from .data import data_process as dp
@@ -23,17 +25,25 @@ def survey(request: HttpRequest, survey_url):
 
     survey = get_object_or_404(Survey, url_slug=survey_url, active=True)
     
-    if request.method == 'GET':
-        return render(request, survey.get_template_path())
-    elif request.method == 'POST':
-        try:
-            survey_key = dp.process_form(survey, request.POST) # Feels weird. Wish I could do the survey key separately from saving it.
-        except:
-            response = redirect('survey:survey_fail')
-            return response
-        else:
-            return redirect('survey:survey_success', survey_key=survey_key)
+    if request.method == 'POST':
+        """Captcha Stuff"""
 
+        recaptcha_response = request.POST.get('g-recaptcha-response')
+        data = {
+            'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+            'response': recaptcha_response
+        }
+        r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+        result = r.json()
+        if result['success']:
+            try:
+                survey_key = dp.process_form(survey, request.POST) # Feels weird. Wish I could do the survey key separately from saving it.
+            except:
+                response = redirect('survey:survey_fail')
+                return response
+            else:
+                return redirect('survey:survey_success', survey_key=survey_key)
+    return render(request, survey.get_template_path())
 
 
 

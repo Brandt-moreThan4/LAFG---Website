@@ -7,7 +7,7 @@ class Survey(models.Model):
     survey_name = models.SlugField(max_length=300, unique=True)
     active = models.BooleanField(default=True)
     url_slug = models.SlugField(max_length=300, unique=True)
-    column_headers = models.TextField(max_length=1000, default='lol')
+    column_headers = models.TextField(default='lol')
 
 
 

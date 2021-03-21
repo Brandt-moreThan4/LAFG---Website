@@ -69,13 +69,18 @@ def key_is_valid(key: str) -> bool:
 
 
 
+def write_records_to_response(survey_name: str, response: HttpResponse):
+    # Filter for the survey.
+    records = Survey_Record.objects.all().filter(survey__survey_name = survey_name)
+    records = [json.loads(survey_record.response) for survey_record in records] # Convert string jsons to lists
+    columns:str = Survey.objects.get(survey_name=survey_name).column_headers
+    columns = columns.split(';')
+    records.insert(0, columns) # Add headers
+    csv.writer(response).writerows(records) #  Write the records to response
 
-def write_records_to_response(button_value: str, response: HttpResponse):
-    records = Survey_Record.objects.all().filter(survey__survey_name = button_value)
-    record_responses = [record.response for record in records]
-    records = [json.loads(record) for record in record_responses]
-    csv.writer(response).writerows(records)
-    print('lol')
+
+
+
 
 
 # def save_form_data_to_csv(survey:Survey, form_answers: list):
