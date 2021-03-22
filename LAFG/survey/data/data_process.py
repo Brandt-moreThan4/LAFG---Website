@@ -4,10 +4,11 @@ import csv
 from pathlib import Path
 import string
 import random
-from django.http import HttpResponseRedirect, HttpRequest, QueryDict
+from django.http import HttpResponseRedirect, HttpRequest, QueryDict, HttpResponse
 import datetime
+import json
 
-from ..models import Survey, Survey_Key
+from ..models import Survey, Survey_Key, Survey_Record
 
 
 SURVEY_KEY_PATH: Path = Path(__file__).parent / 'survey_keys.csv'
@@ -25,21 +26,19 @@ def process_form(survey:Survey, query_dict: QueryDict) -> str:
     form_answers.insert(0, survey_key) # put survey key in the first column of the csv row
     form_answers.insert(0, datetime.datetime.now()) # Add time stamp
 
-    save_form_data_to_csv(survey=survey, form_answers=form_answers)
+    create_new_survey_record(survey, form_answers)    
+    # save_form_data_to_csv(survey=survey, form_answers=form_answers)
 
     return survey_key
 
 
-def save_form_data_to_csv(survey:Survey, form_answers: list):
-    """Appends the form responses to the survey csv path."""
+def create_new_survey_record(survey:Survey, form_answers: list):
+    survey_record = Survey_Record()
+    survey_record.survey = survey
+    json_form_answers = json.dumps(form_answers, default=str) # default is needed because datetime object isn't serailizable
+    survey_record.response = json_form_answers
+    survey_record.save()
 
-    # Really don't know why the below doesn't work
-    # survey_csv_path = Path(survey.get_csv_path())
-    survey_csv_path = Path(__file__).parent / 'survey_exports' / ( survey.survey_name +'.csv') 
-
-    with survey_csv_path.open('a',  newline='') as f:
-        writer = csv.writer(f)
-        writer.writerow(form_answers)
 
 
 def generate_random_survey_key() -> str:
@@ -70,17 +69,43 @@ def key_is_valid(key: str) -> bool:
 
 
 
-def write_csv_to_response(survey_name, response):
-    """Takes an interable of iterables like a list of lists and writes it to the response object as a csv?"""
-    survey_csv_path = Path(__file__).parent / 'survey_exports' / ( survey_name +'.csv') 
-    survey_rows = load_csv(survey_csv_path) 
-    writer = csv.writer(response).writerows(survey_rows)
+def write_records_to_response(survey_name: str, response: HttpResponse):
+    # Filter for the survey.
+    records = Survey_Record.objects.all().filter(survey__survey_name = survey_name)
+    records = [json.loads(survey_record.response) for survey_record in records] # Convert string jsons to lists
+    columns:str = Survey.objects.get(survey_name=survey_name).column_headers
+    columns = columns.split(';')
+    records.insert(0, columns) # Add headers
+    csv.writer(response).writerows(records) #  Write the records to response
+
+
+
+
+
+
+# def save_form_data_to_csv(survey:Survey, form_answers: list):
+#     """Appends the form responses to the survey csv path."""
+
+#     # Really don't know why the below doesn't work
+#     # survey_csv_path = Path(survey.get_csv_path())
+#     survey_csv_path = Path(__file__).parent / 'survey_exports' / ( survey.survey_name +'.csv') 
+
+#     with survey_csv_path.open('a',  newline='') as f:
+#         writer = csv.writer(f)
+#         writer.writerow(form_answers)
+
+
+# def write_csv_to_response(survey_name, response):
+#     """Takes an interable of iterables like a list of lists and writes it to the response object as a csv?"""
+#     survey_csv_path = Path(__file__).parent / 'survey_exports' / ( survey_name +'.csv') 
+#     survey_rows = load_csv(survey_csv_path) 
+#     writer = csv.writer(response).writerows(survey_rows)
     
 
 
-def load_csv(file_path: Path):
+# def load_csv(file_path: Path):
     
-    with file_path.open('r') as f:
-        reader = csv.reader(f, delimiter = ',')
-        rows = list(reader)
-    return rows
+#     with file_path.open('r') as f:
+#         reader = csv.reader(f, delimiter = ',')
+#         rows = list(reader)
+#     return rows

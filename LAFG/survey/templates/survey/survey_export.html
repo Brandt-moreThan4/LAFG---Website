@@ -8,7 +8,7 @@
 
 {% block content %}
 
-<form method="post" enctype="multipart/form-data">
+<!-- <form method="post" enctype="multipart/form-data">
     {% csrf_token %}  
     <div class="row">
         <div class="col">
@@ -27,7 +27,17 @@
             </div>
         </div>
     </div>
-</form>  
+</form>   -->
+
+<form method="post">
+    {% csrf_token %}
+
+    {% for survey in surveys %}
+        <div class="row">
+            <button type="submit" value="{{ survey.survey_name }}" name="data_export" class="btn btn-primary">Export {{ survey.survey_name }}</button> 
+        </div>
+        <br>
+    {% endfor %}
 
 
 {% endblock %}

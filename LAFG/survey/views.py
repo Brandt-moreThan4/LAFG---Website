@@ -4,6 +4,8 @@ from django.http import HttpResponseRedirect, HttpRequest, QueryDict, HttpRespon
 from django.core.paginator import Paginator
 from django.urls import reverse
 import datetime
+import requests
+from django.conf import settings
 
 from .models import Survey, Survey_Key
 from .data import data_process as dp
@@ -23,17 +25,26 @@ def survey(request: HttpRequest, survey_url):
 
     survey = get_object_or_404(Survey, url_slug=survey_url, active=True)
     
-    if request.method == 'GET':
-        return render(request, survey.get_template_path())
-    elif request.method == 'POST':
-        try:
-            survey_key = dp.process_form(survey, request.POST)# Feels weird. Wish I could do the survey key separately from saving it.
+    if request.method == 'POST':
+        """Captcha Stuff"""
 
-        except:
-            response = redirect('survey:survey_fail')
-            return response
-        else:
-            return redirect('survey:survey_success', survey_key=survey_key)
+        recaptcha_response = request.POST.get('g-recaptcha-response')
+        data = {
+            'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+            'response': recaptcha_response
+        }
+        r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+        result = r.json()
+        if result['success']:
+            try:
+                survey_key = dp.process_form(survey, request.POST) # Feels weird. Wish I could do the survey key separately from saving it.
+            except:
+                response = redirect('survey:survey_fail')
+                return response
+            else:
+                return redirect('survey:survey_success', survey_key=survey_key)
+    return render(request, survey.get_template_path())
+
 
 
 
@@ -48,7 +59,7 @@ def survey_fail(request):
     return render(request, 'survey/survey_submit_error.html')
 
 def survey_help(request):
-    """"""
+    """ Not actually using this."""
     return render(request, 'survey/help.html')
 
 
@@ -57,16 +68,17 @@ def survey_export(request):
     """ """
     # Should probably just make this so that I can return the csv directly include it as an href link?
     if request.method == 'POST':
-        # button value with either be 'Survey-1' or 'Survey-2'
-        button_value = request.POST.get('data_export')
-        file_name = button_value + '.csv'
+        survey_name = request.POST.get('data_export') 
+
+        file_name = survey_name + '.csv'
         response = HttpResponse(content_type='text/csv')
         response['Content-Disposition'] = 'attachment; filename=' + file_name
-        if button_value == 'keys':
-            export_db(Survey_Key, response)
-        else:
-            dp.write_csv_to_response(button_value, response)
-        return response
 
-    return render(request, 'survey/survey_export.html')
+        dp.write_records_to_response(survey_name, response)
+        return response
+    else:
+        surveys = Survey.objects.all()
+        
+
+    return render(request, 'survey/survey_export.html',context={'surveys': surveys})
     
