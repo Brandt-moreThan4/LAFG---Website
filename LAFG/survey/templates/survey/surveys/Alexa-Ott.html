@@ -1,0 +1,279 @@
+{% extends "survey/base.html" %}
+{% load static %}
+
+{% block title %}Case Study{% endblock %}
+{% block style_links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'survey/css/site.css' %}" />
+{% endblock%}
+{% block page_title %}Test Case{% endblock %}
+
+{% block styles %}
+    <style>
+        h2, h3 {
+            font-weight: bold;
+        }
+
+        img {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .img-wrapper {
+            list-style: none;
+        }
+
+        h4 {
+            /* font-weight: bold; */
+            text-decoration: underline;
+            text-align: center;
+        }
+
+        .fault-number-label {
+            display: inline-block;
+            width: 260px;
+            /* color: red; */
+        }
+
+        .sign-up-form ul {
+            list-style-type:none !important;
+        }
+
+        .question-section ul {
+            list-style-type: none;
+        }
+
+        .field-wrapper {
+            margin-bottom:20px;
+        }
+
+        
+    </style>
+{% endblock %}
+
+
+{% block content %}
+
+<div>
+    <form name="surveyForm" method="post" id="survey" autocomplete="on">
+        {% csrf_token %}
+            <br>
+            <h2>Legal Case Study</h2>
+            <hr>
+            <br><br>
+            <h3 >Instructions</h3>
+            <br>
+            <div>
+                <p>Thank you for participating in this legal case study! First, you will be presented with a few simple, demographic questions
+                    for gaining some basic info about you. Following these questions, you will begin the actual case study portion of the survey.
+                    Here, you will be presented with facts pertaining to a legal case. After carefully reading the facts you will be
+                    prompted to answer questions regarding your opinion on certain elements of the case.
+                </p>
+                <p>Please provide a response to every question.</p>
+                <p>
+                    If you have any trouble understanding the above instructions or in submitting your answers, please call: 
+                    <a href="tel:225-907-4265">225-907-4265</a>.
+                </p>
+            </div>
+            <br><br>
+            <hr>
+            <h3>Basic Info</h3>
+            
+            <div class="sign-up-form">
+                {% include "survey/basic_info.html" %}
+            </div>
+
+            <hr>
+            <br>
+
+        <div class="Case-Facts">
+            <h3>Case Description</h3>
+            <br>
+            <ul>
+                <li>In this case, a teenage girl’s left arm was amputated below the elbow as a result of the rollover of a utility terrain vehicle (“UTV”).</li>
+                <li>It’s the first day of school at St. Thomas Aquinas High School in Hammond, La. School lets out at lunch on the first day.</li>
+                <li>The girl’s volleyball team will practice at 3:30 that afternoon.</li>
+                <li>A group of freshmen members of the volleyball team decide to meet up at the “Kingdom Ranch South,” which is a 40-acre farm property owned by the parents of Ava Alston, one of the team members.</li>
+                <li>Their plan is to hang out there until volleyball practice.</li>
+                <li>Here’s an aerial photo of the property:</li>
+                <li class="img-wrapper"><div><img class="img-fluid" width="700px" height="350px" src= "{% static 'survey/Images/surveys/4.png' %}"></div></li>
+                <li>The family’s house is at the bottom of the photo.</li>
+                <li>Five girls meet up at the property.</li>
+                <li>The girls are fifteen and sixteen years old.</li>
+                <li>Once there, the girls decide to go for a ride on Jay Alston’s utility terrain vehicle, or “side-by-side.”</li>
+                <li>Here’s a picture of the side-by-side.</li>
+                <li class="img-wrapper"><div><img class="img-fluid" width="700px" height="350px" src= "{% static 'survey/Images/surveys/5.png' %}"></div></li>
+                <li>Jay Alston backs the side-by-side out for the girls, tells them to fasten their seat belts, and closes the mesh door on the right side of the vehicle.</li>
+                <li>Ava, 15, is driving when they leave the house.</li>
+                <li>The girls drive to the back of the Kingdom Ranch property, where there is an elevated portion of the dirt road that the Alston family calls “the jump.”</li>
+                <li>The location of the jump is marked by the red “X” on the aerial photo above.</li>
+                <li>Here’s “the jump.”</li>
+                <li class="img-wrapper"><div><img class="img-fluid" width="700px" height="350px" src= "{% static 'survey/Images/surveys/6.png' %}"></div></li>
+                <li>Ava drives over the jump.</li>
+                <li>The girls then take turns driving the side-by-side over the jump.</li>
+                <li>Alexa Ott, 16, takes a turn driving.</li>
+                <li>Ava is in the back seat of the side-by-side, playing music on her phone, while Alexa drives.</li>
+                <li>When Alexa tops the jump, the side-by-side turns sharply and rolls over onto the driver’s side of the vehicle.</li>
+                <li>Alexa’s left arm is caught under the side-by-side as it hits the ground, causing several compound fractures of the bones of her arm.</li>
+                <li>Ava calls her brother, who is back at the house, on her phone to tell him what happened and to come for help.</li>
+                <li>Jay Alston and his son drive to the jump and administer first aid to Alexa while they wait for an ambulance to arrive.</li>
+                <li>Ultimately, Alexa’s left arm is amputated just below her elbow.</li>
+            </ul>
+        </div>
+        <hr><br><br>
+
+
+        
+
+        <h3>Additional Facts</h3>
+        <p class="alert alert-info">
+            Following are twelve additional facts related to this case. You are to first review the entire list of twelve facts. After reading through the list, you are to rate how important each fact is to what happened in this case. The scale of importance is from 0 to 5. 0 being “not at all important,” 5 being “very important.”
+        </p>
+        <br>
+
+
+        <div>
+            <table class="table table-striped">
+              <tr>
+                <td class="border"></td>
+                <td class="border">0</td>
+                <td class="border">1</td>
+                <td class="border">2</td>
+                <td class="border">3</td>
+                <td class="border">4</td>
+                <td class="border">5</td>
+              </tr>
+              <tr>
+                <td class="border">1. Jay Alston is angry when he sees who his daughter brought to Kingdom Ranch.</td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r1c1" name="r1" value="0" class="custom-control-input"><label class="custom-control-label" for="r1c1"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r1c2" name="r1" value="1" class="custom-control-input"><label class="custom-control-label" for="r1c2"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r1c3" name="r1" value="2" class="custom-control-input"><label class="custom-control-label" for="r1c3"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r1c4" name="r1" value="3" class="custom-control-input"><label class="custom-control-label" for="r1c4"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r1c5" name="r1" value="4" class="custom-control-input"><label class="custom-control-label" for="r1c5"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r1c6" name="r1" value="5" class="custom-control-input"><label class="custom-control-label" for="r1c6"></label></div></td>
+                </tr>
+                <tr>
+                <td class="border">2. Jay Alston bought the 2018 Polaris side-by-side new, and had the dealer upgrade the vehicle with after-market tires.</td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r2c1" name="r2" value="0" class="custom-control-input"><label class="custom-control-label" for="r2c1"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r2c2" name="r2" value="1" class="custom-control-input"><label class="custom-control-label" for="r2c2"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r2c3" name="r2" value="2" class="custom-control-input"><label class="custom-control-label" for="r2c3"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r2c4" name="r2" value="3" class="custom-control-input"><label class="custom-control-label" for="r2c4"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r2c5" name="r2" value="4" class="custom-control-input"><label class="custom-control-label" for="r2c5"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r2c6" name="r2" value="5" class="custom-control-input"><label class="custom-control-label" for="r2c6"></label></div></td>
+                </tr>
+                <tr>
+                <td class="border">3. The dealer required Jay Alston to sign a waiver acknowledging that adding the after-market tires “makes the side-by-side unsafe to use and can cause severe injury or death”.</td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r3c1" name="r3" value="0" class="custom-control-input"><label class="custom-control-label" for="r3c1"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r3c2" name="r3" value="1" class="custom-control-input"><label class="custom-control-label" for="r3c2"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r3c3" name="r3" value="2" class="custom-control-input"><label class="custom-control-label" for="r3c3"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r3c4" name="r3" value="3" class="custom-control-input"><label class="custom-control-label" for="r3c4"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r3c5" name="r3" value="4" class="custom-control-input"><label class="custom-control-label" for="r3c5"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r3c6" name="r3" value="5" class="custom-control-input"><label class="custom-control-label" for="r3c6"></label></div></td>
+                </tr>
+                <tr>
+                <td class="border">4. The dealer required that Jay Alston sign an acknowledgment that, among other things, the side-by-side was not to be used to perform “wheelie, jumps, or stunts.”</td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r4c1" name="r4" value="0" class="custom-control-input"><label class="custom-control-label" for="r4c1"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r4c2" name="r4" value="1" class="custom-control-input"><label class="custom-control-label" for="r4c2"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r4c3" name="r4" value="2" class="custom-control-input"><label class="custom-control-label" for="r4c3"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r4c4" name="r4" value="3" class="custom-control-input"><label class="custom-control-label" for="r4c4"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r4c5" name="r4" value="4" class="custom-control-input"><label class="custom-control-label" for="r4c5"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r4c6" name="r4" value="5" class="custom-control-input"><label class="custom-control-label" for="r4c6"></label></div></td>
+                </tr>
+                <tr>
+                <td class="border">5. Jay Alston did not tell his family or other people who used the side-by-side about the after- market tires and the warnings that were given to him about the tires by the dealership..</td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r5c1" name="r5" value="0" class="custom-control-input"><label class="custom-control-label" for="r5c1"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r5c2" name="r5" value="1" class="custom-control-input"><label class="custom-control-label" for="r5c2"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r5c3" name="r5" value="2" class="custom-control-input"><label class="custom-control-label" for="r5c3"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r5c4" name="r5" value="3" class="custom-control-input"><label class="custom-control-label" for="r5c4"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r5c5" name="r5" value="4" class="custom-control-input"><label class="custom-control-label" for="r5c5"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r5c6" name="r5" value="5" class="custom-control-input"><label class="custom-control-label" for="r5c6"></label></div></td>
+                </tr>
+                <tr>
+                <td class="border">6. The top speed of the side-by-side is 60 mph.</td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r6c1" name="r6" value="0" class="custom-control-input"><label class="custom-control-label" for="r6c1"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r6c2" name="r6" value="1" class="custom-control-input"><label class="custom-control-label" for="r6c2"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r6c3" name="r6" value="2" class="custom-control-input"><label class="custom-control-label" for="r6c3"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r6c4" name="r6" value="3" class="custom-control-input"><label class="custom-control-label" for="r6c4"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r6c5" name="r6" value="4" class="custom-control-input"><label class="custom-control-label" for="r6c5"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r6c6" name="r6" value="5" class="custom-control-input"><label class="custom-control-label" for="r6c6"></label></div></td>
+                </tr>
+                <tr>
+                <td class="border">7. The side-by-side manufacturer requires that drivers must be at least 16 years old.</td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r7c1" name="r7" value="0" class="custom-control-input"><label class="custom-control-label" for="r7c1"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r7c2" name="r7" value="1" class="custom-control-input"><label class="custom-control-label" for="r7c2"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r7c3" name="r7" value="2" class="custom-control-input"><label class="custom-control-label" for="r7c3"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r7c4" name="r7" value="3" class="custom-control-input"><label class="custom-control-label" for="r7c4"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r7c5" name="r7" value="4" class="custom-control-input"><label class="custom-control-label" for="r7c5"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r7c6" name="r7" value="5" class="custom-control-input"><label class="custom-control-label" for="r7c6"></label></div></td>
+                </tr>
+                <tr>
+                <td class="border">8. Jay Alston’s rule is that no one outside the family is allowed to drive the side-by-side.</td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r8c1" name="r8" value="0" class="custom-control-input"><label class="custom-control-label" for="r8c1"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r8c2" name="r8" value="1" class="custom-control-input"><label class="custom-control-label" for="r8c2"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r8c3" name="r8" value="2" class="custom-control-input"><label class="custom-control-label" for="r8c3"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r8c4" name="r8" value="3" class="custom-control-input"><label class="custom-control-label" for="r8c4"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r8c5" name="r8" value="4" class="custom-control-input"><label class="custom-control-label" for="r8c5"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r8c6" name="r8" value="5" class="custom-control-input"><label class="custom-control-label" for="r8c6"></label></div></td>
+                </tr>
+                <tr>
+                <td class="border">9. Jay Alston sees the girls leaving in the side-by-side, tells them to fasten the seatbelts, and closes the mesh door on the passenger side of the side-by-side before the girls drive off.</td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r9c1" name="r9" value="0" class="custom-control-input"><label class="custom-control-label" for="r9c1"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r9c2" name="r9" value="1" class="custom-control-input"><label class="custom-control-label" for="r9c2"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r9c3" name="r9" value="2" class="custom-control-input"><label class="custom-control-label" for="r9c3"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r9c4" name="r9" value="3" class="custom-control-input"><label class="custom-control-label" for="r9c4"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r9c5" name="r9" value="4" class="custom-control-input"><label class="custom-control-label" for="r9c5"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r9c6" name="r9" value="5" class="custom-control-input"><label class="custom-control-label" for="r9c6"></label></div></td>
+                </tr>
+                <tr>
+                <td class="border">10. The seat belts were not used by the girls when they rode in the side-by-side.</td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r10c1" name="r10" value="0" class="custom-control-input"><label class="custom-control-label" for="r10c1"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r10c2" name="r10" value="1" class="custom-control-input"><label class="custom-control-label" for="r10c2"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r10c3" name="r10" value="2" class="custom-control-input"><label class="custom-control-label" for="r10c3"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r10c4" name="r10" value="3" class="custom-control-input"><label class="custom-control-label" for="r10c4"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r10c5" name="r10" value="4" class="custom-control-input"><label class="custom-control-label" for="r10c5"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r10c6" name="r10" value="5" class="custom-control-input"><label class="custom-control-label" for="r10c6"></label></div></td>
+                </tr>
+                <tr>
+                <td class="border">11. Alexa is encouraged by the girls to drive back over the jump, including telling Alexa to go faster as they approach.</td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r11c1" name="r11" value="0" class="custom-control-input"><label class="custom-control-label" for="r11c1"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r11c2" name="r11" value="1" class="custom-control-input"><label class="custom-control-label" for="r11c2"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r11c3" name="r11" value="2" class="custom-control-input"><label class="custom-control-label" for="r11c3"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r11c4" name="r11" value="3" class="custom-control-input"><label class="custom-control-label" for="r11c4"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r11c5" name="r11" value="4" class="custom-control-input"><label class="custom-control-label" for="r11c5"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r11c6" name="r11" value="5" class="custom-control-input"><label class="custom-control-label" for="r11c6"></label></div></td>
+                </tr>
+                <tr>
+                <td class="border">12. The mesh doors on the side-by-side were not fastened at the time the side-by-side rolled over.</td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r12c1" name="r12" value="0" class="custom-control-input"><label class="custom-control-label" for="r12c1"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r12c2" name="r12" value="1" class="custom-control-input"><label class="custom-control-label" for="r12c2"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r12c3" name="r12" value="2" class="custom-control-input"><label class="custom-control-label" for="r12c3"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r12c4" name="r12" value="3" class="custom-control-input"><label class="custom-control-label" for="r12c4"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r12c5" name="r12" value="4" class="custom-control-input"><label class="custom-control-label" for="r12c5"></label></div></td>
+                <td class="border"><div class="custom-control custom-radio"><input required type="radio" id="r12c6" name="r12" value="5" class="custom-control-input"><label class="custom-control-label" for="r12c6"></label></div></td>
+                </tr>
+                
+
+            </table>
+        </div>
+        <br><br>
+
+        <div>
+            <label>Briefly explain which of the above facts you feel is the most important and why?</label>
+            <textarea required class="form-control" id="most_important" name="most_important"></textarea>
+        </div>
+
+        <br><br><br>
+        <!-- Robot prevention with below two lines.  -->
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <div class="g-recaptcha" data-sitekey="6Lc5LYkaAAAAAE9O9t6YU90jCF9Ib_jKrODZ4s6_"></div>
+        <br>
+
+        <button class="btn btn-primary btn-lg" type="submit" form="survey" value="Submit">Submit</button> 
+    </form>
+</div>
+
+{% block scripts %}
+<script>
+</script>
+{% endblock %}
+
+{% endblock %}

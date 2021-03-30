@@ -12,10 +12,9 @@ from .data import data_process as dp
 from lafg_site.data_tools.data_export import export_db
 
 
-print('http://127.0.0.1:8000/survey/surveys/Survey-401A')
-print('http://127.0.0.1:8000/survey/surveys/Survey-501B')
-
-# print('http://127.0.0.1:8000/survey/survey-export/')
+# print('http://127.0.0.1:8000/survey/surveys/Survey-401A')
+print('http://127.0.0.1:8000/survey/surveys/300')
+print('http://127.0.0.1:8000/survey/survey-export/')
 
 
 
