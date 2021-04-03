@@ -6,6 +6,7 @@ from django.urls import reverse
 import datetime
 import requests
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
 from .models import Survey, Survey_Key
 from .data import data_process as dp
@@ -62,7 +63,7 @@ def survey_help(request):
     return render(request, 'survey/help.html')
 
 
-
+@login_required
 def survey_export(request):
     """ """
     # Should probably just make this so that I can return the csv directly include it as an href link?
