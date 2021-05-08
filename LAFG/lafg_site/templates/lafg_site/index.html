@@ -1,8 +1,18 @@
 {% extends "lafg_site/base.html" %}
 {% load static %}
 
+{% block styles %}
+ <style>
+     .heading {
+         color: blue;
+     }
+
+ </style>
+{% endblock %}
+
 {% block title %}Home{% endblock %}
 {% block page_title %}ABOUT US{% endblock %}
+
 
 
 {% block content %}
@@ -10,7 +20,7 @@
     <div class="mainArea">
 
         <div>
-            <h3 class="">What do we do?</h3>
+            <h3 class="heading">What do we do?</h3>
             <p>US Focus Groups primarily services law firms that are interested in hearing feedback about their cases before they go to trial. This feedback is often elicited from participants with the use of focus groups. For the typical focus group, a moderator will present the facts and evidence of a case as it will be presented in trial and prompt discussion from the group regarding their opinions on the case. </p>
         </div>
         <br>
@@ -20,7 +30,7 @@
         <br /><br />
         
         <div>
-            <h3>Focus Group Info</h3>
+            <h3 class="heading">Focus Group Info</h3>
             <p>Focus groups are conducted both through Zoom and in-person. The average focus group will
                  last for three hours and participants will receive compensation of $100 for participating.</p>
 
@@ -42,19 +52,34 @@
                 cities, we still encourage you to sign up, but keep in mind, it may be a few weeks before you are contacted
                 to participate in a focus group.
             </p>
-
-
-            <div>
+<!-- 
+            <div class="card-deck">
                 {% for state, places in states_dict.items %}
-                    <h6>From {{ state }}:</h6>
-                    <ul>
-                        {% for place in places %}
-                            <li>{{ place.city_value }}</li>   
-                        {% endfor %}
-                    </ul>
+                    <div class="card bg-primary">
+                        <div class=""><h4>{{ state }}</h4>
+                            <div class="card-body">
+                                <ul>
+                                    {% for place in places %}
+                                        <li>{{ place.city_value }}</li>   
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 {% endfor %}
-                
+            </div> -->
+            <div class="row">
+                {% for state, places in states_dict.items %}
+                    <div class="col-md-4"><h4>{{ state }}</h4>
+                        <ul>
+                            {% for place in places %}
+                                <li>{{ place.city_value }}</li>   
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
             </div>
+            <br><br>
         </div>
     </div>
 

@@ -19,8 +19,16 @@
 {% block page_title %}SIGN-UP FORM{% endblock %}
 
 {% block content %}
-
+    <p>Thank you for your interest in participating in a focus group! Please complete the below form
+        and we will contact you with additional details once a focus group in your area as been scheduled!
+        If you have any questions or issues filling out the form, please email
+         <a href="mailto:info@usfocusgroups.org">info@usfocusgroups.org</a> and we will get back to you
+         as soon as possible.
+    </p>
+    <hr>
+    <br>
     <div>
+        <h3>Focus Group Sign Up</h3>
         <div>
             <form class="sign-up-form" method="post" id="sign_up" autocomplete="on">
                 {% csrf_token %}
