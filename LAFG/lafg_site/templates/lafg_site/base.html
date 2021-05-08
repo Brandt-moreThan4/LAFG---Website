@@ -26,17 +26,19 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1 navbar-right justify-content-end">
-                        <li class="nav-item"
-                            ><a class="nav-link" href="{% url 'lafg_site:home' %}">Home</a>
-                        </li>
-                        <li class="nav-item"
-                            ><a class="nav-link" href="{% url 'lafg_site:contact' %}">Contact Us</a>
-                        </li>
-                        <li class="nav-item"
-                            ><a class="nav-link" href="{% url 'lafg_site:conduct' %}">Conduct a Focus Group</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'lafg_site:home' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'lafg_site:sign_up' %}">Sign-Up Form</a> 
+                            <a class="nav-link" href="{% url 'lafg_site:contact' %}">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'lafg_site:conduct' %}">Conduct a Focus Group</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'lafg_site:sign_up' %}">
+                                <button type="button" class="btn btn-info">Sign-Up</button>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -65,21 +67,18 @@
 
             <div class="col-md-3 mt-5 mt-md-0">
                 <div class="right-nav">
-                    <h4>Pages</h4>
+                    <h4>Page Navigate</h4>
                     <ul>
                         <li><a class="" href="{% url 'lafg_site:home' %}">Home</a></li> <hr />
                         <li><a class="" href="{% url 'lafg_site:contact' %}">Contact Us</a></li><hr />
                         <li><a class="" href="{% url 'lafg_site:conduct' %}">Conduct a Focus Group</a></li><hr />
                         <li><a class="" href="{% url 'lafg_site:sign_up' %}">Sign-Up Form</a></li>
-                        {% comment %} <li><a class="" href="{% url 'survey:test_case' 1 %}">Case Info</a></li>  {% endcomment %}
                     </ul>
                     <br /><br />
-                    <h4>LA Focus Groups</h4>
+                    <h4>US Focus Groups</h4>
                     <ul>
-                        <li>256 East Blvd.,</li>
-                        <li>Baton Rouge, LA 70802</li>
-                        <li>(225) 907-4265</li>
-                        <li><a href="mailto:lafocusgroupsllc@gmail.com">lafocusgroupsllc@gmail.com</a></li>
+                        <li>Phone: (225) 907-4265</li>
+                        <li>Email: <a href="mailto:info@usfocusgroups.org">info@usfocusgroups.org</a></li>
                     </ul>
                 </div>
             </div>

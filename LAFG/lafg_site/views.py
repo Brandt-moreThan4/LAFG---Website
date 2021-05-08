@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 import datetime
 
 from .data_tools import data_export
@@ -68,6 +69,7 @@ def sign_up_success(request):
     return render(request, 'lafg_site/sign_up_success.html')
 
 
+# @staff_member_required
 @login_required
 def data(request):
     """This is the page to export the participant list as a csv"""
