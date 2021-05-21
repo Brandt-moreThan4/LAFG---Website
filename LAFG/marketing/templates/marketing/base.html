@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'lafg_site/css/bootstrap/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'lafg_site/css/site.css' %}" />
+    {% block styles %}{% endblock %}
+
+    <link rel="icon" href="{% static 'lafg_site/Images/Square Logo.png' %}"/>
+
+</head>
+
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3" style="margin:0px !important; border-bottom:0px !important">
+
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1 navbar-right justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'lafg_site:home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'lafg_site:contact' %}">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'lafg_site:conduct' %}">Conduct a Focus Group</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="card bg-dark text-white">
+        <img id="skyLine" src= "{% static 'lafg_site/Images/skyline.jpg' %}" alt="Skyline"/>
+        <div class="card-img-overlay">
+            <h2 class="card-title">{% block page_title %}{% endblock %}</h2>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="container pb-3">
+        <div class="row justify-content-between">
+            <div class="col-md-8">
+                <main>
+                    {% block content %}{% endblock %}
+                </main>      
+            </div>
+
+            <br /><br />
+
+            <!-- <div class="col-md-3 mt-5 mt-md-0">
+                <div class="right-nav">
+                    <h4>Page Navigation</h4>
+                    <ul>
+                        <li><a class="" href="{% url 'lafg_site:home' %}">Home</a></li> <hr />
+                        <li><a class="" href="{% url 'lafg_site:contact' %}">Contact Us</a></li><hr />
+                        <li><a class="" href="{% url 'lafg_site:conduct' %}">Conduct a Focus Group</a></li><hr />
+                        <li><a class="" href="{% url 'lafg_site:sign_up' %}">Sign-Up Form</a></li>
+                    </ul>
+                    <br /><br />
+                    <h4>US Focus Groups</h4>
+                    <ul>
+                        <li>Phone: (225) 907-4265</li>
+                        <li>Email: <a href="mailto:info@usfocusgroups.org">info@usfocusgroups.org</a></li>
+                    </ul>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+
+
+    <footer class="border-top footer">
+        <div class="container">
+            &copy; 2020 - LAFG
+        </div>
+    </footer>
+
+
+    <script src="{% static "lafg_site/js/jquery/jquery.min.js" %}"></script>  {#must come before the below script#}
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static "lafg_site/js/bootstrap/bootstrap.bundle.min.js" %}"></script>
+
+    {% block scripts %}{% endblock %} 
+
+
+</body>
+</html>
