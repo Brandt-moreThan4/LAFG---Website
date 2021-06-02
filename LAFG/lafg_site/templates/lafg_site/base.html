@@ -11,20 +11,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'lafg_site/css/site.css' %}" />
     {% block styles %}{% endblock %}
 
-    <link rel="icon" href="{% static 'lafg_site/Images/Square Logo.png' %}"/>
-
+    <link rel="icon" href="{% static 'lafg_site/Images/USFG_Logo.png' %}"/>
     <style>
-        #background {
-            background-image: url("{% static 'lafg_site/Images/skyline.jpg' %}");
-        }
 
-        #my-top-nav li{
-            margin-right: 10px;
-        }
-
-        #my-top-nav a:hover{
-            color: hotpink !important;
-        }
 
 
     </style>
@@ -33,12 +22,18 @@
 <body>
     <header>
        
-        <!-- <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3" style="margin:0px !important; border-bottom:0px !important"> -->
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3" style="margin:0px !important; border-bottom:0px !important">
             <div class="container-fluid">
-                <div>
+                <!-- <div>
                     <img src="{% static 'lafg_site/Images/USFG_Logo.png' %}" alt="logo" style="width: 100px; height: auto;">
-                </div>
+                </div> -->
+                <div class="container-fluid">
+                    <div id="logo-container">
+                        <a href="{% url 'marketing:home' %}">
+                            <img id="nav-logo" src="{% static 'lafg_site/Images/Logo_People.png' %}" alt="logo">
+                            US Focus Groups
+                        </a>
+                    </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -52,7 +47,10 @@
                             <a class="nav-link" href="{% url 'lafg_site:contact' %}">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'lafg_site:conduct' %}">Conduct a Focus Group</a>
+                            <a class="nav-link" href="{% url 'lafg_site:faqs' %}">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'lafg_site:services' %}">Services</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'lafg_site:sign_up' %}">
@@ -65,27 +63,19 @@
         </nav>
     </header>
 
-    <!-- <div id="background">
-        <img id="skyLine" src= "{% static 'lafg_site/Images/skyline.jpg' %}" alt="Skyline"/>
-        <h3>hahahah</h3>
-        <h3>hahahah</h3>
-        <h3>hahahah</h3>
-        <h3>hahahah</h3>
-        <h3>hahahah</h3>
-    </div> -->
 
-    <div class="card bg-dark text-white">
+    <!-- <div class="card bg-dark text-white">
         <img id="skyLine" src= "{% static 'lafg_site/Images/skyline.jpg' %}" alt="Skyline"/>
         <div class="card-img-overlay">
             <h2 class="card-title">{% block page_title %}{% endblock %}</h2>
         </div>
-    </div>
+    </div> -->
 
     <br />
 
     <div class="container pb-3">
         <div class="row justify-content-between">
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <main>
                     {% block content %}{% endblock %}
                 </main>      
@@ -93,13 +83,12 @@
 
             <br /><br />
 
-            <div class="col-md-3 mt-5 mt-md-0">
+            <!-- <div class="col-md-3 mt-5 mt-md-0">
                 <div class="right-nav">
                     <h4>Page Navigation</h4>
                     <ul>
                         <li><a class="" href="{% url 'lafg_site:home' %}">Home</a></li> <hr />
                         <li><a class="" href="{% url 'lafg_site:contact' %}">Contact Us</a></li><hr />
-                        <li><a class="" href="{% url 'lafg_site:conduct' %}">Conduct a Focus Group</a></li><hr />
                         <li><a class="" href="{% url 'lafg_site:sign_up' %}">Sign-Up Form</a></li>
                     </ul>
                     <br /><br />
@@ -109,7 +98,7 @@
                         <li>Email: <a href="mailto:info@usfocusgroups.org">info@usfocusgroups.org</a></li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>

@@ -11,3 +11,31 @@ def home(request:HttpRequest):
     """Renders home page"""
     
     return render(request, 'marketing/home.html')
+
+
+def contact(request:HttpRequest):
+    """Renders contact page"""
+    
+    return render(request, 'marketing/contact.html')
+
+
+def faqs(request:HttpRequest):
+    """Renders FAQ's page"""
+
+    return render(request, 'marketing/FAQs.html')
+
+
+def focus_groups(request:HttpRequest):
+    """Renders focus gorups page"""
+
+    return render(request, 'marketing/focus_groups.html')
+
+def surveys(request:HttpRequest):
+    """Renders focus gorups page"""
+
+    return render(request, 'marketing/surveys.html')
+
+def demonstratives(request:HttpRequest):
+    """Renders focus gorups page"""
+
+    return render(request, 'marketing/demonstratives.html')

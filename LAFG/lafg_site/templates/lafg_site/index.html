@@ -3,9 +3,9 @@
 
 {% block styles %}
  <style>
-     .heading {
+     /* .heading {
          color: blue;
-     }
+     } */
 
  </style>
 {% endblock %}
@@ -21,12 +21,16 @@
 
         <div>
             <h3 class="heading">What do we do?</h3>
-            <p>US Focus Groups primarily services law firms that are interested in hearing feedback about their cases before they go to trial. This feedback is often elicited from participants with the use of focus groups. For the typical focus group, a moderator will present the facts and evidence of a case as it will be presented in trial and prompt discussion from the group regarding their opinions on the case. </p>
+            <p>US Focus Groups primarily services law firms that are interested in hearing feedback about their cases before they go to trial.
+                 This feedback is often elicited from participants through the use of focus groups. For the typical focus group, a moderator
+                  will present the facts and evidence of a case as it will be presented in trial and prompt discussion from the group
+                   regarding their opinions on the case.
+            </p>
         </div>
         <br>
-        <div>
+        <!-- <div>
             <img id="CourtRoom" src= "{% static 'lafg_site/Images/courtRoom.jpg' %}" alt="Court Room "/>
-        </div>
+        </div> -->
         <br /><br />
         
         <div>
@@ -48,7 +52,7 @@
             </div>
             <br>
             <hr>
-            <h3>Upcoming Focus Groups</h3>
+            <h3 class="heading">Upcoming Focus Groups</h3>
             <p>The below locations are cities where we will be hosting focus groups in the near future. If you
                 currently reside in one of the below cities, please sign-up! If you do not live in one of the below
                 cities, we still encourage you to sign up, but keep in mind, it may be a few weeks before you are contacted

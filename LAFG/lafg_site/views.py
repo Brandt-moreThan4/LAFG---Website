@@ -30,10 +30,10 @@ def contact(request):
     return render(request, 'lafg_site/contact.html')
 
 
-def conduct(request):
+def services(request):
     """Renders the conduct a focus group about page"""
 
-    return render(request, 'lafg_site/conduct.html')
+    return render(request, 'lafg_site/services.html')
 
 
 def sign_up(request):
@@ -56,11 +56,10 @@ def sign_up(request):
     return render(request, 'lafg_site/sign_up.html', {'form': form})
 
 
+def faqs(request):
+    """Renders the sign-up success template"""
 
-
-def test(request):
-
-    return render(request, 'lafg_site/sign_two.html') 
+    return render(request, 'lafg_site/faqs.html')
 
 
 def sign_up_success(request):
@@ -88,3 +87,9 @@ def data(request):
 
 
     return render(request, 'lafg_site/data.html')
+
+
+
+def test(request):
+
+    return render(request, 'lafg_site/sign_two.html') 
