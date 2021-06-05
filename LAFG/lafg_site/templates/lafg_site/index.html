@@ -3,45 +3,69 @@
 
 {% block styles %}
  <style>
-     /* .heading {
-         color: blue;
-     } */
 
      .sign-up-btn {
         font-size: x-large;
-        color: yellow;
-        background-color: darkblue;
+        color: #F3EE52;
+        background-color: rgba(29, 38, 124, .85);
         height: 70px;
         width: 325px;
         padding: 13px;
         margin-top: 20px;
         border-radius: 50px;
         font-weight: bold;
+        box-shadow: 5px 5px 5px grey;
      }
 
-     .sign-up-btn:hover {
-         color: yellow;
+     .my-shadow {
+        box-shadow: 10px 10px 5px grey;
      }
 
-     .main-content {
+
+     /* .main-content {
          margin-left: 100px;
          margin-right: 100px;
-     }
+     } */
 
      .blue-fun {
-        background: #000965 0% 0% no-repeat padding-box;
-        mix-blend-mode: darken;
-        opacity: 0.65;
+        background-color: rgba(0, 9, 101, 1);
+        opacity: 0.68;
         color:white;
+        /* font-weight: bold; */
+        /* font-size: large; */
+        font-size: x-large;
+        
+    }
+
+     .img-fun {
+        background-image: url("{% static 'lafg_site/Images/courtRoom.jpg' %}");
+        background-repeat: no-repeat; 
+        background-size: cover; 
+        background-position:center;
+        
      }
 
+
+    /* White line below First Header */
+     h1 {
+         position: relative;
+     }
+
+     h1:before {
+        position: absolute;
+        left: 1em;
+        top: 1.2em;
+        height: 0px;
+        width: 180px;
+        content: '';
+        border-top: 3px solid white;
+        }
+        /* ------------ */
 
  </style>
 {% endblock %}
 
 {% block title %}Home{% endblock %}
-{% block page_title %}ABOUT US{% endblock %}
-
 
 
 {% block content %}
@@ -49,19 +73,21 @@
             <div class="row">
                 <!-- Below Col is necessary I think so that I can put other non-col classed elementes inside of master row. Like <br> -->
                 <div class="col"> 
-                    <div style="" class="row blue-fun">
-                        <div class="col-md-1"></div>
-                        <div class="col-md-6">
-                            <br><br>
-                            <h2 class="heading" style="margin-bottom: 20px;">What do we do?</h2>
-                            <p>US Focus Groups primarily serves as the middle man for law firms interested in hearing feedback
-                                on their cases before going through the trial process. We gather that feedback through online
-                                surveys and focus groups, conducted by the moderators from our team, through which we hope to
-                                gauge how people really feel about the lawsuits happening in their communities.
-                            </p>
-                            <br><br>
+
+                    <div class="img-fun">
+                        <div style=" padding-bottom: 50px;" class="row blue-fun">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <br><br>
+                                <h1 class="heading" style="margin-bottom: 30px;">What do we do?</h1>
+                                <p class="text-center pl-md-5">US Focus Groups primarily serves as the middle man for law firms interested in hearing feedback
+                                    on their cases before going through the trial process. We gather that feedback through online
+                                    surveys and focus groups, conducted by the moderators from our team, through which we hope to
+                                    gauge how people really feel about the lawsuits happening in their communities.
+                                </p>
+                                <br><br>
+                            </div>
                         </div>
-                        <div></div>
                     </div>
                     
 
@@ -70,17 +96,18 @@
                     </div> -->
                     
                     
-                    <div class="row" style="background: #DDDDDD 0% 0% no-repeat padding-box;">
-                        <div class="col-md-1"></div>
-                        <div class="col-md-6">
-                            <div class="row p-3">
+                    <div class="row" style="background: #DDDDDD">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <div class="row pt-3">
                                 <div class="col-md-7">
-                                    <h2 class="heading" style="color: darkblue;">How do you sign up?</h2>
-                                    <p>All we need is for you to fill out the sign-up form and we will work to place you into one of the upcoming focus groups
+                                    <h2 class="heading" style="color: rgba(0, 9, 101, 1); margin-bottom: 20px;">How do you sign up?</h2>
+                                    <p class="pl-md-4">All we need is for you to fill out the sign-up form and we will work to place you into one of the upcoming focus groups
                                         in your area as they become available.
                                     </p>
                                 </div>
-                                <div class="col-md-5">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-4 p-2">
                                     <div class="">
                                         <a href="{% url 'lafg_site:sign_up' %}">
                                             <button class="sign-up-btn btn">Sign-Up Form</button>
@@ -91,32 +118,34 @@
                             </div>
                         </div>
                     </div>
-                    <br><br>
+                    
 
 
-
+                    
                     <div class="row">
-                        <div class="col-md-1"></div>
-                        <div class="col-md-7">
-                            <h3 class="heading">Focus Group Information</h3>
-                            <p>Focus groups are conducted both through Zoom and in-person. The average focus group will
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <br><br>
+                            <h3 class="heading">Focus Group Information</h3><br>
+                            <p class="pl-md-5">Focus groups are conducted both through Zoom and in-person. The average focus group will
                                 last for three hours and participants will receive compensation of $100 for participating.</p>
-                            <p>
+                            <p class="pl-md-5">
                                 For the typical focus group, the moderator will present the facts and evidence of a case as
                                 it will be presented in trial and prompt discussion from the group regarding their opinions on the case.
                             </p>
                             <br>
-                            <p>For more information about our focus groups, please check our <a style="font-weight: bold;" href="{% url 'lafg_site:faqs' %}">Frequently Asked Questions</a> page.</p>
+                            <p style="font-weight: bold;">For more information about our focus groups, please check our <a style="font-weight: bold;" href="{% url 'lafg_site:faqs' %}">Frequently Asked Questions</a> page.</p>
                             <hr>
+                            <br><br>
                         </div>
                     </div>
-                    <br><br>
+                    
                         
                         
 
-                    <div class="row" style="background-color:grey">
-                        <div class="col-md-1"></div>
-                        <div class="col-md-7 p-4">
+                    <div class="row" style="background: #DDDDDD">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-10 col-lg-7 p-4">
                             <h3 class="heading text-center" style="margin-bottom: 18px;">Upcoming Focus Groups</h3>
                             <p>The below locations are cities where we will be hosting focus groups in the near future. If you
                                 currently reside in one of the below cities, please sign-up! If you do not live in one of the below
@@ -127,12 +156,12 @@
 
                             <div class="card-deck">
                                 {% for state, places in states_dict.items %}
-                                    <div style="background-color: darkblue; border-radius: 30px;" class="card">
+                                    <div style="background-color: rgba(29, 38, 124, .9); border-radius: 30px; box-shadow: 10px 10px 5px grey;" class="card ">
                                         <div  class="">
-                                            <h2 class="text-center pt-1" style="color:yellow">{{ state }}</h2>
-                                            <hr style="background-color: yellow;">
+                                            <h2 class="text-center pt-1" style="color:#F3EE52">{{ state }}</h2>
+                                            <hr style="background-color: #F3EE52; height: 2px;">
                                             <div class="card-body" style="padding-top: 0px;">
-                                                <ul style="list-style-type: none; color: white; font-size: large;">
+                                                <ul style="list-style-type: none; color: white; font-size: large; padding-left: 5px;">
                                                     {% for place in places %}
                                                         <li style="margin-top: 2px;">{{ place.city_value }}</li>   
                                                     {% endfor %}
