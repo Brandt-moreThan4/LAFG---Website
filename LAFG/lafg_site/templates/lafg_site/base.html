@@ -21,18 +21,20 @@
 <body>
     <header>
        
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3" style="margin:0px !important; border-bottom:0px !important">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3 my-shadow" style="margin:0px !important; border-bottom:0px !important">
             <div class="container-fluid">
-                <!-- <div>
-                    <img src="{% static 'lafg_site/Images/USFG_Logo.png' %}" alt="logo" style="width: 100px; height: auto;">
-                </div> -->
-                <div class="container-fluid">
+                <div>
+                    <a href="{% url 'lafg_site:home' %}">
+                        <img src="{% static 'lafg_site/Images/USFG_Logo.png' %}" alt="logo" style="width: 100px; height: auto;">
+                    </a>
+                </div>
+                <!-- <div class="container-fluid">
                     <div id="logo-container">
-                        <a href="{% url 'marketing:home' %}">
+                        <a href="{% url 'lafg_site:home' %}">
                             <img id="nav-logo" src="{% static 'lafg_site/Images/Logo_People.png' %}" alt="logo">
                             US Focus Groups
                         </a>
-                    </div>
+                    </div> -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -63,44 +65,13 @@
     </header>
 
 
-    <!-- <div class="card bg-dark text-white">
-        <img id="skyLine" src= "{% static 'lafg_site/Images/skyline.jpg' %}" alt="Skyline"/>
-        <div class="card-img-overlay">
-            <h2 class="card-title">{% block page_title %}{% endblock %}</h2>
-        </div>
-    </div> -->
 
 
 
-    <!-- <div class="container"> -->
-        <!-- <div class="row"> -->
-            <!-- <div> -->
-                <main>
-                    {% block content %}{% endblock %}
-                </main>      
-            <!-- </div> -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>      
 
-            <br /><br />
-
-            <!-- <div class="col-md-3 mt-5 mt-md-0">
-                <div class="right-nav">
-                    <h4>Page Navigation</h4>
-                    <ul>
-                        <li><a class="" href="{% url 'lafg_site:home' %}">Home</a></li> <hr />
-                        <li><a class="" href="{% url 'lafg_site:contact' %}">Contact Us</a></li><hr />
-                        <li><a class="" href="{% url 'lafg_site:sign_up' %}">Sign-Up Form</a></li>
-                    </ul>
-                    <br /><br />
-                    <h4>US Focus Groups</h4>
-                    <ul>
-                        <li>Phone: (225) 907-4265</li>
-                        <li>Email: <a href="mailto:info@usfocusgroups.org">info@usfocusgroups.org</a></li>
-                    </ul>
-                </div>
-            </div> -->
-
-        </div>
-    </div>
 
 
     <footer class="border-top footer">
