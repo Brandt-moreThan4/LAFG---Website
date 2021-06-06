@@ -7,9 +7,10 @@ header {
 }
 
 .nav-link {
-    color: white !important; /*What would be a better color?*/
+    color: white !important; 
 }
 
+/* Make text bigger and put some spacing between links  */
 #my-top-nav li{
     margin-right: 20px;
     font-size: 20px;
@@ -18,6 +19,14 @@ header {
 #my-top-nav a:hover{
     color: black !important;
 }
+
+.my-underline {
+    border-bottom: 2px;
+    border-color: white;
+    border-style: none none solid none;
+    /* padding-bottom: 10px; */
+}
+
 
 /* Logo stuff */
 #nav-logo{
@@ -35,7 +44,7 @@ header {
     text-decoration: none;
 }
 
-
+/* ---------------------- */
 
 
 
@@ -45,6 +54,14 @@ html {
     position: relative;
     min-height: 100%;
     font-size: 15px !important;
+}
+
+/*Make text smaller on smaller screens.*/
+
+@media (min-width: 768px) {
+    html {
+        font-size: 17px !important;
+    }
 }
 
 body {
@@ -66,38 +83,14 @@ body {
 
 
 
-.box-shadow {
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
+.my-shadow {
+    box-shadow: 10px 10px 5px grey !important;
+ }
 
-/*Make text smaller on smaller screens.*/
+ .nav-shadow {
+    box-shadow: 5px 5px 6px grey !important;
+ }
 
-@media (min-width: 768px) {
-    html {
-        font-size: 17px !important;
-    }
-}
-
-
-/* #Logo {
-    float: left;
-    margin-right: 125px;
-    margin-left: 100px;
-} */
-
-
-/* #CourtRoom {
-    width: 90%;
-}
-
-
-@media screen and (max-width: 1200px) {
-    
-    #CourtRoom {
-        width: 100%;
-    }
- 
-} */
 
 
 .heading {

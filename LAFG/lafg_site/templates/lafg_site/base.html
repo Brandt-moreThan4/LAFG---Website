@@ -14,27 +14,26 @@
     <style>
 
 
-
     </style>
 </head>
 
 <body>
-    <header>
-       
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3 my-shadow" style="margin:0px !important; border-bottom:0px !important">
+    <header class="sticky-top">
+        <!-- <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3 my-shadow" style="margin:0px !important; border-bottom:0px !important"> -->
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark nav-shadow" style="">
             <div class="container-fluid">
-                <div>
-                    <a href="{% url 'lafg_site:home' %}">
-                        <img src="{% static 'lafg_site/Images/USFG_Logo.png' %}" alt="logo" style="width: 100px; height: auto;">
+                <!-- <div>
+                    <a class="navbar-brand " href="{% url 'lafg_site:home' %}">
+                        <img id="nav-logo" src="{% static 'lafg_site/Images/USFG_Logo.png' %}" alt="logo" style="">
                     </a>
-                </div>
-                <!-- <div class="container-fluid">
+                </div> -->
+                <div class="container-fluid">
                     <div id="logo-container">
                         <a href="{% url 'lafg_site:home' %}">
                             <img id="nav-logo" src="{% static 'lafg_site/Images/Logo_People.png' %}" alt="logo">
                             US Focus Groups
                         </a>
-                    </div> -->
+                    </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -42,19 +41,19 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul id="my-top-nav" class="navbar-nav flex-grow-1 navbar-right justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'lafg_site:home' %}">Home</a>
+                            <a class="nav-link {% block nav-home%}{% endblock %}" href="{% url 'lafg_site:home' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'lafg_site:contact' %}">Contact</a>
+                            <a class="nav-link {% block nav-contact%}{% endblock %}" href="{% url 'lafg_site:contact' %}">Contact</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link {% block nav-faqs%}{% endblock %}" href="{% url 'lafg_site:faqs' %}">FAQs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'lafg_site:faqs' %}">FAQs</a>
+                            <a class="nav-link {% block nav-services%}{% endblock %}" href="{% url 'lafg_site:services' %}">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'lafg_site:services' %}">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'lafg_site:sign_up' %}">
+                            <a class="nav-link {% block nav-sign-up%}{% endblock %}" href="{% url 'lafg_site:sign_up' %}">
                                 <button type="button" class="btn btn-info">Sign-Up</button>
                             </a>
                         </li>
