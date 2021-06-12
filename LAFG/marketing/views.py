@@ -4,6 +4,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 import datetime
 
+# from . models import Person, Place, State, Faq
+# from ..lafg_site.models import Faq
+from lafg_site.models import Faq
 
 print('http://127.0.0.1:8000/lawyers/')
 
@@ -21,15 +24,16 @@ def contact(request:HttpRequest):
 
 def faqs(request:HttpRequest):
     """Renders FAQ's page"""
+    faqs = Faq.objects.all()
 
-    return render(request, 'marketing/FAQs.html')
+    return render(request, 'marketing/FAQs.html', context={'faqs': faqs})
 
 
 def focus_groups(request:HttpRequest):
     """Renders focus gorups page"""
 
     return render(request, 'marketing/focus_groups.html')
-
+    
 def surveys(request:HttpRequest):
     """Renders focus gorups page"""
 

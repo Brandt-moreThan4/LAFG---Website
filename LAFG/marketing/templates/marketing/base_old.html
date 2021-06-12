@@ -7,29 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'lafg_site/css/bootstrap/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'lafg_site/css/site.css' %}" />
-    {% block styles %}{% endblock %}
-
     <link rel="icon" href="{% static 'lafg_site/Images/USFG_Logo.png' %}"/>
     <style>
         body {
             font-family: "Times New Roman", Times, serif;
         }
 
+    
+
     </style>
+    {% block styles %}{% endblock %}
+
+    
+
 </head>
 
+
 <body>
-    <header class="sticky-top">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark nav-shadow" style="">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3" style="margin:0px !important; border-bottom:0px !important">
+
             <div class="container-fluid">
-                <div class="container-fluid">
-                    <div id="logo-container">
-                        <a href="{% url 'marketing:home' %}">
-                            <img id="nav-logo-people" src="{% static 'lafg_site/Images/Logo_People.png' %}" alt="logo">
-                            <img id="nav-logo-words" src="{% static 'lafg_site/Images/Logo_No_People.png' %}" alt="logo">
-                        </a>
-                    </div>
+                <div id="logo-container">
+                    <a href="{% url 'marketing:home' %}">
+                        <img id="nav-logo" src="{% static 'lafg_site/Images/Logo_People.png' %}" alt="logo">
+                        US Focus Groups
+                        <!-- <span style="clear: both;"></span> -->
+                    </a>
+                </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -37,7 +44,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul id="my-top-nav" class="navbar-nav flex-grow-1 navbar-right justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link {% block nav-home%}{% endblock %}" href="{% url 'marketing:home' %}">Home</a>
+                            <a class="nav-link" href="{% url 'marketing:home' %}">About</a>
                         </li>
                         <li class="nav-item">
                             <div class="dropdown">
@@ -52,25 +59,32 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% block nav-contact%}{% endblock %}" href="{% url 'marketing:contact' %}">Contact</a>
+                            <a class="nav-link" href="{% url 'marketing:contact' %}">Contact</a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link {% block nav-faqs%}{% endblock %}" href="{% url 'marketing:faqs' %}">FAQs</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'marketing:faqs' %}">FAQs</a>
                         </li>
+
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
+    <br />
 
+    <div class="container pb-3">
+        <div class="row justify-content-between">
+            <div class="col-md-9">
+                <main>
+                    {% block content %}{% endblock %}
+                </main>      
+            </div>
 
+            <br /><br />
 
-
-    <main>
-        {% block content %}{% endblock %}
-    </main>      
-
+        </div>
+    </div>
 
 
     <footer class="border-top footer">
