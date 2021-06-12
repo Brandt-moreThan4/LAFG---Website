@@ -29,20 +29,25 @@ header {
 
 
 /* Logo stuff */
-#nav-logo{
+#nav-logo-people{
     width: 80px;
     height: auto;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
-#logo-container a {
+/* #nav-logo-words{
+    width: 128px;
+    height: auto;
+} */
+
+/* #logo-container a {
     color: white !important;
     font-size: x-large;
-}
+} */
 
-#logo-container a:hover {
+/* #logo-container a:hover {
     text-decoration: none;
-}
+} */
 
 /* ---------------------- */
 

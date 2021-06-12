@@ -22,16 +22,11 @@
         <!-- <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3 my-shadow" style="margin:0px !important; border-bottom:0px !important"> -->
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark nav-shadow" style="">
             <div class="container-fluid">
-                <!-- <div>
-                    <a class="navbar-brand " href="{% url 'lafg_site:home' %}">
-                        <img id="nav-logo" src="{% static 'lafg_site/Images/USFG_Logo.png' %}" alt="logo" style="">
-                    </a>
-                </div> -->
                 <div class="container-fluid">
                     <div id="logo-container">
                         <a href="{% url 'lafg_site:home' %}">
-                            <img id="nav-logo" src="{% static 'lafg_site/Images/Logo_People.png' %}" alt="logo">
-                            US Focus Groups
+                            <img id="nav-logo-people" src="{% static 'lafg_site/Images/Logo_People.png' %}" alt="logo">
+                            <img id="nav-logo-words" src="{% static 'lafg_site/Images/Logo_No_People.png' %}" alt="logo">
                         </a>
                     </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -49,9 +44,9 @@
                         <li class="nav-item active">
                             <a class="nav-link {% block nav-faqs%}{% endblock %}" href="{% url 'lafg_site:faqs' %}">FAQs</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link {% block nav-services%}{% endblock %}" href="{% url 'lafg_site:services' %}">Services</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link {% block nav-sign-up%}{% endblock %}" href="{% url 'lafg_site:sign_up' %}">
                                 <button type="button" class="btn btn-info">Sign-Up</button>
