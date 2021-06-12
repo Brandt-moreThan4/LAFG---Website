@@ -63,20 +63,21 @@ place_query = Place.objects.filter(display=True)
 loc_labels = [place.city_label for place in place_query]
 loc_values = [place.city_value for place in place_query]
 LOCATION_CHOICES = list(zip(loc_values, loc_labels))
-# print('done')
+
 
 SOURCES_CHOICES = [('Family/Friend','Family/Friend'),
                     ('Facebook','Facebook'),
                     ('Instagram','Instagram'),
-                    ('Other','Other')]
+                    ('Other','Other'),
+                    ('Craigslist', 'Craigslist')]
         
 
 def get_location_choices():
     place_query = Place.objects.filter(display=True)
     loc_labels = [place.city_label for place in place_query]
     loc_values = [place.city_value for place in place_query]
-    LOCATION_CHOICES = list(zip(loc_values, loc_labels))
-    return LOCATION_CHOICES
+    location_choices = list(zip(loc_values, loc_labels))
+    return location_choices
 
 class PersonForm(forms.ModelForm):
     """Sign_Up submission form"""

@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 import datetime
 
 from .data_tools import data_export
-from . models import Person, Place, State
+from . models import Person, Place, State, Faq
 from .forms import PersonForm
 
 print('http://127.0.0.1:8000/sign_up')
@@ -29,10 +30,10 @@ def contact(request):
     return render(request, 'lafg_site/contact.html')
 
 
-def conduct(request):
+def services(request):
     """Renders the conduct a focus group about page"""
 
-    return render(request, 'lafg_site/conduct.html')
+    return render(request, 'lafg_site/services.html')
 
 
 def sign_up(request):
@@ -55,11 +56,12 @@ def sign_up(request):
     return render(request, 'lafg_site/sign_up.html', {'form': form})
 
 
+def faqs(request):
+    """Renders the sign-up success template"""
 
+    faqs = Faq.objects.all()
 
-def test(request):
-
-    return render(request, 'lafg_site/sign_two.html') 
+    return render(request, 'lafg_site/faqs.html', context={'faqs': faqs})
 
 
 def sign_up_success(request):
@@ -68,6 +70,7 @@ def sign_up_success(request):
     return render(request, 'lafg_site/sign_up_success.html')
 
 
+# @staff_member_required
 @login_required
 def data(request):
     """This is the page to export the participant list as a csv"""
@@ -86,3 +89,9 @@ def data(request):
 
 
     return render(request, 'lafg_site/data.html')
+
+
+
+def test(request):
+
+    return render(request, 'lafg_site/sign_two.html') 

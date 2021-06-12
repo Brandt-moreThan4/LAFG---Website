@@ -1,52 +1,179 @@
 {% extends "lafg_site/base.html" %}
 {% load static %}
 
-{% block title %}Home{% endblock %}
-{% block page_title %}ABOUT US{% endblock %}
+{% block styles %}
+ <style>
 
+     .sign-up-btn {
+        font-size: x-large;
+        color: #F3EE52;
+        background-color: rgba(29, 38, 124, .85);
+        height: 70px;
+        width: 325px;
+        padding: 13px;
+        margin-top: 20px;
+        border-radius: 50px;
+        font-weight: bold;
+        box-shadow: 5px 5px 5px grey;
+     }
+
+
+
+     /* .main-content {
+         margin-left: 100px;
+         margin-right: 100px;
+     } */
+
+     .blue-fun {
+        background-color: rgba(0, 9, 101, 1);
+        opacity: 0.68;
+        color:white;
+        /* font-weight: bold; */
+        /* font-size: large; */
+        font-size: x-large;
+        
+    }
+
+     .img-fun {
+        background-image: url("{% static 'lafg_site/Images/courtRoom.jpg' %}");
+        background-repeat: no-repeat; 
+        background-size: cover; 
+        background-position:center;
+        
+     }
+
+
+    /* White line below First Header */
+     h1 {
+         position: relative;
+     }
+
+     h1:before {
+        position: absolute;
+        left: 1em;
+        top: 1.2em;
+        height: 0px;
+        width: 180px;
+        content: '';
+        border-top: 3px solid white;
+        }
+        /* ------------ */
+
+ </style>
+{% endblock %}
+
+{% block title %}Home{% endblock %}
+{% block nav-home %}my-underline{% endblock %}
 
 {% block content %}
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Below Col is necessary I think so that I can put other non-col classed elementes inside of master row. Like <br> -->
+                <div class="col"> 
 
-    <div class="mainArea">
+                    <div class="img-fun">
+                        <div style=" padding-bottom: 50px;" class="row blue-fun">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <br><br>
+                                <h1 class="heading" style="margin-bottom: 30px;">What do we do?</h1>
+                                <p class="text-center pl-md-5">US Focus Groups assists trial attorneys in setting up focus
+                                     groups to gather critical feedback on cases pending in litigation. Feedback is gathered
+                                      primarily through two processes: online surveys and live focus groups. Live focus
+                                       groups are led by an experienced, neutral trial attorney. Focus group participants show
+                                        the litigants how people in the community really feel about the issues in their lawsuits.
+                                </p>
+                                <br><br>
+                            </div>
+                        </div>
+                    </div>
+                    
 
-        <div>
-            <p>
-                Our company serves as a host for several law firms wishing to conduct focus groups.
-                The purpose of these focus groups is for the law firms to get feedback on cases that are
-                going to trial. A moderator will be presenting the evidence as they would in court and then
-                prompting discussion from the participants.
-            </p>
-        </div>
-      
-        <div>
-            <img id="CourtRoom" src= "{% static 'lafg_site/Images/courtRoom.jpg' %}" alt="Court Room "/>
-        </div>
-        <br /><br />
-        
-        <div>
-            <p>
-                Participants will be paid $100 each for a three hour session and catering will be provided.
-                To apply, navigate to our <a style="color:blue" href="{% url 'lafg_site:sign_up' %}">sign-up page</a>
-                to complete the form and we will contact you with a specific date
-                and location a week before the session you have been selected for.
-            </p>
-            <br>
+                    <!-- <div>
+                        <img id="CourtRoom" src= "{% static 'lafg_site/Images/courtRoom.jpg' %}" alt="Court Room "/>
+                    </div> -->
+                    
+                    
+                    <div class="row" style="background: #DDDDDD">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <div class="row pt-3">
+                                <div class="col-md-7">
+                                    <h2 class="heading" style="color: rgba(0, 9, 101, 1); margin-bottom: 20px;">How do you sign up?</h2>
+                                    <p class="pl-md-4">All we need is for you to fill out the sign-up form and we will work to place you into one of the upcoming focus groups
+                                        in your area as they become available.
+                                    </p>
+                                </div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-4 p-2">
+                                    <div class="">
+                                        <a href="{% url 'lafg_site:sign_up' %}">
+                                            <button class="sign-up-btn btn">Sign-Up Form</button>
+                                        </a>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
 
-            <p>We are currently looking for participants from the following areas:</p>
 
+                    
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <br><br>
+                            <h3 class="heading">Focus Group Information</h3><br>
+                            <p class="pl-md-5">Focus groups are conducted both through Zoom and in-person. The average focus group will
+                                last for three hours and participants will receive compensation of $100 for participating.</p>
+                            <p class="pl-md-5">
+                                For the typical focus group, the moderator will present the facts and evidence of a case as
+                                it will be presented in trial and prompt discussion from the group regarding their opinions on the case.
+                            </p>
+                            <br>
+                            <p style="font-weight: bold;">For more information about our focus groups, please check our <a style="font-weight: bold;" href="{% url 'lafg_site:faqs' %}">Frequently Asked Questions</a> page.</p>
+                            <hr>
+                            <br><br>
+                        </div>
+                    </div>
+                    
+                        
+                        
 
-            <div>
-                {% for state, places in states_dict.items %}
-                    <h6>From {{ state }}:</h6>
-                    <ul>
-                        {% for place in places %}
-                            <li>{{ place.city_value }}</li>   
-                        {% endfor %}
-                    </ul>
-                {% endfor %}
-                
+                    <div class="row" style="background: #DDDDDD">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-10 col-lg-7 p-4">
+                            <h3 class="heading text-center" style="margin-bottom: 18px;">Upcoming Focus Groups</h3>
+                            <p>US Focus Groups is currently recruiting participants for upcoming focus groups in the
+                                 communities listed below. If you currently reside on one of these areas, please
+                                  sign up so that we can contact you about participating in our focus group.
+                                   If you don’t see your community on the list, we encourage you to go ahead
+                                    and enroll since we schedule new focus groups throughout the Southeast weekly.
+                            </p>
+                            <br>
+
+                            <div class="card-deck">
+                                {% for state, places in states_dict.items %}
+                                    <div style="background-color: rgba(29, 38, 124, .9); border-radius: 30px; box-shadow: 10px 10px 5px grey;" class="card ">
+                                        <div  class="">
+                                            <h2 class="text-center pt-1" style="color:#F3EE52">{{ state }}</h2>
+                                            <hr style="background-color: #F3EE52; height: 2px;">
+                                            <div class="card-body" style="padding-top: 0px;">
+                                                <ul style="list-style-type: none; color: white; font-size: large; padding-left: 5px;">
+                                                    {% for place in places %}
+                                                        <li style="margin-top: 2px;">{{ place.city_value }}</li>   
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
 {% endblock %}

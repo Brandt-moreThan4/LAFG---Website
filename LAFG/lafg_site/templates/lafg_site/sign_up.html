@@ -1,11 +1,13 @@
 ﻿{% extends "lafg_site/base.html" %}
 {% load static %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Sign-Up{% endblock %}
+{% block nav-sign-up %}my-underline{% endblock %}
+
 {% block styles %}
     <style>
         .sign-up-form ul {
-            list-style-type:none !important;
+            list-style-type:none;
         }
 
         .field-wrapper {
@@ -16,47 +18,59 @@
     </style>
 {% endblock %}
 
-{% block page_title %}SIGN-UP FORM{% endblock %}
 
 {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <br>
+                <h2 class="heading">Focus Group Sign Up</h2><br>
+                <p>Thank you for your interest in participating in a focus group! Please complete the below form
+                    and we will contact you with additional details once a focus group in your area has been scheduled!
+                    If you have any questions or issues filling out the form, please email
+                    <a href="mailto:info@usfocusgroups.org">info@usfocusgroups.org</a> and we will get back to you
+                    as soon as possible.
+                </p>
+                <hr>
+                <br>
+                <div>
+                    
+                    <div>
+                        <form class="sign-up-form" method="post" id="sign_up" autocomplete="on">
+                            {% csrf_token %}
 
-    <div>
-        <div>
-            <form class="sign-up-form" method="post" id="sign_up" autocomplete="on">
-                {% csrf_token %}
+                            {{ form.non_field_errors }}
 
-                {{ form.non_field_errors }}
+                            {% for field in form %}
 
-                {% for field in form %}
+                                <div id="{{ field.name }}" class="field-wrapper">
 
-                    <div id="{{ field.name }}" class="field-wrapper">
+                                    {% if field.errors %}
+                                        <div class="alert alert-warning" role="alert">
+                                            {{ field.errors }}
+                                        </div>
+                                    {% endif %}
+                                    <span>{{ field.label_tag }}</span>
+                                    <br />
+                                    <span >{{ field }}</span>
 
-                        {% if field.errors %}
-                            <div class="alert alert-warning" role="alert">
-                                {{ field.errors }}
-                            </div>
-                        {% endif %}
-                        <span>{{ field.label_tag }}</span>
-                        <br />
-                        <span >{{ field }}</span>
+                                    {% if field.help_text %}
+                                        <p class="help">{{ field.help_text|safe }}</p>
+                                    {% endif %}
 
-                        {% if field.help_text %}
-                            <p class="help">{{ field.help_text|safe }}</p>
-                        {% endif %}
+                                </div>
+                            {% endfor %}
+
+                            <button class="btn btn-primary btn-lg" type="submit" form="sign_up" value="Submit">Submit</button>
+                        </form>
 
                     </div>
-                    {#<br />#}
-                {% endfor %}
+                </div>
 
-                <button class="btn btn-primary btn-lg" type="submit" form="sign_up" value="Submit">Submit</button>
-            </form>
-
+                <hr>
+            </div>
         </div>
     </div>
-
-    <hr>
-    <br><br>
-
 {% endblock %}
 
 {% block scripts %}

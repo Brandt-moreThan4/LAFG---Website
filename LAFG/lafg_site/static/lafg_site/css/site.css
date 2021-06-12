@@ -1,39 +1,56 @@
+
+/* Header stuff */
+
 header {
-    background-color: rgb(0, 71, 137);
+    /* background-color: rgb(0, 71, 137); */
+    background-color: rgba(29, 38, 124, 1);
 }
 
 .nav-link {
-    color: white !important; /*What would be a better color?*/
+    color: white !important; 
 }
 
-.right-nav ul{
-    list-style-type:none;
+/* Make text bigger and put some spacing between links  */
+#my-top-nav li{
+    margin-right: 20px;
+    font-size: 20px;
 }
 
-.right-nav li{
-    margin-bottom: 3px;
+#my-top-nav a:hover{
+    color: black !important;
 }
 
-.right-nav hr{
-    margin: 0px;
+.my-underline {
+    border-bottom: 2px;
+    border-color: white;
+    border-style: none none solid none;
+    /* padding-bottom: 10px; */
 }
 
 
-/*Below does not work for some reason. So it is applied manually to nav element in html*/
-/*nav {
-    margin: 0px !important;
-    border-bottom: 0px !important;
-}*/
-/*Make text smaller on smaller screens.*/
-html {
-    font-size: 14px;
+/* Logo stuff */
+#nav-logo-people{
+    width: 80px;
+    height: auto;
+    margin-right: 10px;
 }
 
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-}
+/* #nav-logo-words{
+    width: 128px;
+    height: auto;
+} */
+
+/* #logo-container a {
+    color: white !important;
+    font-size: x-large;
+} */
+
+/* #logo-container a:hover {
+    text-decoration: none;
+} */
+
+/* ---------------------- */
+
 
 
 /* Sticky footer styles
@@ -41,12 +58,22 @@ html {
 html {
     position: relative;
     min-height: 100%;
+    font-size: 15px !important;
+}
+
+/*Make text smaller on smaller screens.*/
+
+@media (min-width: 768px) {
+    html {
+        font-size: 17px !important;
+    }
 }
 
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
     font-family: Arial, Helvetica, sans-serif;
+    /* font-family: "Times New Roman", Times, serif; */
 }
 
 .footer {
@@ -55,38 +82,22 @@ body {
     width: 100%;
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
-    background-color: rgb(0, 71, 137);
+    background-color: rgba(29, 38, 124, 1);
     color: white !important;
 }
 
 
 
-.box-shadow {
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+.my-shadow {
+    box-shadow: 10px 10px 5px grey !important;
+ }
+
+ .nav-shadow {
+    box-shadow: 5px 5px 6px grey !important;
+ }
+
+
+
+.heading {
+    font-weight: bold;
 }
-
-
-
-#Logo {
-    float: left;
-    margin-right: 125px;
-    margin-left: 100px;
-}
-
-
-#CourtRoom {
-    width: 90%;
-}
-
-
-@media screen and (max-width: 1200px) {
-    
-    #CourtRoom {
-        width: 100%;
-    }
- 
-}
-
-
-
-

@@ -1,19 +1,41 @@
 ﻿    {% extends "lafg_site/base.html" %}
     {% load static %}
 
+    <style>
+   
+        
+    #skyline {
+        width: 100%;
+    }
+   
+
+    </style>
+
     {% block title %}Contact{% endblock %}
-    {% block page_title %}CONTACT{% endblock %}
+    {% block nav-contact %}my-underline{% endblock %}
+    
+
 
     {% block content %}
-
-        <br /> 
-        <p>We are looking forward to hearing from you! Please feel free to contact us through phone or email using the
-             information below and we will get back to you as soon as possible.</p>
-        <br /><br />
-        <div>
-            <span>LA FocusGroups, LLC</span><br />
-            <span>Phone: (225) 907-4265</span><br />
-            <span>Email: <a href="mailto:lafocusgroupsllc@gmail.com">lafocusgroupsllc@gmail.com</a></span>
+    <!-- For some reason, the iiamge below needs to be in a card because I couldn't make its width to be 100% otherwise. -->
+    <div class="card bg-dark text-white">
+        <img id="skyLine" src= "{% static 'lafg_site/Images/skyline.jpg' %}" alt="Skyline"/>
+        <div class="card-img-overlay">
+            <h2 class="card-title">Contact Us</h2>
         </div>
+    </div>
+    <br /> 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <!-- <h2 class="heading">Contact Us</h2><br />  -->
+                <p class="alert alert-primary">We look forward to hearing from you! Please feel free to send us an email at
+                     <span><a href="mailto:info@usfocusgroups.org">info@usfocusgroups.org</a></span> with any questions you have
+                      and we will get back to you as soon as possible!
+                </p>
+                <br>
+            </div>
+        </div>
+    </div>
 
     {% endblock %}
