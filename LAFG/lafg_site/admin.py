@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Person, Place, State
+from .models import Person, Place, State, Faq
 
 
 @admin.register(Person)
@@ -18,5 +18,8 @@ class PlacedAdmin(admin.ModelAdmin):
 
 @admin.register(State)
 class PlacedAdmin(admin.ModelAdmin):
-    # list_display = ('city_value', 'state', 'display')
     list_display = ('name', 'display')
+
+@admin.register(Faq)
+class FaqAdmin(admin.ModelAdmin):
+    list_display = ('question', 'answer')

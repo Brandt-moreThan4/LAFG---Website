@@ -23,7 +23,7 @@ class Place(models.Model):
     def __str__(self):
         return self.city_label
 
-class faq(models.Model):
+class Faq(models.Model):
     """table used to hold faq questions and their answers"""
     question = models.TextField()
     answer = models.TextField()

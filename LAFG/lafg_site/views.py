@@ -5,7 +5,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 import datetime
 
 from .data_tools import data_export
-from . models import Person, Place, State
+from . models import Person, Place, State, Faq
 from .forms import PersonForm
 
 print('http://127.0.0.1:8000/sign_up')
@@ -59,7 +59,9 @@ def sign_up(request):
 def faqs(request):
     """Renders the sign-up success template"""
 
-    return render(request, 'lafg_site/faqs.html')
+    faqs = Faq.objects.all()
+
+    return render(request, 'lafg_site/faqs.html', context={'faqs': faqs})
 
 
 def sign_up_success(request):
