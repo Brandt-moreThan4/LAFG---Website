@@ -2,23 +2,58 @@
 {% load static %}
 
 {% block styles %}
- <!-- <style>
-     .mainArea {
-         color:red;
-     } -->
+ <style>
 
  </style>
 {% endblock %}
 
+{% block nav-home %}my-underline{% endblock %}
 {% block title %}Home{% endblock %}
-{% block page_title %}Home{% endblock %}
 
 
 
 {% block content %}
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="heading">Who we are</h2>
+                <p>We work to help you find the best way to tell your client's story.</p>
+                <p>People process information when it is presented to them in the form of a story. Our goal is to help you craft a story that allows jurors to align themselves with your client. </p>
+                
+                <h2 class="heading">How do we do that?</h2>
+                <p>The best version of your client's story is the version that takes the jury through the facts of your case on a predictable path so that, at the end of the story, your client achieves full justice. We craft this story by taking the facts you've gathered through investigation and discovery, and getting feedback from focus groups until we know the story works.</p>
+            
+            
+                <h2 class="heading">When do you need to turn to US Focus Groups?</h2>
+                <p>The story of your case begins to take shape as you begin to gather information and evidence.
+                     How you view the story will affect the way that you question witnesses, conduct discovery,
+                      take depositions, and frame your case. We encourage lawyers to begin the process of crafting
+                       that story before discovery begins in earnest. Focus groups tell us the facts are important
+                        to a story, how those facts fit in the story, the facts that are missing, and how they
+                         expect the facts to be presented. Having this feedback while discovery is still open
+                          allows the lawyer to find all the facts that the jury will expect to hear.
+                </p>
+                <p>So, while it is certainly optimal too to start this process as early as possible,
+                     we can join forces with you at any point up to the day of trial to help frame
+                      your story with the juror's expectations in mind.
+                </p>
+                
 
-    <div class="mainArea">
-        <h1>Home Page big chillin</h1>
+                <h2 class="heading">Story-Crafting Timeline</h2>
+                <p>Where time and resources allow, we offer a multi-step process of story-crafting that begins
+                     with breaking down and analyzing the facts of your case and ends with a bullet-proof story ready to be presented to a jury.
+                </p>
+                <div>
+                    <img class="img-fluid" src="{% static 'marketing/Images/timeline.jpg' %}">
+                </div>
+                <br>
+                <h2 class="heading">Our Toolbox</h2>
+
+
+
+            </div>
+        </div>
     </div>
 
 {% endblock %}
