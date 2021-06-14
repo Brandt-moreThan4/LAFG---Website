@@ -43,3 +43,8 @@ def demonstratives(request:HttpRequest):
     """Renders focus gorups page"""
 
     return render(request, 'marketing/demonstratives.html')
+
+def timeline(request:HttpRequest):
+    """Renders timeline page"""
+
+    return render(request, 'marketing/timeline.html')

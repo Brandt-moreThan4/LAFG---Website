@@ -10,5 +10,6 @@ urlpatterns = [
     path('focus-groups/', views.focus_groups, name='focus_groups' ),
     path('demonstratives/', views.demonstratives, name='demonstratives'),
     path('surveys/', views.surveys, name='surveys' ),
+    path('timeline/', views.timeline, name='timeline' ),
     path('', views.home, name='home' ),
     ]
