@@ -14,6 +14,15 @@
          margin-right: 0px !important;
      }
      
+     .tool-box a {
+         color: black;
+     }
+
+     .tool-box a:hover {
+         text-decoration: none;
+     }
+
+
  </style>
 {% endblock %}
 
@@ -65,46 +74,54 @@
                 </p>
                 <div>
                     <a href="{% url 'marketing:timeline' %}">
-                        <img class="img-fluid" src="{% static 'marketing/Images/timeline.jpg' %}">
+                        <!-- <img class="img-fluid" src="{% static 'marketing/Images/timeline.jpg' %}"> -->
+                        <img class="img-fluid" src="{% static 'marketing/Images/Timeline Mock 2.png' %}">
                     </a>
                 </div>
 
                 <br>
                 
                 <h2 class="heading text-center">Our Toolbox</h2><br><br>
-                <div class="row justify-content-center">
-                    <div class="col-6">
-                        <div class="card card-block">
-                            <img src="{% static 'marketing/Images/fg_zoom.png' %}" class="card-img-top card-img">
-                            <div class="card-body">
-                              <h4 class="card-title">Focus Groups</h4>
-                              <p class="card-text">Crossing this dusky entry, and on through yon low-arched way—cut through what in old times must have been a great central chimney with fireplaces all round—you enter the public room.</p>
-                            </div>
-                          </div>
+                <div class="tool-box"> 
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <a href="{% url 'marketing:focus_groups' %}">
+                                <div class="card card-block">
+                                    <img src="{% static 'marketing/Images/fg_zoom.png' %}" class="card-img-top card-img">
+                                    <div class="card-body">
+                                    <h4 class="card-title">Focus Groups</h4>
+                                    <p class="card-text">Crossing this dusky entry, and on through yon low-arched way—cut through what in old times must have been a great central chimney with fireplaces all round—you enter the public room.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="{% url 'marketing:surveys' %}">
+                                <div class="card card-block">
+                                    <img src="{% static 'marketing/Images/survey_sample.jpg' %}" class="card-img-top card-img">
+                                    <div class="card-body">
+                                    <h4 class="card-title">Surveys</h4>
+                                    <p class="card-text">Abominable are the tumblers into which he pours his poison. Though true cylinders without—within, the villanous green goggling glasses deceitfully tapered downwards to a cheating bottom.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="{% url 'marketing:demonstratives' %}">    
+                                <div class="card card-block">
+                                    <img src="{% static 'marketing/Images/board_example.jpg' %}" class="card-img-top card-img">
+                                    <div class="card-body">
+                                    <h4 class="card-title">Demonstrative Exhibits</h4>
+                                    <p class="card-text">I told him that I never liked to sleep two in a bed; that if I should ever do so, it would depend upon who the harpooneer might be.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-6">
-                        <div class="card card-block">
-                            <img src="{% static 'marketing/Images/survey_sample.jpg' %}" class="card-img-top card-img">
-                            <div class="card-body">
-                              <h4 class="card-title">Surveys</h4>
-                              <p class="card-text">Abominable are the tumblers into which he pours his poison. Though true cylinders without—within, the villanous green goggling glasses deceitfully tapered downwards to a cheating bottom.</p>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="card card-block">
-                            <img src="{% static 'marketing/Images/board_example.jpg' %}" class="card-img-top card-img">
-                            <div class="card-body">
-                              <h4 class="card-title">Demonstrative Exhibits</h4>
-                              <p class="card-text">I told him that I never liked to sleep two in a bed; that if I should ever do so, it would depend upon who the harpooneer might be.</p>
-                            </div>
-                          </div>
-                    </div>
-                </div>
-
 
 
             </div>
