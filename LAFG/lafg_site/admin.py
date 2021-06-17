@@ -4,9 +4,9 @@ from .models import Person, Place, State, Faq
 
 @admin.register(Person)
 class PersonAdmin(admin.ModelAdmin):
-    list_display = ('time_stamp', 'first_name', 'last_name', 'sex', 'age', 'phone', 'location', 'source')
+    list_display = ('time_stamp', 'first_name', 'last_name', 'sex', 'age', 'phone', 'zip', 'source')
     list_filter = ('time_stamp',)
-    search_fields = ('first_name', 'first_name', 'location')
+    search_fields = ('first_name', 'first_name', 'zip')
     ordering = ('-time_stamp',)
 
 

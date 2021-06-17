@@ -86,11 +86,11 @@ class PersonForm(forms.ModelForm):
     occupation = forms.CharField(required=False, label = 'If you are working, what is your occupation?', widget=forms.TextInput(attrs={'class': 'form-control'}))
     sourceOther = forms.CharField(required=False, label = 'If other, please specify.', widget=forms.TextInput(attrs={'class': 'form-control'}))
 
-    def __init__(self, *args, **kwargs):
-        # This function makes sure the rendered choices for location button are dynamic and based off the the 'Places' model.
-        super().__init__(*args, **kwargs)
-        locations= get_location_choices()
-        self.fields["location"].widget.choices = locations
+    # def __init__(self, *args, **kwargs):
+    #     # This function makes sure the rendered choices for location button are dynamic and based off the the 'Places' model.
+    #     super().__init__(*args, **kwargs)
+    #     locations= get_location_choices()
+    #     self.fields["location"].widget.choices = locations
 
     
     class Meta:
@@ -109,7 +109,8 @@ class PersonForm(forms.ModelForm):
             'party_to_law_suit': ('Have you ever been party to a lawsuit?'),
             'felony': ('Have you ever been convicted of a felony?'),
             'legal_background': ('Are you studying law or have you worked for a law firm?'),
-            'location': ("Please indicate where you're located:"),
+            'zip': ('Zip Code'),
+            # 'location': ("Please indicate where you're located:"),
             'source': ('How did you hear about us?'),
         }
 
@@ -121,7 +122,8 @@ class PersonForm(forms.ModelForm):
             'last_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Last Name'}),
             'email': forms.TextInput(attrs={'class':'form-control', 'placeholder':'email@example.com' }),
             'phone': forms.TextInput(attrs={'class':'form-control', 'type':'tel', 'placeholder':'999-999-9999'}),
-            'age': forms.NumberInput(attrs={'class':'form-control', 'min':0}),
+            'zip': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Zip Code', 'pattern':"[0-9]{5}"}),
+            'age': forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Age', 'min':0}),
             'sex': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=SEX_CHOICES),
             'ethnicity': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=ETHNICITY_CHOICES),
             'political_view': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=POLITICAL_VIEW_CHOICES),
@@ -137,7 +139,7 @@ class PersonForm(forms.ModelForm):
             'party_to_law_suit': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=PARTY_TO_LAW_SUIT_CHOICES),
             'felony': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=FELONY_CHOICES),
             'legal_background': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=LEGAL_BACKGROUND_CHOICES),
-            'location': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=LOCATION_CHOICES),
+            # 'location': forms.RadioSelect(attrs={'class':'ethnicity'}, choices=LOCATION_CHOICES),
             'source': forms.RadioSelect(attrs={'class':'ethnicity','onclick':'showHideSourceOther()'}, choices=SOURCES_CHOICES),
         }
 

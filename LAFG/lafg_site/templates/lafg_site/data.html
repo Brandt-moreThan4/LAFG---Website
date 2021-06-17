@@ -6,21 +6,21 @@
 
     {% block content %}
 
-        {#<div class="row">#}
+    <br><br>
+    <div class="container">
+        <div class="row">
             <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                 {# Could instead use one book name and different values for to differentiate on back end? #}    
+                {% csrf_token %} 
                 <div class="row">
                     <div class="col">
                         <div>
                             <button type="submit" value="participant_export" name="data_export" class="btn btn-primary">Export Data</button><br /><br />   
                         </div>
                     </div>
-
                 </div>
-
             </form>  
-        {#</div>#}
+        </div>
+    </div>
 
 
     {% endblock %}
