@@ -41,6 +41,7 @@ class Person(models.Model):
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=15)
+    zip = models.CharField(max_length=5)
     age = models.IntegerField()
     sex = models.CharField(max_length=10)
     ethnicity = models.CharField(max_length=50)
@@ -58,7 +59,7 @@ class Person(models.Model):
     party_to_law_suit = models.CharField(max_length=3)
     felony = models.CharField(max_length=3)
     legal_background = models.CharField(max_length=3)
-    location = models.CharField(max_length=250)
+    # location = models.CharField(max_length=250)
     source = models.CharField(max_length=250)
     sourceOther = models.CharField(max_length=250)
 
