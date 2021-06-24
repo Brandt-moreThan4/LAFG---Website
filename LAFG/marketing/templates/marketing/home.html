@@ -22,6 +22,14 @@
          text-decoration: none;
      }
 
+     .text-bigger {
+         font-size: x-large;
+     }
+
+     .body-text {
+         font-size: larger;
+     }
+
 
  </style>
 {% endblock %}
@@ -32,95 +40,101 @@
 
 
 {% block content %}
-    <br>
-    <div class="container">
+<script src="https://use.fontawesome.com/1430990023.js"></script>
+
+    <div class="container-fluid">
         <div class="row">
             <div class="col">
 
-                <div class="jumbotron jumbotron-fluid">
+
+                <div class="row" style="background-color: #DDDDDD;">
                     <div class="container">
-                      <h1 class="display-4">Who We Are</h1>
-                      <i><p class="lead">We work to help you find the best way to tell your client's story.</p></i>
-                      <p>People process information when it is presented to them in the form of a story. Our goal is to help you craft a story that allows jurors to align themselves with your client. </p>
+                        <div class="row">
+                            <div class="col">
+                                <h1 class="font-weight-bold" style="margin-top: 50px; margin-bottom: 30px; margin-left: -70px;" >Who we are</h1>
+                                
+                                <div>
+                                    <i><p class="text-bigger">We work to help you find the best way to tell your client's story.</p></i> 
+                                    <p class="text-bigger" >People process information when it is presented to them in the form of a story. Our goal is to help you craft a story that allows jurors to align themselves with your client. </p>
+                                </div>
+                                <br><br><br>
+                            </div>    
+                        </div>
                     </div>
-                  </div>
-
-                <!-- <h2 class="heading">Who we are</h2>
-                <p>We work to help you find the best way to tell your client's story.</p>
-                <p>People process information when it is presented to them in the form of a story. Our goal is to help you craft a story that allows jurors to align themselves with your client. </p> -->
-                
-                <h2 class="heading">How do we do that?</h2>
-                <p>The best version of your client's story is the version that takes the jury through the facts of your case on a predictable path so that, at the end of the story, your client achieves full justice. We craft this story by taking the facts you've gathered through investigation and discovery, and getting feedback from focus groups until we know the story works.</p>
-            
-            
-                <h2 class="heading">When do you need to turn to US Focus Groups?</h2>
-                <p>The story of your case begins to take shape as you begin to gather information and evidence.
-                     How you view the story will affect the way that you question witnesses, conduct discovery,
-                      take depositions, and frame your case. We encourage lawyers to begin the process of crafting
-                       that story before discovery begins in earnest. Focus groups tell us the facts are important
-                        to a story, how those facts fit in the story, the facts that are missing, and how they
-                         expect the facts to be presented. Having this feedback while discovery is still open
-                          allows the lawyer to find all the facts that the jury will expect to hear.
-                </p>
-                <p>So, while it is certainly optimal too to start this process as early as possible,
-                     we can join forces with you at any point up to the day of trial to help frame
-                      your story with the juror's expectations in mind.
-                </p>
-                
-
-                <h2 class="heading">Story-Crafting Timeline</h2>
-                <p>Where time and resources allow, we offer a multi-step process of story-crafting that begins
-                     with breaking down and analyzing the facts of your case and ends with a bullet-proof story ready to be presented to a jury.
-                </p>
-                <div>
-                    <a href="{% url 'marketing:timeline' %}">
-                        <!-- <img class="img-fluid" src="{% static 'marketing/Images/timeline.jpg' %}"> -->
-                        <img class="img-fluid" src="{% static 'marketing/Images/Timeline Mock 2.png' %}">
-                    </a>
                 </div>
 
-                <br>
-                
-                <h2 class="heading text-center">Our Toolbox</h2><br><br>
-                <div class="tool-box"> 
-                    <div class="row justify-content-center">
-                        <div class="col-6">
-                            <a href="{% url 'marketing:focus_groups' %}">
-                                <div class="card card-block">
-                                    <img src="{% static 'marketing/Images/fg_zoom.png' %}" class="card-img-top card-img">
-                                    <div class="card-body">
-                                    <h4 class="card-title">Focus Groups</h4>
-                                    <p class="card-text">Crossing this dusky entry, and on through yon low-arched way—cut through what in old times must have been a great central chimney with fireplaces all round—you enter the public room.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                <br><br>
 
+
+                <div class="container">
                     <div class="row">
-                        <div class="col-6">
-                            <a href="{% url 'marketing:surveys' %}">
-                                <div class="card card-block">
-                                    <img src="{% static 'marketing/Images/survey_sample.jpg' %}" class="card-img-top card-img">
-                                    <div class="card-body">
-                                    <h4 class="card-title">Surveys</h4>
-                                    <p class="card-text">Abominable are the tumblers into which he pours his poison. Though true cylinders without—within, the villanous green goggling glasses deceitfully tapered downwards to a cheating bottom.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-6">
-                            <a href="{% url 'marketing:demonstratives' %}">    
-                                <div class="card card-block">
-                                    <img src="{% static 'marketing/Images/board_example.jpg' %}" class="card-img-top card-img">
-                                    <div class="card-body">
-                                    <h4 class="card-title">Demonstrative Exhibits</h4>
-                                    <p class="card-text">I told him that I never liked to sleep two in a bed; that if I should ever do so, it would depend upon who the harpooneer might be.</p>
-                                    </div>
-                                </div>
-                            </a>
+                        <div class="col">
+                            <h1 class="heading" style="text-align: center;">How do we do that?</h1>
+                            <br>
+                            <p class="body-text" >The best version of your client's story is the version that takes the jury through the facts of your case on a predictable path so that, at the end of the story, your client achieves full justice. We craft this story by taking the facts you've gathered through investigation and discovery, and getting feedback from focus groups until we know the story works.</p>
                         </div>
                     </div>
+                </div>
+
+                <br><br>
+
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="heading" style="text-align: center;">When do you need to turn to US Focus Groups?</h1>
+                            <br>
+                            <p class="body-text">The story of your case begins to take shape as you begin to gather information and evidence.
+                                How you view the story will affect the way that you question witnesses, conduct discovery,
+                                take depositions, and frame your case. We encourage lawyers to begin the process of crafting
+                                that story before discovery begins in earnest. Focus groups tell us the facts are important
+                                    to a story, how those facts fit in the story, the facts that are missing, and how they
+                                    expect the facts to be presented. Having this feedback while discovery is still open
+                                    allows the lawyer to find all the facts that the jury will expect to hear.
+                            </p>
+                            <p class="body-text">So, while it is certainly optimal too to start this process as early as possible,
+                                we can join forces with you at any point up to the day of trial to help frame
+                                your story with the juror's expectations in mind.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <br>
+
+                <div class="row" style="background-color: #DDDDDD;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <h1 class="heading" style="text-align: center; margin-top: 20px;">Story-Crafting Timeline</h1>
+                                <br>
+                                <p class="body-text">Where time and resources allow, we offer a multi-step process of story-crafting that begins
+                                    with breaking down and analyzing the facts of your case and ends with a bullet-proof story ready to be presented to a jury.
+                                </p>
+                                <br>
+                                <div>
+                                    <a href="{% url 'marketing:timeline' %}">
+                                        <img class="img-fluid" src="{% static 'marketing/Images/Story_timeline.png' %}">
+                                    </a>
+                                </div>
+                                <br>
+                                <a href="{% url 'marketing:timeline' %}">
+                                    <div class="heading" style="text-align:right; font-size: x-large;">More Information <i class="fa fa-chevron-right"></i></div>
+                                </a>
+                                <br>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br><br>
+                
+                <h1 class="heading text-center">Our Toolbox</h1>
+                <br><br>
+
+                <div class="tool-box"> 
+
                 </div>
 
 
