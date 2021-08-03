@@ -10,18 +10,10 @@
 
      .card-block {
          margin-bottom: 10px;
-         width: 410px;
+         width: px;
          margin-right: 0px !important;
      }
      
-     .tool-box a {
-         color: black;
-     }
-
-     .tool-box a:hover {
-         text-decoration: none;
-     }
-
      .text-bigger {
          font-size: x-large;
      }
@@ -30,8 +22,37 @@
          font-size: larger;
      }
 
+     .toolbox-btn {
+        font-size: x-large;
+        color: white;
+        background-color: rgba(29, 38, 124, .85);
+        /* height: 70px;
+        width: 325px; */
+        /* margin: 20px 20px 20px 20px; */
+        margin-top: 15px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        border: 3px solid rgba(112, 112, 112, 1);
+        font-weight: bold;
+        box-shadow: 5px 5px 5px grey;
+     }
+
+     .toolbox-card {
+         border: 5px solid rgba(112, 112, 112, 1);
+         border-radius: 20px;
+         background-color: #DDDDDD;
+         width: 300px;
+     }
+
+     .toolbox h2 {
+         font-weight: bold;
+         margin-top: 50px;
+     }
+     /* rgba(29, 38, 124, 1) */
 
  </style>
+
+
 {% endblock %}
 
 {% block nav-home %}my-underline{% endblock %}
@@ -133,8 +154,61 @@
                 <h1 class="heading text-center">Our Toolbox</h1>
                 <br><br>
 
-                <div class="tool-box"> 
+                <div class="toolbox"> 
+                    <div class="container">
+                        <div class="row">
 
+                            <div class="col-md-4" style="margin-bottom: 30px;">
+                                <img style="width: 150px; z-index: 1; position: absolute; left: 85px;" src="{% static 'marketing/Images/surveys_icon.png' %}">
+                                <div class="toolbox-card" style="margin-top: 85px;">
+                                    <h2 style="text-align: center; margin-bottom: 50px; margin-top: 90px;">Surveys</h2>
+                                    <p style="text-align: left; padding: 25px; color:rgba(29, 38, 124, 1);font-weight: bold;">Abominable are the tumblers into which he pours his poison. Though true cylinders without—within, the villanous green goggling glasses deceitfully tapered downwards to a cheating bottom.</p>
+                                    <div style="text-align: center;">
+                                        <a href="{% url 'marketing:surveys' %}">
+                                            <button class="btn toolbox-btn">Survey Information</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4" style="margin-bottom: 30px;">
+                                <img style="width: 150px; z-index: 1; position: absolute; left: 85px;" src="{% static 'marketing/Images/fg_icon.png' %}">
+                                <div class="toolbox-card" style="margin-top: 85px;">
+                                    <h2 style="text-align: center; margin-bottom: 50px; margin-top: 90px;">Focus Groups</h2>
+                                    <p style="text-align: left; padding: 25px; color:rgba(29, 38, 124, 1);font-weight: bold;">Abominable are the tumblers into which he pours his poison. Though true cylinders without—within, the villanous green goggling glasses deceitfully tapered downwards to a cheating bottom.</p>
+                                    <div style="text-align: center;">
+                                        <a href="{% url 'marketing:focus_groups' %}">
+                                            <button class="btn toolbox-btn">Focus Groups</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4" style="margin-bottom: 30px;">
+                                <img style="width: 150px; z-index: 1; position: absolute; left: 85px;" src="{% static 'marketing/Images/demonstratives_icon.png' %}">
+                                <div class="toolbox-card" style="margin-top: 85px;">
+                                    <h2 style="text-align: center; margin-bottom: 50px; margin-top: 90px;">Demonstrative Exhibits</h2>
+                                    <p style="text-align: left; padding: 25px; color:rgba(29, 38, 124, 1);font-weight: bold;">Abominable are the tumblers into which he pours his poison. Though true cylinders without—within, the villanous green goggling glasses deceitfully tapered downwards to a cheating bottom.</p>
+                                    <div style="text-align: center;">
+                                        <a href="{% url 'marketing:demonstratives' %}">
+                                            <button class="btn toolbox-btn">Demonstrative Exhibits</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
                 </div>
 
 
