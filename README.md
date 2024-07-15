@@ -1,0 +1,3 @@
+# Overview
+This is the repo I used to store the code needed to build the USFG website. When I started to work on the project, we were still named LAFG...
+But at the end of 2023, when we decided we weren't going to be hosting focus groups anymore, I decided to let the domain name expire and stopped paying the hosting fee on real python. So you can't actually see the website anymore. 
